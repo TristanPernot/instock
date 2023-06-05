@@ -1,11 +1,15 @@
-import React from 'react'
+import "./Header.scss";
 
-const Header = () => {
-    return (
-        <div>
-            Header
-        </div>
-    )
+function Header() {
+  return (
+    <header className="header">
+      <div className="header__logo"></div>
+      <div className="header__nav">
+        <div className="header__nav--item">Warehouses</div>
+        <div className="header__nav--item">Inventory</div>
+      </div>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

@@ -1,0 +1,70 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.header {
+  height: 14.5rem;
+  background-color: $background-graphite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    height: 12rem;
+    display: flex;
+    flex-direction: row;
+    // gap: 22rem;
+    gap: 45vw;
+    align-items: start;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    gap: 40rem;
+  }
+  &__logo {
+    background-image: url(../../assets/Logo/InStock-Logo.svg);
+    width: 12rem;
+    height: 3rem;
+    margin: 1rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9rem;
+    @include tablet {
+      background-size: 8rem;
+    }
+  }
+  &__nav {
+    display: flex;
+    gap: 1rem;
+    color: $primary-white;
+    @include tablet {
+      gap: 0rem;
+    }
+    &--item {
+      border-radius: 20px;
+      width: 11.5rem;
+      height: 2.5rem;
+      text-align: center;
+      padding-top: 0.5rem;
+      @include tablet {
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        width: 6.7rem;
+        height: 2.3rem;
+        padding-top: 0.45rem;
+      }
+    }
+    &--item:hover {
+      background-color: $primary-black;
+    }
+  }
+}
