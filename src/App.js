@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // Import Components
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
+import WarehouseList from './components/WarehouseList/WarehouseList';
 // Import Pages
 import Homepage from './pages/Homepage/Homepage';
 import InventoryPage from './pages/InventoryPage/InventoryPage';
@@ -16,20 +17,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <WareHouseList />
+  
       </header>
+      <WarehouseList />
     </div>
   );
 }

@@ -1,0 +1,13 @@
+@use fonts as mixing
+.container{
+    display: flex;
+    flex-direction: column;
+
+    &__list{
+        display: inline;
+        list-style: none;
+    }
+    &__li{
+
+    }
+}
