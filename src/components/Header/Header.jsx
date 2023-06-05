@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Header.scss";
 
 function Header() {
@@ -13,3 +14,16 @@ function Header() {
 }
 
 export default Header;
+=======
+import React from 'react'
+
+const Header = () => {
+    return (
+        <div>
+            Header
+        </div>
+    )
+}
+
+export default Header
+>>>>>>> develop

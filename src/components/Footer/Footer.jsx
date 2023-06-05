@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Footer.scss";
 
 function Footer() {
@@ -5,3 +6,16 @@ function Footer() {
 }
 
 export default Footer;
+=======
+import React from 'react'
+
+const Footer = () => {
+    return (
+        <div>
+            Footer
+        </div>
+    )
+}
+
+export default Footer
+>>>>>>> develop
