@@ -5,7 +5,7 @@
   padding: 0 1.5rem;
   @include tablet {
     width: 50%;
-    border-right: 1px solid $secondary-color-light;
+    border-right: 1px solid $secondary-cloud;
     padding: 0 2rem 0 1rem;
   }
   &__wrapper {
@@ -33,21 +33,18 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 0.5rem;
-    @include body-medium-mobile;
     font-weight: 600;
   }
   &__input {
-    border: 1px solid $secondary-color-light;
+    border: 1px solid $secondary-cloud;
     border-radius: 1.25rem;
     width: 100%;
     height: 2.25rem;
     padding-left: 1rem;
 
-    &:focus {
-			outline: $primary-color-medium solid 1px;
-		}
+   
     &--error {
-      border: 1px solid $secondary-color-light;
+      border: 1px solid $secondary-cloud;
       border-radius: 1.25rem;
       width: 100%;
       height: 2.25rem;
@@ -59,7 +56,7 @@
     }
   }
   &__button-wrapper {
-    background-color: $background-color-light;
+    background-color: $background-graphite;
     display: flex;
     height: 2.25rem;
     justify-content: space-around;
