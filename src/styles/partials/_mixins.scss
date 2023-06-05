@@ -22,3 +22,28 @@
 //   }
 
 //
+
+// searchbar
+@mixin searchbar {
+  border-radius: 20px;
+  background: url("../../assets/Icons/search-24px.svg") no-repeat;
+
+  height: 36px;
+  border-color: $secondary-cloud;
+
+  @include tablet {
+    height: 38px;
+  }
+}
+
+// button
+@mixin button {
+  border-radius: 20px;
+  background-color: $primary-indigo;
+  color: $primary-white;
+  border: none;
+  height: 36px;
+  @include tablet {
+    height: 38px;
+  }
+}
