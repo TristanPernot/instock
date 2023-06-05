@@ -24,7 +24,7 @@ function App() {
             <Route path="/inventory/:id" element={<SingleInventoryPage />}/>
             <Route path="/addWarehouse" element={<AddWarehousePage />}/>
             <Route path="/addInventory" element={<AddInventoryPage/>}/>
-            {/* 404 Page */}
+                    {/* 404 Page */}
             <Route path="*" element={<NotFoundPage />}/>
           </Routes>
         </BrowserRouter>
