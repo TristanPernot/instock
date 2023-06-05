@@ -21,7 +21,8 @@ body {
     height: 12rem;
     display: flex;
     flex-direction: row;
-    gap: 22rem;
+    // gap: 22rem;
+    gap: 45vw;
     align-items: start;
   }
   @include desktop {
