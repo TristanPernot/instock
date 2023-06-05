@@ -24,6 +24,11 @@ body {
     gap: 22rem;
     align-items: start;
   }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    gap: 40rem;
+  }
   &__logo {
     background-image: url(../../assets/Logo/InStock-Logo.svg);
     width: 12rem;
