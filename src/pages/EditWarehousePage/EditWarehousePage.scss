@@ -1,0 +1,22 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+
+    &__header {
+        display: flex;
+        padding: 2rem 1rem;
+        gap: 0.5rem;
+        border-bottom: solid 1px $secondary-cloud;
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary-black;
+    }
+    &__content {
+        padding: 1rem;
+    }
+}

@@ -12,6 +12,7 @@ import SingleInventoryPage from './pages/SingleInventoryPage/SingleInventoryPage
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import AddWarehousePage from './pages/AddWarehousePage/AddWarehousePage';
 import AddInventoryPage from './pages/AddInventoryPage/AddInventoryPage';
+import EditWarehousePage from './pages/EditWarehousePage/EditWarehousePage';
 // App Components
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/inventory/:id" element={<SingleInventoryPage />}/>
             <Route path="/addWarehouse" element={<AddWarehousePage />}/>
             <Route path="/addInventory" element={<AddInventoryPage/>}/>
+            <Route path="/editWarehouse/:id" element={<EditWarehousePage />}/>
             {/* 404 Page */}
             <Route path="*" element={<NotFoundPage />}/>
           </Routes>
