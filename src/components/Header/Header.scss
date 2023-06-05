@@ -2,9 +2,18 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
 .header {
-  height: 12.5rem;
-  background-color: $primary-black;
+  height: 14.5rem;
+  background-color: $background-graphite;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,19 +21,26 @@
     background-image: url(../../assets/Logo/InStock-Logo.svg);
     width: 12rem;
     height: 3rem;
+    margin: 1rem 0;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 9rem;
   }
   &__nav {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     color: $primary-white;
     &--item {
       // background-color: $primary-black;
-      background-color: maroon; // for testing
+      // background-color: $primary-black; // for testing
       border-radius: 20px;
-      width: 164px;
-      height: 36px;
+      width: 11.5rem;
+      height: 2.5rem;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+    &--item:hover {
+      background-color: $primary-black;
     }
   }
 }
