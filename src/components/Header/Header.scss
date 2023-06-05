@@ -1,0 +1,30 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  height: 12.5rem;
+  background-color: $primary-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__logo {
+    background-image: url(../../assets/Logo/InStock-Logo.svg);
+    width: 12rem;
+    height: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__nav {
+    display: flex;
+    gap: 2rem;
+    color: $primary-white;
+    &--item {
+      // background-color: $primary-black;
+      background-color: maroon; // for testing
+      border-radius: 20px;
+      width: 164px;
+      height: 36px;
+    }
+  }
+}

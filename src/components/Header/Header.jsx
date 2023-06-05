@@ -2,8 +2,12 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <header>
-      <header__logo></header__logo>
+    <header className="header">
+      <div className="header__logo"></div>
+      <div className="header__nav">
+        <div className="header__nav--item">Warehouses</div>
+        <div className="header__nav--item">Inventory</div>
+      </div>
     </header>
   );
 }
