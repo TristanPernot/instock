@@ -19,4 +19,16 @@
     &__content {
         padding: 1rem;
     }
+    &__control {
+        display: flex;
+        flex-direction: column;
+    }
+    &__buttons {
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: end;
+    }
+    &__btn {
+        padding: 0.5rem 0.8rem;
+    }
 }
