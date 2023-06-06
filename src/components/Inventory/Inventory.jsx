@@ -19,23 +19,37 @@ function Inventory() {
           <div className="inventory__mobileContainer1">
             <div className="inventory__mobileContainer2">
               <div className="inventory__tableHeader">INVENTORY ITEM</div>
-              <div className="inventory__item">{}</div>
-              <div className="inventory__tableHeader">CATEGORY</div>
-              <div className="inventory__body">{}</div>
+              <div className="inventory__body">placeholder</div>
+              <div className="inventory__tabletContainer">
+                <div className="inventory__tableHeader">CATEGORY</div>
+                <div className="inventory__body">placeholder</div>
+              </div>
             </div>
             <div className="inventory__mobileContainer3">
               <div className="inventory__tableHeader">STATUS</div>
-              <div className="inventory__body">{}</div>
-              <div className="inventory__tableHeader">QTY</div>
-              <div className="inventory__body">{}</div>
-              <div className="inventory__tableHeader">WAREHOUSE</div>
-              <div className="inventory__body">{}</div>
+              <div className="inventory__body">placeholder</div>
+              <div className="inventory__tabletContainer">
+                <div className="inventory__tableHeader">QTY</div>
+                <div className="inventory__body">placeholder</div>
+              </div>
+              <div className="inventory__tabletContainer">
+                <div className="inventory__tableHeader">WAREHOUSE</div>
+                <div className="inventory__body">placeholder</div>
+              </div>
             </div>
           </div>
           <div className="inventory__iconContainer">
-            <img src={deleteIcon} alt="delete" />
-
-            <img src={editIcon} alt="edit" />
+            <div className="inventory__tableHeader" id="actions">
+              ACTIONS
+            </div>
+            <div className="inventory__iconTablet">
+              <div className="inventory__icons">
+                <img src={deleteIcon} alt="delete" />
+              </div>
+              <div className="inventory__icons">
+                <img src={editIcon} alt="edit" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
