@@ -20,9 +20,9 @@ import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 function App() {
   return (
     <div className="App">
-     
       <BrowserRouter>
       <Header/>
+
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />
@@ -30,8 +30,9 @@ function App() {
           <Route path="/inventory/:id" element={<SingleInventoryPage />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
           <Route path="/addInventory" element={<AddInventoryPage />} />
-          <Route path="/Ditailsform" element={<Ditailsform/>}/>
+          {/* <Route path="/Ditailsform" element={<Ditailsform/>}/> */}
           <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
+          <Route path="/editWarehouse" element={<EditWarehousePage />}/>
           <Route
             path="warehouses/:warehouseId"
             element={<WarehouseDetails />}

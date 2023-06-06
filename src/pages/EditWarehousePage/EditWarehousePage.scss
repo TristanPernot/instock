@@ -8,11 +8,20 @@
     @include tablet {
         margin: 2rem;
     }
+    @include desktop {
+        margin: 2rem 8.125rem;
+    }
     &__header {
         display: flex;
         padding: 1.25rem 1rem;
         gap: 0.5rem;
         border-bottom: solid 1px $secondary-cloud;
+        @include tablet {
+            padding: 1.5rem 2rem;
+        }
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
     }
     &__title {
         font-size: 1.5rem;
@@ -46,12 +55,18 @@
             border-right: solid 1px $secondary-cloud;
             padding: 0 2rem;
         }
+        @include desktop{
+            padding: 0 2.5rem;
+        }
     }
     &__right {
         padding: 1rem 1rem;
-        width: 50%;
         @include tablet {
             padding: 0 2rem;
+            width: 50%;
+        }
+        @include desktop {
+            padding: 0 2.5rem;
         }
     }
     &__btn {
@@ -68,6 +83,9 @@
         font-size: 0.8rem;
         font-weight: 600;
         margin-bottom: 0.3rem;
+        @include desktop {
+            font-size: 0.875rem;
+        }
     }
     &__input {
         border: solid 1px $secondary-cloud;
@@ -94,4 +112,4 @@
         background-color: $primary-indigo;
         color: white;
     }
- }
+}
