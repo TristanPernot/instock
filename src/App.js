@@ -14,7 +14,7 @@ import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 // import Ditailsform from './components/DetailsForm/Ditailsform';
 import AddNewWarehouseForm from './components/AddNewWarehouseForm/AddNewWarehouseForm';
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
-
+import InventoryList from "./components/InventoryList/InventoryList";
 // App Components
 function App() {
   return (
@@ -35,6 +35,7 @@ function App() {
             path="warehouses/:warehouseId"
             element={<WarehouseDetails />}
           />
+          <Route path="/InventoryList"element={<InventoryList/>}/>
                   {/* 404 Page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
