@@ -4,9 +4,16 @@
 .inventory {
   font-family: "Titillium Web", sans-serif;
 
+  &__container {
+    max-width: 21rem;
+    margin: auto;
+  }
+
   &__searchContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
   &__searchbar {
     @include searchbar;
@@ -15,23 +22,24 @@
   &__button {
     @include button;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   &__itemContainer {
     border-top: 2px solid $secondary-cloud;
+    padding-top: 1rem;
   }
 
   &__mobileContainer1 {
     display: flex;
-    flex-direction: column;
   }
   &__mobileContainer2 {
     display: flex;
     flex-direction: column;
+    margin-right: 6rem;
   }
 
-  &__iconContainer {
+  &__iconContainer3 {
     display: flex;
   }
 }
