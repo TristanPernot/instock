@@ -11,6 +11,7 @@
     @include tablet {
       max-width: 100%;
       display: flex;
+      flex-direction: column;
     }
   }
 
@@ -22,65 +23,139 @@
 
     @include tablet {
       flex-direction: row;
-      //   width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &__tabletSearchContainer {
+    @include tablet {
+      display: flex;
+      margin-top: 1.34rem;
     }
   }
   &__searchbar {
     @include searchbar;
+    display: flex;
+    width: 100%;
+
+    @include tablet {
+      display: inline;
+    }
   }
 
   &__button {
     @include button;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    width: 100%;
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
-  &__itemContainer {
-    border-top: 2px solid $secondary-cloud;
-    padding-top: 1rem;
+  //   &__itemContainer {
+  //     border-top: 2px solid $secondary-cloud;
+  //     padding-top: 1rem;
 
+  //     @include tablet {
+  //       display: flex;
+  //       padding: 1rem;
+  //     }
+  //   }
+
+  //   &__mobileContainer1 {
+  //     display: flex;
+
+  //     @include tablet {
+  //       display: flex;
+  //     }
+  //   }
+  //   &__mobileContainer2 {
+  //     display: flex;
+  //     flex-direction: column;
+  //     margin-right: 6rem;
+
+  //     @include tablet {
+  //       margin-right: 0;
+  //       flex-direction: row;
+  //     }
+  //   }
+
+  //   &__mobileContainer3 {
+  //     display: flex;
+  //     flex-direction: column;
+  //     margin-right: 6rem;
+
+  //     @include tablet {
+  //       margin-right: 0;
+  //       flex-direction: row;
+  //     }
+  //   }
+  //   &__iconContainer {
+  //     justify-content: space-between;
+
+  //     @include tablet {
+  //       flex-direction: column;
+  //       padding: 1rem;
+  //     }
+  //   }
+
+  //   &__icons {
+  //     display: flex;
+  //     justify-content: space-between;
+  //   }
+
+  //   &__iconTablet {
+  //     display: flex;
+  //     justify-content: space-between;
+  //   }
+
+  //   &__body {
+  //     margin-bottom: 1rem;
+  //   }
+
+  //   &__tabletContainer {
+  //     @include tablet {
+  //       display: flex;
+  //       flex-direction: column;
+  //       padding: 1rem;
+  //     }
+  //   }
+
+  //   &__tableHeader {
+  //     background-color: $background-light-grey;
+  //   }
+
+  //   &__sort {
+  //     display: none;
+  //     @include tablet {
+  //       display: inline;
+  //     }
+  //   }
+  // }
+
+  // #actions {
+  //   display: none;
+
+  //   @include tablet {
+  //     display: flex;
+  //   }
+
+  &__listContainer {
     @include tablet {
       display: flex;
     }
   }
 
-  &__mobileContainer1 {
-    display: flex;
-  }
-  &__mobileContainer2 {
-    display: flex;
-    flex-direction: column;
-    margin-right: 6rem;
-  }
-
-  &__iconContainer {
-    display: flex;
-    justify-content: space-between;
-
+  &__sort {
+    display: none;
     @include tablet {
-      flex-direction: column;
+      display: inline;
     }
-  }
-
-  &__icons {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__body {
-    margin-bottom: 1rem;
-  }
-
-  &__tabletContainer {
-    display: flex;
-    flex-direction: column;
   }
 }
 
-#actions {
-  display: none;
-
-  @include tablet {
-    display: flex;
-  }
+ul {
+  background-color: $background-light-grey;
+  align-items: center;
 }
