@@ -1,0 +1,56 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit-warehouse-details {
+  padding: 0 1.5rem;
+  @include tablet {
+    width: 50%;
+    border-right: 1px solid $secondary-cloud;
+    padding: 0 2rem 0 1rem;
+  }
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__heading {
+    padding: 1rem 0;
+    @include tablet {
+      padding: 0 0 2rem 0;
+      border: none;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__warehouse {
+    padding-bottom: 1rem;
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    @include body-medium-mobile;
+    font-weight: 600;
+  }
+  &__input {
+    border: 1px solid $secondary-cloud;
+    border-radius: 1.25rem;
+    width: 100%;
+    height: 2.25rem;
+    padding-left: 1rem;
+    @include tablet {
+      height: 2.375rem;
+    }
+  }
+  &__button-wrapper {
+    background-color: $background-color-light;
+    display: flex;
+    height: 2.25rem;
+    justify-content: space-around;
+    padding: 4rem 0;
+  }
+}

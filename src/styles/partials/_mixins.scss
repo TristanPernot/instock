@@ -1,0 +1,28 @@
+@use "./variables" as *;
+@use "./font" as *;
+
+//breakpoints
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin body-medium-mobile {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+//   @mixin desktop-wide {
+//     @media (min-width: $desktop-wide) {
+//       @content;
+//     }
+//   }
+
+//

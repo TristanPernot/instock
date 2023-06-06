@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Import Components
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+// Import Pages
+import Homepage from "./pages/Homepage/Homepage";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import SingleWarehousePage from "./pages/SingleWarehousePage/SingleWarehousePage";
+import SingleInventoryPage from "./pages/SingleInventoryPage/SingleInventoryPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
+import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
+// import Ditailsform from './components/DetailsForm/Ditailsform';
+import AddNewWarehouseForm from './components/AddNewWarehouseForm/AddNewWarehouseForm';
+import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 
+// App Components
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/inventory" element={<InventoryPage />} />
+          <Route path="/warehouse/:id" element={<SingleWarehousePage />} />
+          <Route path="/inventory/:id" element={<SingleInventoryPage />} />
+          <Route path="/addWarehouse" element={<AddWarehousePage />} />
+          <Route path="/addInventory" element={<AddInventoryPage />} />
+          {/* <Route path="/Ditailsform" element={<Ditailsform/>}/> */}
+          <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
+          <Route
+            path="warehouses/:warehouseId"
+            element={<WarehouseDetails />}
+          />
+                  {/* 404 Page */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Footer /> */}
+ bg    </div>
   );
 }
 
