@@ -1,15 +1,52 @@
 @use "../../styles/partials/font" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+ul{
+    padding: 1rem;
+}
+
 .container{
-    display: flex;
-    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    padding-bottom: 1rem;
+    width: 63.75rem;
 
     &__list{
-        display: inline;
+        display: flex;
+        flex-direction: column;
         list-style: none;
+        margin: 0;
+        padding: 1rem;
     }
     &__li{
+        display: flex;
+        padding-right: 1rem;
+        border-bottom: solid #BDC5D5;
+        
+
+        &--item{
+            display: inherit;
+            padding-right: 9rem;
+        }
+
+        &--special{
+            color: #2E66E5;
+            text-decoration: underline;
+        }
 
     }
+    &__headerlist{
+        background: rgba(247, 248, 249, 0.7);
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        border-bottom: none;
+        padding: none;
+        margin: none;
+        height: 2.5rem;
+    }
+}
+.hoverdiv:hover{
+    background: rgba(46, 102, 230, 0.07);
 }
