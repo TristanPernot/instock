@@ -8,7 +8,7 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import DeleteModal from "../DeleteModal/DeleteModal";
 function InventoryList(){
-    const api = '';
+    const api = process.env.REACT_APP_API_URL;
     const [inventory, setInventory] = useState([]);
     const [deleteModalInfo, setDeleteModalInfo] = useState({});
   
