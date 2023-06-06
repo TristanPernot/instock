@@ -25,45 +25,48 @@ function Inventory() {
               INVENTORY ITEM
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>
-              ITEM PLACEHOLDER
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </li>
+            <li>ITEM PLACEHOLDER</li>
           </div>
-          <div>
+          <div className="inventory__items">
             <ul>
               CATEGORY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
             <li>ITEM PLACEHOLDER</li>
           </div>
-          <div>
+          <div className="inventory__items">
             <ul>
               STATUS
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
             <li>ITEM PLACEHOLDER</li>
           </div>
-          <div>
+          <div className="inventory__items">
             <ul>
               QTY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
             <li>ITEM PLACEHOLDER</li>
           </div>
-          <div>
+          <div className="inventory__items">
             <ul>
               WAREHOUSE
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>
-              ITEM PLACEHOLDER
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </li>
-          </div>
-          <div>
-            <ul>ACTIONS</ul>
             <li>ITEM PLACEHOLDER</li>
+          </div>
+          <div className="inventory__items">
+            <ul>ACTIONS</ul>
+            <li>
+              <div className="inventory__iconTablet">
+                <div className="inventory__icons">
+                  <img src={deleteIcon} alt="delete" />
+                </div>
+                <div className="inventory__icons">
+                  <img src={editIcon} alt="edit" />
+                </div>
+              </div>
+            </li>
           </div>
         </div>
         {/* <div className="inventory__itemContainer">
@@ -112,14 +115,7 @@ function Inventory() {
             <div className="inventory__tableHeader" id="actions">
               ACTIONS
             </div>
-            <div className="inventory__iconTablet">
-              <div className="inventory__icons">
-                <img src={deleteIcon} alt="delete" />
-              </div>
-              <div className="inventory__icons">
-                <img src={editIcon} alt="edit" />
-              </div>
-            </div>
+       
           </div>
         </div> */}
       </div>

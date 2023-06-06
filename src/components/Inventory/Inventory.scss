@@ -105,10 +105,13 @@
   //     justify-content: space-between;
   //   }
 
-  //   &__iconTablet {
-  //     display: flex;
-  //     justify-content: space-between;
-  //   }
+  &__iconTablet {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
 
   //   &__body {
   //     margin-bottom: 1rem;
@@ -134,13 +137,13 @@
   //   }
   // }
 
-  // #actions {
-  //   display: none;
+  #actions {
+    display: none;
 
-  //   @include tablet {
-  //     display: flex;
-  //   }
-
+    @include tablet {
+      display: inline;
+    }
+  }
   &__listContainer {
     @include tablet {
       display: flex;
@@ -153,9 +156,18 @@
       display: inline;
     }
   }
+
+  &__items {
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
 }
 
 ul {
   background-color: $background-light-grey;
   align-items: center;
+}
+li {
+  list-style: none;
 }

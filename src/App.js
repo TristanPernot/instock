@@ -11,6 +11,7 @@ import SingleInventoryPage from "./pages/SingleInventoryPage/SingleInventoryPage
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
+import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 // import Ditailsform from './components/DetailsForm/Ditailsform';
 import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />
@@ -33,6 +35,7 @@ function App() {
             path="/AddNewWarehouseForm"
             element={<AddNewWarehouseForm />}
           />
+          <Route path="/editWarehouse" element={<EditWarehousePage />} />
           <Route
             path="warehouses/:warehouseId"
             element={<WarehouseDetails />}
