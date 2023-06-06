@@ -8,7 +8,7 @@ function warehouseList() {
                 <li className='container__li'>
                     <p>Test</p>
                 </li>
-                <li className='container__lis'>
+                <li className='container__li'>
                     <p>Test</p>
                     <p>Second test</p>
                 </li>
