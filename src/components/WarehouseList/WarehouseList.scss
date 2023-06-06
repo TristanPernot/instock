@@ -1,4 +1,6 @@
-@use fonts as mixing
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 .container{
     display: flex;
     flex-direction: column;
