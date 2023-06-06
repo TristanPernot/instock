@@ -53,7 +53,7 @@
     border: 1px solid transparent;
     color:$primary-white ;
     padding: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 1rem;
     justify-content: center;
     &:hover{
@@ -220,7 +220,7 @@
   }
 
   &__tag {
-   
+   color: $supporting-green;
     background: rgba(21, 132, 99, 0.07);
     height: 1.5rem;
     font-size: 0.6875rem;
@@ -235,7 +235,7 @@
 
     &--out {
       background: rgba(201, 69, 21, 0.07);
-      
+      color: $supporting-red;
     }
   }
 
