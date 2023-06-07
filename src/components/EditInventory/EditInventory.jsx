@@ -96,7 +96,7 @@ function EditInventory() {
       });
   }
 
-  //removeDup example modified from a respons at https://stackoverflow.com/questions/54757902/remove-duplicates-in-an-array-using-foreach
+  //removeDup example modified from a respons 
   function removeDup(arr) {
     let result = [];
     arr.forEach((item) => {
