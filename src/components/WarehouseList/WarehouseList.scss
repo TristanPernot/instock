@@ -12,10 +12,8 @@
     @include tablet{
         width: 44rem;
         margin-top: -5.55rem;
-        margin-left: 2rem;
-    }
-    @include desktop{
-        margin-left: 20rem;
+        margin-left: auto;
+        margin-right: auto;
     }
     &__form {
         width: 100%;
@@ -48,6 +46,7 @@
         display: flex;
         align-items: center;
         background: #2e66e5;
+        text-decoration: none;
         border-radius: 1.25rem;
         border: 0.0625rem solid transparent;
         color: #ffffff;
@@ -92,7 +91,8 @@
             width: 50%;
             @include tablet{
                 flex-direction: row;
-                justify-content: space-evenly;
+                flex: 1.75;
+
             }
         }
 
@@ -100,9 +100,15 @@
             display: inline-flex;
             @include tablet{
             display: flex;
+            width: 8rem;
             flex: 1;
             align-items: center;  
             }    
+        }
+        &--item-large {
+            @include tablet {
+                flex: 1.2
+            }
         }
         &--special{
             color: #2E66E5;
@@ -113,8 +119,7 @@
         &--img{
             display: flex;
             justify-content: space-evenly;
-            @include tablet{
-            }
+            flex: 1;
         }
         &--mobile{
             color: #5C667E;
@@ -124,7 +129,7 @@
         }
         &--header{
             border-bottom: none;
-            padding-right: 1rem;
+            padding: 0 1rem;
             @include tablet{
                 display: flex;
             }
