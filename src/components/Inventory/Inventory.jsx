@@ -107,80 +107,30 @@ function Inventory() {
                 </li>
               </div>
             </div>
-          </div>
-
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader" id="actions">
-              ACTIONS
-            </ul>
-            <li className="inventory__tableItems">
-              <div className="inventory__iconTablet">
-                <div className="inventory__icons">
-                  <img
-                    src={deleteIcon}
-                    alt="delete"
-                    className="inventory_iconImage"
-                  />
+            <div className="inventory__table">
+              <ul className="inventory__tableHeader" id="actions">
+                ACTIONS
+              </ul>
+              <li className="inventory__tableItems">
+                <div className="inventory__iconTablet">
+                  <div className="inventory__icons">
+                    <img
+                      src={deleteIcon}
+                      alt="delete"
+                      className="inventory_iconImage"
+                    />
+                  </div>
+                  <div className="inventory__icons">
+                    <img
+                      src={editIcon}
+                      alt="edit"
+                      className="inventory_iconImage"
+                    />
+                  </div>
                 </div>
-                <div className="inventory__icons">
-                  <img
-                    src={editIcon}
-                    alt="edit"
-                    className="inventory_iconImage"
-                  />
-                </div>
-              </div>
-            </li>
-          </div>
-          {/* <div className="inventory__itemContainer">
-          <div className="inventory__mobileContainer1">
-            <div className="inventory__mobileContainer2">
-              <div className="inventory__tabletContainer">
-                <div className="inventory__tableHeader">
-                  INVENTORY ITEM
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </div>
-                <div className="inventory__body">placeholder</div>
-              </div>
-              <div className="inventory__tabletContainer">
-                <div className="inventory__tableHeader">
-                  CATEGORY
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </div>
-                <div className="inventory__body">placeholder</div>
-              </div>
-            </div>
-            <div className="inventory__mobileContainer3">
-              <div className="inventory__tabletContainer">
-                <div className="inventory__tableHeader">
-                  STATUS
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </div>
-                <div className="inventory__body">placeholder</div>
-              </div>
-              <div className="inventory__tabletContainer">
-                <div className="inventory__tableHeader">
-                  QTY
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </div>
-                <div className="inventory__body">placeholder</div>
-              </div>
-              <div className="inventory__tabletContainer">
-                <div className="inventory__tableHeader">
-                  WAREHOUSE
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </div>
-                <div className="inventory__body">placeholder</div>
-              </div>
+              </li>
             </div>
           </div>
-          <div className="inventory__iconContainer">
-            <div className="inventory__tableHeader" id="actions">
-              ACTIONS
-            </div>
-       
-          </div>
-        </div> */}
         </div>
       ))}
       ;
