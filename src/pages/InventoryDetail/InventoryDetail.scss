@@ -122,5 +122,12 @@
         border-radius: 20px;
         margin-right: 5rem;
     }
+    &__stock--red {
+        background-color: rgba(201, 69, 21, 0.07);;
+        color: $supporting-red;
+        padding: 0.1rem 0.5rem;
+        border-radius: 20px;
+        margin-right: 5rem;
+    }
     
 }

@@ -53,7 +53,7 @@ const InventoryDetail = () => {
                     <div className="content__wrapper2">
                         <div className="content__box">
                             <p className="content__title">STATUS</p>
-                            <p className="content__info content__stock">{item?.status}</p>
+                            <p className={item?.quantity > 0 ? "content__info content__stock" : "content__info content__stock--red"}>{item?.status}</p>
                         </div>
                         <div className="content__box">
                             <p className="content__title">QUANTITY</p>
