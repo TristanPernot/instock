@@ -122,7 +122,7 @@ function WarehouseList(){
                         <Link
                             to={`/warehouse/${warehouse.id}`}
                           >
-                            <div className="container__li--format">
+                            <div className="container__li--titlewrapper">
                                 <p className='container__li--special'>
                                     {warehouse.warehouse_name}
                                 </p> 
@@ -133,7 +133,8 @@ function WarehouseList(){
                         <h4 className='container__li--mobile'>Address</h4> 
                         <div className='container__li--item container__li--format'>
                             {warehouse.address}
-                            {warehouse.city}{warehouse.country}
+                            <br />
+                            {warehouse.city} {warehouse.country}
                         </div>
                     </div>
                     <div className="container__li--format">
@@ -144,6 +145,7 @@ function WarehouseList(){
                         <h4 className='container__li--mobile'>Contact information</h4> 
                         <div className='container__li--item container__li--item-large container__li--format' >
                             {warehouse.contact_phone}
+                            <br />
                             {warehouse.contact_email}
                         </div>
                     </div>

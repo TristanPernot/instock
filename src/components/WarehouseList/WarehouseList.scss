@@ -1,6 +1,10 @@
 @use "../../styles/partials/font" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+a{
+    text-decoration: none;
+    color: #2E66E5;
+}
 .container{
     background: #FFFFFF;
     box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
@@ -8,9 +12,10 @@
     padding-bottom: 1rem;
     width: 100%;
     margin-top: -4rem;
+    overflow: hidden;
 
     @include tablet{
-        width: 44rem;
+        width: 80%;
         margin-top: -5.55rem;
         margin-left: auto;
         margin-right: auto;
@@ -95,9 +100,13 @@
 
             }
         }
+        &--titlewrapper{
+            display: flex;
+        }
 
         &--item{
             display: inline-flex;
+            overflow-wrap: break-word;
             @include tablet{
             display: flex;
             width: 8rem;
@@ -120,6 +129,7 @@
             display: flex;
             justify-content: space-evenly;
             flex: 1;
+            height: 1.8rem;
         }
         &--mobile{
             color: #5C667E;
