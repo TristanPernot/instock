@@ -20,9 +20,9 @@ import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 function App() {
   return (
     <div className="App">
-     
       <BrowserRouter>
-      <Header/>
+        <Header />
+
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />

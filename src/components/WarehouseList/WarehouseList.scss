@@ -35,8 +35,9 @@ ul{
         }
 
         &--item{
-            display: inherit;
-            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;        
         }
         &--special{
             color: #2E66E5;
@@ -45,7 +46,11 @@ ul{
             text-decoration: underline;
         }
         &--img{
-            display: inherit;
+            display: flex;
+            justify-content: space-evenly;
+            @include tablet{
+                justify-content: unset;
+            }
         }
 
     }   
