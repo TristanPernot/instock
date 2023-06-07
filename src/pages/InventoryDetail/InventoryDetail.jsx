@@ -1,15 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./InventoryDetail.scss";
 import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/Icons/edit-24px.svg";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 const InventoryDetail = () => {
+    const [item, setItem] = useState({})
+    const [warehouseName, setWarehouseName] = useState("");
+    const {id} = useParams();
+    useEffect(() => {
+        axios.get(`http://localhost:8080/inventory/${id}`)
+            .then((response) => setItem(response.data))
+            .catch((error) => console.log(error))
+    }, [])
+    useEffect(() => {
+        if (item.id) {
+            axios.get(`http://localhost:8080/warehouse/${item.warehouse_id}`)
+                .then((response) => setWarehouseName(response.data.warehouse_name))
+                .catch((error) => console.log(error))
+        }
+    }, [item])
     return (
         <div className="item">
             {/* Header */}
             <div className="item__header">
                 <div className="item__left">
                     <img src={BackIcon} alt="Back Icon" />
-                    <div className="form__title">Television</div>
+                    <div className="form__title">{item?.item_name}</div>
                 </div>
                 <div className="item__edit-btn">
                     <img className="item__btn" src={EditIcon} alt="Edit Icon" />
@@ -23,11 +40,11 @@ const InventoryDetail = () => {
                 <div className="content__left">
                     <div className="content__box">
                         <p className="content__title">ITEM DESCRIPTION</p>
-                        <p className="content__info">This 50", 4k, LED TV provides a crystal-clear picture and vivid colors</p>
+                        <p className="content__info">{item?.description}</p>
                     </div>
                     <div className="content__box">
                         <p className="content__title">CATEGORY</p>
-                        <p className="content__info">Electronics</p>
+                        <p className="content__info">{item?.category}</p>
                     </div>
                 </div>
                 {/* Container to wrap status, quantity, and warehouse */}
@@ -36,16 +53,16 @@ const InventoryDetail = () => {
                     <div className="content__wrapper2">
                         <div className="content__box">
                             <p className="content__title">STATUS</p>
-                            <p className="content__info content__stock">IN STOCK</p>
+                            <p className="content__info content__stock">{item?.status}</p>
                         </div>
                         <div className="content__box">
                             <p className="content__title">QUANTITY</p>
-                            <p className="content__info">500</p>
+                            <p className="content__info">{item?.quantity}</p>
                         </div>
                     </div>
                     <div className="content__box">
                         <p className="content__title">WAREHOUSE</p>
-                        <p className="content__info">Manhattan</p>
+                        <p className="content__info">{warehouseName && warehouseName}</p>
                     </div>
                 </div>
             </div>
