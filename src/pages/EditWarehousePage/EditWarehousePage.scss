@@ -1,0 +1,115 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+    margin: 1rem;
+    @include tablet {
+        margin: 2rem;
+    }
+    @include desktop {
+        margin: 2rem 8.125rem;
+    }
+    &__header {
+        display: flex;
+        padding: 1.25rem 1rem;
+        gap: 0.5rem;
+        border-bottom: solid 1px $secondary-cloud;
+        @include tablet {
+            padding: 1.5rem 2rem;
+        }
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary-black;
+    }
+    &__content {
+        @include tablet{
+            display: flex;
+            margin: 1.5rem 0;
+        }
+    }
+    &__control {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    &__buttons {
+        padding:1.5rem 1rem;
+        display: flex;
+        justify-content: end;
+        gap: 0.5rem;
+        background-color: rgba(247,248,249, 0.7);
+    }
+    &__left {
+        padding: 1rem 1rem;
+        border-bottom: solid 1px $secondary-cloud;
+        @include tablet{
+            border-bottom: none;
+            width: 50%;
+            border-right: solid 1px $secondary-cloud;
+            padding: 0 2rem;
+        }
+        @include desktop{
+            padding: 0 2.5rem;
+        }
+    }
+    &__right {
+        padding: 1rem 1rem;
+        @include tablet {
+            padding: 0 2rem;
+            width: 50%;
+        }
+        @include desktop {
+            padding: 0 2.5rem;
+        }
+    }
+    &__btn {
+        padding: 0.5rem 0.8rem;
+    }
+    &__subtitle{
+        margin: 1rem 0;
+        font-size: 1.25rem;
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+    &__label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        @include desktop {
+            font-size: 0.875rem;
+        }
+    }
+    &__input {
+        border: solid 1px $secondary-cloud;
+        border-radius: 20px;
+        padding: 0.4rem 0.7rem;
+        @include tablet {
+            padding: 0.5rem 0.7rem;
+        }
+    }
+    &__btn {
+        border-radius: 20px;
+        font-size: 0.7rem;
+        width: 137px;
+        text-align: center;
+        @include tablet {
+            width: 72px;
+        }
+    }
+    &__cancel-btn {
+        border: solid 1px $secondary-cloud;
+        background-color: white;
+    }
+    &__save-btn {
+        background-color: $primary-indigo;
+        color: white;
+    }
+}

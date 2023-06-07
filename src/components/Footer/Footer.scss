@@ -1,0 +1,40 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.footer {
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $secondary-slate;
+  font-size: 0.8rem;
+  @include tablet {
+    height: 8.5rem;
+  }
+  @include desktop {
+    height: 7rem;
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      height: 3rem;
+      width: 30vw;
+      margin-top: 2rem;
+    }
+    @include desktop {
+      margin-top: 0rem;
+    }
+  }
+}
