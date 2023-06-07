@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./InventoryDetail.scss";
 import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
-import EditIcon from "../../assets/Icons/edit-24px.svg";
+import EditIcon from "../../assets/Icons/edit-white-24px.svg";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 const InventoryDetail = () => {
