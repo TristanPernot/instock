@@ -37,45 +37,54 @@ function Inventory() {
       </div>
       {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader">
-              INVENTORY ITEM
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </ul>
-            <li className="inventory__tableItems" id="itemName">
-              {inventory.item_name} <img src={goToIcon} alt="goTo" />
-            </li>
+          <div className="inventory__mobileContainer1">
+            <div className="inventory__mobileContainer2">
+              <div className="inventory__table">
+                <ul className="inventory__tableHeader">
+                  INVENTORY ITEM
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+                <li className="inventory__tableItems" id="itemName">
+                  {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                </li>
+              </div>
+              <div className="inventory__table">
+                <ul className="inventory__tableHeader">
+                  CATEGORY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+                <li className="inventory__tableItems">{inventory.category}</li>
+              </div>
+            </div>
+            <div className="inventory__mobileContainer3">
+              <div className="inventory__table">
+                <ul className="inventory__tableHeader">
+                  STATUS
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+                <li className="{`inventory__tableItems ${inventory.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}` }">
+                  {inventory.status}
+                </li>
+              </div>
+              <div className="inventory__table">
+                <ul className="inventory__tableHeader">
+                  QTY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+                <li className="inventory__tableItems">{inventory.quantity}</li>
+              </div>
+              <div className="inventory__table">
+                <ul className="inventory__tableHeader">
+                  WAREHOUSE
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+                <li className="inventory__tableItems">
+                  {inventory.warehouse_id}
+                </li>
+              </div>
+            </div>
           </div>
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader">
-              CATEGORY
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </ul>
-            <li className="inventory__tableItems">{inventory.category}</li>
-          </div>
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader">
-              STATUS
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </ul>
-            <li className="inventory__tableItems" id="stock">
-              {inventory.status}
-            </li>
-          </div>
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader">
-              QTY
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </ul>
-            <li className="inventory__tableItems">{inventory.quantity}</li>
-          </div>
-          <div className="inventory__table">
-            <ul className="inventory__tableHeader">
-              WAREHOUSE
-              <img src={sortIcon} alt="sort" className="inventory__sort" />
-            </ul>
-            <li className="inventory__tableItems">{inventory.warehouse_id}</li>
-          </div>
+
           <div className="inventory__table">
             <ul className="inventory__tableHeader" id="actions">
               ACTIONS
@@ -99,7 +108,6 @@ function Inventory() {
               </div>
             </li>
           </div>
-
           {/* <div className="inventory__itemContainer">
           <div className="inventory__mobileContainer1">
             <div className="inventory__mobileContainer2">

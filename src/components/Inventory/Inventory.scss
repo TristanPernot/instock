@@ -3,7 +3,13 @@
 
 .inventory {
   font-family: "Titillium Web", sans-serif;
+  // border: 2px solid $secondary-cloud;
+  max-width: 21rem;
+  margin: auto;
 
+  @include tablet {
+    max-width: none;
+  }
   &__header {
     font-size: 2rem;
   }
@@ -15,6 +21,8 @@
       max-width: 100%;
       display: flex;
       flex-direction: column;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
   }
 
@@ -70,34 +78,25 @@
   //     }
   //   }
 
-  //   &__mobileContainer1 {
-  //     display: flex;
+  &__mobileContainer1 {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  //
+  &__mobileContainer2,
+  &__mobileContainer3 {
+    padding-right: 3.5rem;
+    @include tablet {
+      padding-right: 0;
+      display: flex;
+      flex-direction: row;
+    }
+  }
 
-  //     @include tablet {
-  //       display: flex;
-  //     }
-  //   }
-  //   &__mobileContainer2 {
-  //     display: flex;
-  //     flex-direction: column;
-  //     margin-right: 6rem;
-
-  //     @include tablet {
-  //       margin-right: 0;
-  //       flex-direction: row;
-  //     }
-  //   }
-
-  //   &__mobileContainer3 {
-  //     display: flex;
-  //     flex-direction: column;
-  //     margin-right: 6rem;
-
-  //     @include tablet {
-  //       margin-right: 0;
-  //       flex-direction: row;
-  //     }
-  //   }
   //   &__iconContainer {
   //     justify-content: space-between;
 
@@ -117,15 +116,7 @@
     justify-content: space-between;
     @include tablet {
       justify-content: flex-start;
-    }
-  }
-
-  &__stock {
-    @include stock;
-
-    &__outOfStock {
-      color: $out-of-stock;
-      background-color: rgba(201, 69, 21, 0.07);
+      flex: 1;
     }
   }
 
@@ -147,11 +138,40 @@
       font-size: 1rem;
       padding-top: 0.68rem;
       padding-bottom: 0.68rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex: 1;
+    }
+  }
+
+  &__table {
+    padding-top: 1rem;
+    @include tablet {
+      flex: 1;
+      width: 10rem;
+      padding-top: 0;
     }
   }
   &__tableItems {
     list-style: none;
-    height: 3rem;
+
+    @include tablet {
+      height: 3rem;
+      padding-left: 2rem;
+      margin-top: 1rem;
+    }
+
+    &.out-of-stock {
+      color: $out-of-stock;
+      background-color: rgba(201, 69, 21, 0.07);
+    }
+
+    &.in-stock {
+      color: $in-stock;
+      background-color: rgba(21, 132, 99, 0.07);
+      @include stock;
+    }
   }
   //   &__sort {
   //     display: none;
@@ -173,8 +193,13 @@
     }
   }
   &__listContainer {
+    border-top: 2px solid $secondary-cloud;
     @include tablet {
       display: flex;
+      flex: 1;
+      border-top: none;
+
+      border-bottom: 2px solid $secondary-cloud;
     }
   }
 
@@ -184,16 +209,4 @@
       display: inline;
     }
   }
-
-  &__table {
-    @include tablet {
-      flex-grow: 1;
-    }
-  }
-}
-
-#stock {
-  color: $in-stock;
-  background-color: rgba(21, 132, 99, 0.07);
-  @include stock;
 }
