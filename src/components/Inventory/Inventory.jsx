@@ -1,9 +1,26 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 import "../Inventory/Inventory.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
+import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function Inventory() {
+  const [inventoryData, setInventoryData] = useState([]);
+
+  //~~get inventory data~~
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/inventory`)
+      .then((response) => {
+        setInventoryData(response.data);
+        console.log(inventoryData);
+      })
+      .catch((err) => console.log(err));
+  });
+
   return (
     <div className="inventory">
       <div className="inventory__container">
@@ -18,45 +35,50 @@ function Inventory() {
             <button className="inventory__button">+Add New Item</button>
           </div>
         </div>
-
+      </div>
+      {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
           <div className="inventory__items">
-            <ul>
+            <ul className="inventory__tableHeader">
               INVENTORY ITEM
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>ITEM PLACEHOLDER</li>
+            <li id="itemName">
+              {inventory.item_name} <img src={goToIcon} alt="goTo" />
+            </li>
           </div>
           <div className="inventory__items">
-            <ul>
+            <ul className="inventory__tableHeader">
               CATEGORY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>ITEM PLACEHOLDER</li>
+            <li>{inventory.category}</li>
           </div>
           <div className="inventory__items">
-            <ul>
+            <ul className="inventory__tableHeader">
               STATUS
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>ITEM PLACEHOLDER</li>
+            <li className="inventory__stock__inStock">{inventory.status}</li>
           </div>
           <div className="inventory__items">
-            <ul>
+            <ul className="inventory__tableHeader">
               QTY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>ITEM PLACEHOLDER</li>
+            <li>{inventory.quantity}</li>
           </div>
           <div className="inventory__items">
-            <ul>
+            <ul className="inventory__tableHeader">
               WAREHOUSE
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>ITEM PLACEHOLDER</li>
+            <li>{inventory.warehouse_id}</li>
           </div>
           <div className="inventory__items">
-            <ul>ACTIONS</ul>
+            <ul className="inventory__tableHeader" id="actions">
+              ACTIONS
+            </ul>
             <li>
               <div className="inventory__iconTablet">
                 <div className="inventory__icons">
@@ -68,8 +90,8 @@ function Inventory() {
               </div>
             </li>
           </div>
-        </div>
-        {/* <div className="inventory__itemContainer">
+
+          {/* <div className="inventory__itemContainer">
           <div className="inventory__mobileContainer1">
             <div className="inventory__mobileContainer2">
               <div className="inventory__tabletContainer">
@@ -118,7 +140,9 @@ function Inventory() {
        
           </div>
         </div> */}
-      </div>
+        </div>
+      ))}
+      ;
     </div>
   );
 }

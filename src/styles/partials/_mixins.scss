@@ -51,3 +51,11 @@
     height: 38px;
   }
 }
+
+//tags
+@mixin stock {
+  border-radius: 20px;
+  padding-right: 8px;
+  padding-left: 8px;
+  height: 1.6rem;
+}

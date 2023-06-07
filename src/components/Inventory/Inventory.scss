@@ -113,6 +113,19 @@
     }
   }
 
+  &__stock {
+    @include stock;
+
+    &__inStock {
+      color: $in-stock;
+      background-color: rgba(21, 132, 99, 0.07);
+    }
+    &__outOfStock {
+      color: $out-of-stock;
+      background-color: rgba(201, 69, 21, 0.07);
+    }
+  }
+
   //   &__body {
   //     margin-bottom: 1rem;
   //   }
@@ -125,9 +138,14 @@
   //     }
   //   }
 
-  //   &__tableHeader {
-  //     background-color: $background-light-grey;
-  //   }
+  &__tableHeader {
+    @include tablet {
+      background-color: $background-light-grey;
+      font-size: 1rem;
+      padding-top: 0.68rem;
+      padding-bottom: 0.68rem;
+    }
+  }
 
   //   &__sort {
   //     display: none;
@@ -137,11 +155,15 @@
   //   }
   // }
 
+  #itemName {
+    color: $primary-indigo;
+  }
+
   #actions {
     display: none;
 
     @include tablet {
-      display: inline;
+      display: block;
     }
   }
   &__listContainer {
@@ -164,10 +186,6 @@
   }
 }
 
-ul {
-  background-color: $background-light-grey;
-  align-items: center;
-}
 li {
   list-style: none;
 }
