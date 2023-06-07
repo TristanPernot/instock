@@ -51,26 +51,18 @@ function warehouseList() {
             <ul className="container__list">
                 <li className='container__li hoverdiv'>
                     <div className='container__li--format'>
-                        <span className='container__li--mobile'>
-                            <h4>Warehouse</h4> 
-                        </span>
+                        <h4 className='container__li--mobile'>Warehouse</h4> 
                         <span className='container__li--item'>
                             <p className='container__li--special'>Test</p> 
                             <img src={`${arrowright}`} alt="arrow" />
                         </span>
-                        <span className='container__li--mobile'>
-                            <h4>Adress</h4> 
-                        </span>
+                        <h4 className='container__li--mobile'>Adress</h4> 
                         <p className='container__li--item'>Second test</p>
                     </div>
                     <div className="container__li--format">
-                        <span className='container__li--mobile'>
-                            <h4>Contact Name</h4> 
-                        </span>
+                        <h4 className='container__li--mobile'>Contact Name</h4> 
                         <p className='container__li--item'>Third test</p>
-                        <span className='container__li--mobile'>
-                            <h4>Contact information</h4> 
-                        </span>
+                        <h4 className='container__li--mobile'>Contact information</h4> 
                         <p className='container__li--item'>Fourth test</p>
                     </div>
                     <span className='container__li--img'>
