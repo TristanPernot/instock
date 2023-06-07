@@ -70,7 +70,7 @@
           gap: 1rem;
           height: 4.5rem;
           padding-right: 2rem;
-          @include body-large-tablet;
+          
         }
 
         @include desktop {
@@ -91,7 +91,7 @@
           }
         }
         &--1 {
-          color: $secondary-color-dark;
+          color: $secondary-slate;
           background-color: $primary-white;
           border: 0.0625rem solid $secondary-cloud;
           @include tablet {
@@ -108,7 +108,7 @@
           background-color: $primary-indigo;
           border: none;
           &:hover {
-            background-color: $background-color-dark;
+            background-color: $background-graphite;
           }
         }
       }
