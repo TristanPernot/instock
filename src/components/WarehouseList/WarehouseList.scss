@@ -1,22 +1,72 @@
 @use "../../styles/partials/font" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-ul{
-    padding: 1rem;
-}
-
 .container{
     background: #FFFFFF;
     box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
     border-radius: 0.1875rem;
     padding-bottom: 1rem;
-    width: 21.43rem;
+    width: 100%;
+    margin-top: -4rem;
+
     @include tablet{
         width: 44rem;
+        margin-top: -5.55rem;
+        margin-left: 2rem;
     }
-
     @include desktop{
-        width: 63.75rem;
+        margin-left: 20rem;
+    }
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    
+        @include tablet {
+          flex-direction: row;
+          justify-content: flex-end;
+        }
+      }
+
+    &__searchbox{
+        border: 1px solid #bdc5d5;
+        border-radius: 1.25rem;
+        padding: 0.5rem 1rem;
+        background-image: url("../../assets/Icons/search-24px.svg");
+        background-repeat: no-repeat;
+        background-position: center right 1rem;
+        @include tablet {
+          width: 39%;
+          height: 2.375rem;
+        }
+        @include desktop {
+          width: 35%;
+        }
+      }
+      &__btn{
+        display: flex;
+        align-items: center;
+        background: #2e66e5;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        color: #ffffff;
+        padding: 0.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        justify-content: center;
+        &:hover{
+            background-color: #232940;
+        }
+        @include tablet {
+            margin: 0;
+            width: 35%;
+            height: 2.375rem;
+          }
+      
+          @include desktop {
+            width: 25%;
+          }
     }
 
     &__list{
@@ -29,15 +79,34 @@ ul{
     &__li{
         padding-right: 1rem;
         border-bottom: solid #BDC5D5;
+        display: flex;
+        flex-wrap: wrap;
         @include tablet{
+            flex-wrap: nowrap;
+            justify-content: space-around;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        &--format{
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            width: 50%;
+            @include tablet{
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
         }
 
         &--item{
+            display: inline-flex;
+            @include tablet{
             display: flex;
+            flex: 1;
+            align-items: center;
             flex-direction: row;
-            flex-wrap: wrap;        
+            flex-wrap: wrap;    
+            }    
         }
         &--special{
             color: #2E66E5;
@@ -50,6 +119,18 @@ ul{
             justify-content: space-evenly;
             @include tablet{
                 justify-content: unset;
+            }
+        }
+        &--mobile{
+            @include tablet{
+                display: none;
+            }
+        }
+        &--header{
+            border-bottom: none;
+            padding-right: 1rem;
+            @include tablet{
+                display: flex;
             }
         }
 
@@ -65,7 +146,7 @@ ul{
             border-bottom: none;
             padding: 0;
             margin: 0;
-            height: 2.5rem;
+            height: 1.5rem;
             font-size: 0.75rem;
         }
     }
