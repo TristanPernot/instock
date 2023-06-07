@@ -9,6 +9,7 @@ import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function Inventory() {
   const [inventoryData, setInventoryData] = useState([]);
+  const [filterInventoryData, setFilterInventoryData] = useState([]);
 
   //~~get inventory data~~
   useEffect(() => {
@@ -18,7 +19,24 @@ function Inventory() {
         setInventoryData(response.data);
       })
       .catch((err) => console.log(err));
-  });
+  }, []);
+
+  //~~ get warehouse name with ID~~
+  useEffect(() => {
+    if (inventoryData) {
+      inventoryData.forEach((item) => {
+        axios
+          .get(`http://localhost:8080/warehouse/${item.warehouse_id}`)
+          .then((response) => {
+            item.warehouse_name = response.data.warehouse_name;
+
+            setFilterInventoryData({ ...filterInventoryData, item });
+          })
+          .catch((error) => console.log(error));
+      });
+    }
+    console.log(inventoryData);
+  }, [inventoryData]);
 
   return (
     <div className="inventory">
@@ -62,8 +80,14 @@ function Inventory() {
                   STATUS
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
-                <li className="{`inventory__tableItems ${inventory.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}` }">
-                  {inventory.status}
+                <li
+                  className={
+                    inventory.quantity > 0
+                      ? "inventory__tableHeader inventory__stock"
+                      : "inventory__tableHeader inventory__stock--red"
+                  }
+                >
+                  {inventory.status.toUpperCase()}
                 </li>
               </div>
               <div className="inventory__table">
@@ -79,7 +103,7 @@ function Inventory() {
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
                 <li className="inventory__tableItems">
-                  {inventory.warehouse_id}
+                  {inventory.warehouse_name}
                 </li>
               </div>
             </div>
