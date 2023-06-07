@@ -4,6 +4,9 @@
 .inventory {
   font-family: "Titillium Web", sans-serif;
 
+  &__header {
+    font-size: 2rem;
+  }
   &__container {
     max-width: 21rem;
     margin: auto;
@@ -24,14 +27,16 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
+      margin: 2rem;
     }
   }
+
   &__tabletSearchContainer {
     @include tablet {
       display: flex;
-      margin-top: 1.34rem;
     }
   }
+
   &__searchbar {
     @include searchbar;
     display: flex;
@@ -39,6 +44,8 @@
 
     @include tablet {
       display: inline;
+      margin-right: 1rem;
+      max-width: 11rem;
     }
   }
 
@@ -116,10 +123,6 @@
   &__stock {
     @include stock;
 
-    &__inStock {
-      color: $in-stock;
-      background-color: rgba(21, 132, 99, 0.07);
-    }
     &__outOfStock {
       color: $out-of-stock;
       background-color: rgba(201, 69, 21, 0.07);
@@ -146,7 +149,10 @@
       padding-bottom: 0.68rem;
     }
   }
-
+  &__tableItems {
+    list-style: none;
+    height: 3rem;
+  }
   //   &__sort {
   //     display: none;
   //     @include tablet {
@@ -179,13 +185,15 @@
     }
   }
 
-  &__items {
+  &__table {
     @include tablet {
       flex-grow: 1;
     }
   }
 }
 
-li {
-  list-style: none;
+#stock {
+  color: $in-stock;
+  background-color: rgba(21, 132, 99, 0.07);
+  @include stock;
 }

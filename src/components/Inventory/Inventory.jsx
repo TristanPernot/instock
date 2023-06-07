@@ -16,7 +16,6 @@ function Inventory() {
       .get(`http://localhost:8080/inventory`)
       .then((response) => {
         setInventoryData(response.data);
-        console.log(inventoryData);
       })
       .catch((err) => console.log(err));
   });
@@ -38,54 +37,64 @@ function Inventory() {
       </div>
       {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader">
               INVENTORY ITEM
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li id="itemName">
+            <li className="inventory__tableItems" id="itemName">
               {inventory.item_name} <img src={goToIcon} alt="goTo" />
             </li>
           </div>
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader">
               CATEGORY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>{inventory.category}</li>
+            <li className="inventory__tableItems">{inventory.category}</li>
           </div>
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader">
               STATUS
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li className="inventory__stock__inStock">{inventory.status}</li>
+            <li className="inventory__tableItems" id="stock">
+              {inventory.status}
+            </li>
           </div>
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader">
               QTY
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>{inventory.quantity}</li>
+            <li className="inventory__tableItems">{inventory.quantity}</li>
           </div>
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader">
               WAREHOUSE
               <img src={sortIcon} alt="sort" className="inventory__sort" />
             </ul>
-            <li>{inventory.warehouse_id}</li>
+            <li className="inventory__tableItems">{inventory.warehouse_id}</li>
           </div>
-          <div className="inventory__items">
+          <div className="inventory__table">
             <ul className="inventory__tableHeader" id="actions">
               ACTIONS
             </ul>
-            <li>
+            <li className="inventory__tableItems">
               <div className="inventory__iconTablet">
                 <div className="inventory__icons">
-                  <img src={deleteIcon} alt="delete" />
+                  <img
+                    src={deleteIcon}
+                    alt="delete"
+                    className="inventory_iconImage"
+                  />
                 </div>
                 <div className="inventory__icons">
-                  <img src={editIcon} alt="edit" />
+                  <img
+                    src={editIcon}
+                    alt="edit"
+                    className="inventory_iconImage"
+                  />
                 </div>
               </div>
             </li>
