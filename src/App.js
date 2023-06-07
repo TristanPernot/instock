@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Homepage from "./pages/Homepage/Homepage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import SingleWarehousePage from "./pages/SingleWarehousePage/SingleWarehousePage";
-import SingleInventoryPage from "./pages/SingleInventoryPage/SingleInventoryPage";
+import InventoryDetail from "./pages/InventoryDetail/InventoryDetail";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
@@ -28,7 +28,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouse/:id" element={<SingleWarehousePage />} />
-          <Route path="/inventory/:id" element={<SingleInventoryPage />} />
+          <Route path="/inventory/:id" element={<InventoryDetail />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
           <Route path="/addInventory" element={<AddInventoryPage />} />
           {/* <Route path="/Ditailsform" element={<Ditailsform/>}/> */}
@@ -36,7 +36,7 @@ function App() {
             path="/AddNewWarehouseForm"
             element={<AddNewWarehouseForm />}
           />
-          <Route path="/editWarehouse" element={<EditWarehousePage />} />
+          <Route path="/editWarehouse/:id" element={<EditWarehousePage />} />
           <Route
             path="warehouses/:warehouseId"
             element={<WarehouseDetails />}
