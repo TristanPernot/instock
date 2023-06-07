@@ -1,6 +1,6 @@
 import "./AddNewWarehouseForm.scss";
 import ArrowBack from "../../assets/Icons/arrow_back-24px.svg";
-import DitailsForm from "../DitailsForm/Ditailsform";
+import DitailsForm from "../DetailsForm/Ditailsform";
 import ContactDetailsForm from "../ContactDetailsForm/ContactDetailsForm";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
