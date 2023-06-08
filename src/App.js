@@ -26,7 +26,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/inventory" element={<InventoryPage />} />
           {/* Display all inventories for a given warehouse */}
           <Route path="/warehouse/:id" element={<WarehouseWithInventories />} />
