@@ -115,7 +115,7 @@ const WarehouseWithInventories = () => {
                                 <div className="inventory__right">
                                     <div className="col w-50">
                                         <p className="col__title">STATUS</p>
-                                        <p className="col__info">{inventory.status}</p>
+                                        <p className={inventory.quantity > 0 ? "col__info col__stock" : "col__info col__stock--red"}>{inventory.status}</p>
                                     </div>
                                     <div className="col">
                                         <p className="col__title">QTY</p>

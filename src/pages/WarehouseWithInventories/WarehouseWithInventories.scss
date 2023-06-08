@@ -44,10 +44,12 @@
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        border-bottom: solid 1px $secondary-cloud;
         @include tablet {
             padding: 2.5rem 2rem;
             flex-direction: row;
             justify-content: space-between;
+            border-bottom: none;
         }
         @include desktop{
             justify-content: start;
@@ -186,6 +188,22 @@
         &__btn {
             width: 20px;
         }
+    }
+    &__stock {
+        background-color: rgba(21, 132, 99, 0.07);
+        color: $supporting-green;
+        padding: 0.1rem 0.5rem;
+        border-radius: 20px;
+        margin-right: 5rem;
+    }
+
+    &__stock--red {
+        background-color: rgba(201, 69, 21, 0.07);
+        ;
+        color: $supporting-red;
+        padding: 0.1rem 0.5rem;
+        border-radius: 20px;
+        margin-right: 5rem;
     }
 }
 .w-50 {
