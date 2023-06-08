@@ -14,7 +14,7 @@ import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import WarehouseWithInventories from "./pages/WarehouseWithInventories/WarehouseWithInventories";
-import Ditailsform from './components/DetailsForm/Ditailsform';
+import Ditailsform from "./components/DetailsForm/Ditailsform";
 
 import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
 import InventoryList from "./components/InventoryList/InventoryList";
@@ -33,11 +33,14 @@ function App() {
           <Route path="/inventory/:id" element={<InventoryDetail />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
           <Route path="/addInventory" element={<AddInventoryPage />} />
-          <Route path="/Ditailsform" element={<Ditailsform/>}/>
-          <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
+          <Route path="/Ditailsform" element={<Ditailsform />} />
+          <Route
+            path="/AddNewWarehouseForm"
+            element={<AddNewWarehouseForm />}
+          />
           <Route path="/inventory/add" element={<AddNewInventoryItem />} />
-          <Route path="/InventoryList"element={<InventoryList/>}/>
-          <Route path="/EditInventory"element={<EditInventory/>}/>
+          <Route path="/InventoryList" element={<InventoryList />} />
+          <Route path="/EditInventory" element={<EditInventory />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
