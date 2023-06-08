@@ -139,7 +139,9 @@ function WarehouseList() {
               <div className="container__li--format">
                 <h4 className="container__li--mobile">Contact Name</h4>
                 <p className="container__li--item">{warehouse.contact_name}</p>
-                <h4 className="container__li--mobile">Contact information</h4>
+                <h4 className="container__li--mobile contact-information">
+                  Contact information
+                </h4>
                 <div className="container__li--item container__li--item-large container__li--format">
                   {warehouse.contact_phone}
                   <br />
