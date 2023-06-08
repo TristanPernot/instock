@@ -94,7 +94,6 @@
     padding-bottom: 1rem;
     @include tablet {
       justify-content: flex-start;
-      // flex: 1;
     }
   }
 
@@ -106,9 +105,8 @@
       padding-top: 0.68rem;
       padding-bottom: 0.68rem;
       display: flex;
-      justify-content: space-evenly;
+
       align-items: center;
-      // flex: 1;
     }
   }
 
