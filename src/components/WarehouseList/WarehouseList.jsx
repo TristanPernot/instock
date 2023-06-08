@@ -107,7 +107,7 @@ function WarehouseList() {
               <img src={`${sort}`} alt="sort" />
             </span>
           </div>
-          <span className="container__li--item container__li--item-small">
+          <span className="container__li--item container__li--item-small action">
             <h4>ACTIONS</h4>
           </span>
         </li>
