@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const { v4: uuid } = require("uuid");
-export const api = "";
+export const api = process.env.REACT_APP_API_URL;
 
 const AddNewWarehouseForm = () => {
   const [warehouse, setWarehouse] = useState("");
