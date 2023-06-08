@@ -63,6 +63,9 @@ const EditWarehousePage = () => {
       contact_position,
       contact_email,
     } = formData;
+    if (!warehouse_name || !address || !city || !country || !contact_name || !contact_phone || !contact_position || !contact_email) {
+      return alert("Please enter all the required fields");
+    }
     axios
       .put(`http://localhost:8080/warehouse/${id}`, {
         warehouse_name,
@@ -86,10 +89,8 @@ const EditWarehousePage = () => {
   return (
     <div className="editForm">
       <div className="editForm__header">
-        <Link to="/">
-          <img src={BackIcon} alt="Back Icon" />
-        </Link>
-        <div className="editForm__title">Edit Warehouse</div>
+          <img className="back__btn" onClick={() => navigate(-1)} src={BackIcon} alt="Back Icon" />
+          <div className="editForm__title">Edit Warehouse</div>
       </div>
       <div className="editForm__content">
         <div className="editForm__left">
