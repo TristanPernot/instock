@@ -9,10 +9,12 @@ import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
 const WarehouseWithInventories = () => {
     const {id} = useParams();
     const [warehouse, setWarehouse] = useState({});
     const [inventories, setInventories] = useState([]);
+    const [deleteModalInfo, setDeleteModalInfo] = useState({});
 
     const navigate = useNavigate();
     // Fetch info about the warehouse
@@ -27,12 +29,46 @@ const WarehouseWithInventories = () => {
             .then((response) => setInventories(response.data))
             .catch((error) => console.log(error))
     }, [])
+    // Get new inventory
+    const getInventories = () => {
+        axios.get(`http://localhost:8080/inventory/forWarehouse/${id}`)
+            .then((response) => setInventories(response.data))
+            .catch((error) => console.log(error))
+    }
+    // Delete Inventory
+    const onDeleteModalCancel = () => {
+        setDeleteModalInfo({});
+    }
+    const onDeleteModalConfirm = async () => {
+        await deleteInventory(deleteModalInfo.id, id);
+        setDeleteModalInfo({});
+    }
+    const deleteInventory = (id, warehouse_id) => {
+        axios.delete(`http://localhost:8080/inventory/${id}`)
+            .then((response) => {
+                getInventories();
+                navigate(`/warehouse/${warehouse_id}`);
+            } )
+            .catch((error) => console.log(error))
+    }
+    const deleteButton = (id, name) => {
+        setDeleteModalInfo({
+            id: id,
+            title: `Delete ${name} inventory?`,
+            text: `Please confirm that you’d like to delete ${name} from the list of inventory. You won’t be able to undo this action.`,
+        })
+    };
     return (
         <div className="warehouseInventories">
             {/* Header */}
+            <DeleteModal
+                deleteModalInfo={deleteModalInfo}
+                onCancel={onDeleteModalCancel}
+                onConfirm={onDeleteModalConfirm}
+            />
             <div className="warehouseInventories__header">
                 <div className="header__heading">
-                    <img onClick={() => navigate(-1)} src={BackIcon} alt="" className="header__btn" />
+                    <img onClick={() => navigate("/")} src={BackIcon} alt="" className="header__btn" />
                     <p className="header__title">{warehouse?.warehouse_name}</p>
                 </div>
                 <Link to={`/editWarehouse/${id}`}>
@@ -132,7 +168,7 @@ const WarehouseWithInventories = () => {
                                 </div>
                                 {/* Three */}
                                 <div className="inventory__bottom">
-                                    <button className="inventory__btn">
+                                    <button onClick={() => deleteButton(inventory.id, inventory.item_name)} className="inventory__btn">
                                         <img className="inventory__deleteBtn" src={DeleteIcon} alt="Delete Icon"/>
                                     </button>
                                     <Link to={`/editInventory/${inventory.id}`}>
