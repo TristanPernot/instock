@@ -3,6 +3,7 @@ import "./DeleteModal.scss";
 import Modal from "react-modal";
 import closeICon from "../../assets/Icons/close-24px.svg";
 
+
 function DeleteModal({ deleteModalInfo, onCancel, onConfirm }) {
     const modalIsOpen = Object.keys(deleteModalInfo).length > 0;
 

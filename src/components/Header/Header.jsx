@@ -11,11 +11,11 @@ function Header() {
         </Link>
 
         <div className="header__nav">
-          <NavLink to="/warehouses" className="header__nav--item">
+          <NavLink to="/" className="header__nav--item">
             <div>Warehouses</div>
           </NavLink>
 
-          <NavLink to="/warehouses" className="header__nav--item">
+          <NavLink to="/inventory" className="header__nav--item">
             <div>Inventory</div>
           </NavLink>
         </div>

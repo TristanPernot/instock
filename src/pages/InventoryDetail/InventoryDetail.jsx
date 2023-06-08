@@ -3,11 +3,12 @@ import "./InventoryDetail.scss";
 import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/Icons/edit-white-24px.svg";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link} from 'react-router-dom';
 const InventoryDetail = () => {
     const [item, setItem] = useState({})
     const [warehouseName, setWarehouseName] = useState("");
     const {id} = useParams();
+    const navigate = useNavigate();
     useEffect(() => {
         axios.get(`http://localhost:8080/inventory/${id}`)
             .then((response) => setItem(response.data))
@@ -25,13 +26,16 @@ const InventoryDetail = () => {
             {/* Header */}
             <div className="item__header">
                 <div className="item__left">
-                    <img src={BackIcon} alt="Back Icon" />
+                    <img onClick={() => navigate(-1)} src={BackIcon} alt="Back Icon" />
                     <div className="form__title">{item?.item_name}</div>
                 </div>
-                <div className="item__edit-btn">
-                    <img className="item__btn" src={EditIcon} alt="Edit Icon" />
-                    <p className="item__edit-text">Edit</p>
-                </div>
+                <Link to={`/editInventory/${item.id}`}>
+                    <div className="item__edit-btn">
+                        <img className="item__btn" src={EditIcon} alt="Edit Icon" />
+                        <p className="item__edit-text">Edit</p>
+                    </div>
+                </Link>
+                
                     
             </div>
             {/* Content */}

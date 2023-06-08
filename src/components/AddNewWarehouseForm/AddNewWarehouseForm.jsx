@@ -1,6 +1,6 @@
 import "./AddNewWarehouseForm.scss";
 import ArrowBack from "../../assets/Icons/arrow_back-24px.svg";
-import DitailsForm from "../DitailsForm/Ditailsform";
+import DitailsForm from "../DetailsForm/Ditailsform";
 import ContactDetailsForm from "../ContactDetailsForm/ContactDetailsForm";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -126,7 +126,7 @@ const AddNewWarehouseForm = () => {
   return (
     <section className="add-form-wrapper">
       <div className="add-form-wrapper__heading">
-        <Link to="/warehouses">
+        <Link to="/">
           <img src={ArrowBack} alt="ArrowBackButton" />
         </Link>
         <h1 className="add-form-wrapper__warehouse">Add New Warehouse</h1>

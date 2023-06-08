@@ -8,10 +8,13 @@ import FowardIcon from "../../assets/Icons/chevron_right-24px.svg";
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 const WarehouseWithInventories = () => {
     const {id} = useParams();
     const [warehouse, setWarehouse] = useState({});
     const [inventories, setInventories] = useState([]);
+
+    const navigate = useNavigate();
     // Fetch info about the warehouse
     useEffect(()=> {
         axios.get(`http://localhost:8080/warehouse/${id}`)
@@ -29,13 +32,15 @@ const WarehouseWithInventories = () => {
             {/* Header */}
             <div className="warehouseInventories__header">
                 <div className="header__heading">
-                    <img src={BackIcon} alt="" className="header__btn" />
+                    <img onClick={() => navigate(-1)} src={BackIcon} alt="" className="header__btn" />
                     <p className="header__title">{warehouse?.warehouse_name}</p>
                 </div>
-                <div className="item__edit-btn">
-                    <img className="item__btn" src={EditIcon} alt="Edit Icon" />
-                    <p className="item__edit-text">Edit</p>
-                </div>
+                <Link to={`/editWarehouse/${id}`}>
+                    <div className="item__edit-btn">
+                        <img className="item__btn" src={EditIcon} alt="Edit Icon" />
+                        <p className="item__edit-text">Edit</p>
+                    </div>
+                </Link>
             </div>
             {/* Warehouse Detail */}
             {
@@ -96,7 +101,8 @@ const WarehouseWithInventories = () => {
                 {
                     inventories.map((inventory) => {
                         return (
-                                <div key={inventory.id} className="inventory__item">
+                            <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
+                                <div  className="inventory__item">
                                 {/* One */}
                                 <div className="inventory__left">
                                     <div className="col w-50">
@@ -132,6 +138,7 @@ const WarehouseWithInventories = () => {
                                     </button>
                                 </div>
                             </div>
+                        </Link>
                         )
                     })
                 }

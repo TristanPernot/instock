@@ -153,7 +153,7 @@ function WarehouseList(){
                     </div>
                     <span className='container__li--img'>
                         <img src={`${deleteimg}`} alt="delete"  onClick={() => deleteButtonClick(warehouse)}/>
-                        <Link to={`/warehouse/edit/${warehouse.id}`}>
+                        <Link to={`/editWarehouse/${warehouse.id}`}>
                         <img src={`${editing}`} alt="edit" /> 
                         </Link>
                     </span>

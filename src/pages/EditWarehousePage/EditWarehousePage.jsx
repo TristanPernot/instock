@@ -1,12 +1,14 @@
 import React from 'react'
 import "./EditWarehousePage.scss";
+import { useNavigate } from 'react-router-dom';
 // Icon
 import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
 const EditWarehousePage = () => {
+    const navigate = useNavigate();
     return (
         <div className="form">
             <div className="form__header">
-                <img src={BackIcon} alt="Back Icon" />
+                <img onClick={()=>navigate(-1)} src={BackIcon} alt="Back Icon" />
                 <div className="form__title">Edit Warehouse</div>
             </div>
             <div className="form__content">
