@@ -39,7 +39,6 @@ function App() {
                   {/* 404 Page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <WarehouseList />
       </BrowserRouter>
       {/* <Footer /> */}
          </div>

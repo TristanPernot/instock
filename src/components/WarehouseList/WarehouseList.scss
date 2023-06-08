@@ -5,6 +5,9 @@ a{
     text-decoration: none;
     color: #2E66E5;
 }
+html{
+    font-size: 0.7rem;
+}
 .container{
     background: #FFFFFF;
     box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
@@ -93,10 +96,10 @@ a{
         &--format{
             display: flex;
             flex-direction: column;
-            width: 50%;
+            width: 45%;
             @include tablet{
                 flex-direction: row;
-                flex: 1.75;
+                flex: 1;
 
             }
         }
@@ -106,9 +109,10 @@ a{
 
         &--item{
             display: inline-flex;
-            overflow-wrap: break-word;
+            flex-wrap: wrap;
             @include tablet{
             display: flex;
+            flex-wrap: nowrap;
             width: 8rem;
             flex: 1;
             align-items: center;  
@@ -119,6 +123,10 @@ a{
                 flex: 1.2
             }
         }
+        &--item-small{
+            flex: 0;
+            justify-content: flex-end;
+        }
         &--special{
             color: #2E66E5;
         }
@@ -127,9 +135,13 @@ a{
         }
         &--img{
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             flex: 1;
             height: 1.8rem;
+            @include tablet{
+                justify-content: flex-end;
+                flex: 0;
+            }
         }
         &--mobile{
             color: #5C667E;

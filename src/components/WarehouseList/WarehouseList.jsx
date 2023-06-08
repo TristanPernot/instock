@@ -106,7 +106,7 @@ function WarehouseList(){
                         <img src={`${sort}`} alt="sort" />
                     </span>
                 </div>
-                    <span className='container__li--item'>
+                    <span className='container__li--item container__li--item-small'>
                         <h4>ACTIONS</h4> 
                     </span>
                 </li>
@@ -133,7 +133,9 @@ function WarehouseList(){
                         <h4 className='container__li--mobile'>Address</h4> 
                         <div className='container__li--item container__li--format'>
                             {warehouse.address}
+
                             <br />
+
                             {warehouse.city} {warehouse.country}
                         </div>
                     </div>
