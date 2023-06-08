@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 import "../Inventory/Inventory.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
@@ -10,9 +11,10 @@ import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function Inventory() {
   const [inventoryData, setInventoryData] = useState([]);
-  const [filterInventoryData, setFilterInventoryData] = useState([]);
+  const [deleteModalInfo, setDeleteModalInfo] = useState({});
 
   //~~get inventory data~~
+
   useEffect(() => {
     axios
       .get(`http://localhost:8080/inventory`)
@@ -32,6 +34,49 @@ function Inventory() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  // ~~delete inventory ~~//
+  function getInventoryList() {
+    axios
+      .get(`http://localhost:8080/inventory`)
+      .then((response) => {
+        setInventoryData(response.data);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  function deleteInventory(id) {
+    axios
+      .delete(`http://localhost:8080/inventory/${id}`)
+      .then((response) => {
+        getInventoryList(id);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  function deleteButtonClick(inventory) {
+    const info = {
+      id: inventory.id,
+      title: `Delete ${inventory.item_name} inventory?`,
+      text: `Please confirm that you’d like to delete ${inventory.item_name} from the list of inventory. You won’t be able to undo this action.`,
+    };
+
+    setDeleteModalInfo(info);
+  }
+
+  function onDeleteModalCancel() {
+    setDeleteModalInfo({});
+  }
+
+  function onDeleteModalConfirm(id) {
+    deleteInventory(id);
+    setDeleteModalInfo({});
+  }
   const headers = [
     "INVENTORY ITEM",
     "CATEGORY",
@@ -50,6 +95,11 @@ function Inventory() {
 
   return (
     <div className="inventory">
+      <DeleteModal
+        deleteModalInfo={deleteModalInfo}
+        onCancel={onDeleteModalCancel}
+        onConfirm={onDeleteModalConfirm}
+      />
       <div className="inventory__container">
         <div className="inventory__searchContainer">
           <h1 className="inventory__header">Inventory</h1>
@@ -159,13 +209,12 @@ function Inventory() {
                 <li className="inventory__tableItems">
                   <div className="inventory__iconTablet">
                     <div className="inventory__icons">
-                      <Link to="/" className="inventory__delete">
-                        <img
-                          src={deleteIcon}
-                          alt="delete"
-                          className="inventory_iconImage"
-                        />
-                      </Link>
+                      <img
+                        src={deleteIcon}
+                        alt="delete"
+                        className="inventory_iconImage"
+                        onClick={() => deleteButtonClick(inventory)}
+                      />
                     </div>
                     <div className="inventory__icons">
                       <Link to="/EditInventory" className="inventory__edit">
