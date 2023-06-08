@@ -14,19 +14,12 @@ import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import WarehouseWithInventories from "./pages/WarehouseWithInventories/WarehouseWithInventories";
-// import Ditailsform from './components/DetailsForm/Ditailsform';
-<<<<<<< HEAD
+import Ditailsform from './components/DetailsForm/Ditailsform';
+
 import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
-import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import InventoryList from "./components/InventoryList/InventoryList";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddNewInventoryItem from "./pages/AddNewInventoryItem/AddNewInventoryItem";
-=======
-// import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
-// // import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
-// import InventoryList from "./components/InventoryList/InventoryList";
->>>>>>> develop
-// App Components
 function App() {
   return (
     <div className="App">
@@ -36,26 +29,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />
-          {/* Display all inventories for a given warehouse */}
           <Route path="/warehouse/:id" element={<WarehouseWithInventories />} />
           <Route path="/inventory/:id" element={<InventoryDetail />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
           <Route path="/addInventory" element={<AddInventoryPage />} />
-          {/*<Route path="/Ditailsform" element={<Ditailsform/>}/>
+          <Route path="/Ditailsform" element={<Ditailsform/>}/>
           <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
-          <Route
-            path="warehouses/:warehouseId"
-            element={<WarehouseDetails />}
-<<<<<<< HEAD
-          />
           <Route path="/inventory/add" element={<AddNewInventoryItem />} />
           <Route path="/InventoryList"element={<InventoryList/>}/>
-          {/* <Route path="/AddInventoryItem" element={<AddInventoryItem/>} /> */}
           <Route path="/EditInventory"element={<EditInventory/>}/>
-=======
-          /> */}
->>>>>>> develop
-          {/* 404 Page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
