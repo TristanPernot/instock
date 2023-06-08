@@ -66,6 +66,11 @@ function WarehouseList() {
   }
   return (
     <div className="container">
+      <DeleteModal
+        deleteModalInfo={deleteModalInfo}
+        onCancel={onDeleteModalCancel}
+        onConfirm={onDeleteModalConfirm}
+      />
       <h1>Warehouse</h1>
       <form className="container__form">
         <input
@@ -146,7 +151,7 @@ function WarehouseList() {
                   alt="delete"
                   onClick={() => deleteButtonClick(warehouse)}
                 />
-                <Link to={`/warehouse/edit/${warehouse.id}`}>
+                <Link to={`/editWarehouse/${warehouse.id}`}>
                   <img src={`${editing}`} alt="edit" />
                 </Link>
               </span>
