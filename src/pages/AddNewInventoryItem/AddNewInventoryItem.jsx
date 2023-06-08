@@ -11,7 +11,7 @@ import ItemDetailsForm from "../../components/ItemDetailsForm/ItemDetailsForm";
 
 function AddNewInventoryItem() {
   //bring in Api address for axios calls
-  const api = process.env.REACT_APP_API_URL;
+
   const { v4 } = require("uuid");
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const [categoryError, setCategoryError] = useState(false);
 const [statusError, setStatusError] = useState(false);
 const [quantityError, setQuantityError] = useState(false);
 const [submit, setSubmit] = useState(false);
-
+const [categoryArray, setCategoryArray] =useState([]);
   const handleChangeSelectWarehouse = (event) => {
     if (selectWarehouse !== "") setSelectWarehouseError(false);
     document.querySelector(".avail__warehouse").classList.remove("error");
@@ -85,7 +85,7 @@ const [submit, setSubmit] = useState(false);
   //api get call function to get warehouses
   function getWarehouses() {
     axios
-      .get(`${api}/warehouses`)
+      .get(`http://localhost:8080/warehouse`)
       .then((data) => {
         if (data) {
           setWarehouses(data.data);
@@ -99,10 +99,11 @@ const [submit, setSubmit] = useState(false);
     //api get call function to get inventories ==move function up later
   function getInventories() {
     axios
-      .get(`${api}/inventories`)
+      .get(`http://localhost:8080/inventory`)
       .then((data) => {
         if (data) {
           setInventories(data.data);
+           setCategoryArray(removeDup(data.data));
         }
       })
       .catch((err) => {
@@ -120,7 +121,7 @@ const [submit, setSubmit] = useState(false);
     return result;
   }
   //categoryArray has all categories from inventories without duplicates
-  const categoryArray = removeDup(inventories);
+  
 
   //function to handle form submit
   function handleFormSubmit(e) {
@@ -162,7 +163,7 @@ const [submit, setSubmit] = useState(false);
 		let newId = v4();
 
       axios
-        .post(`${api}/inventories`, {
+        .post(`http://localhost:8080/inventory`, {
           id: newId,
           warehouse_id: selectWarehouse,
           item_name: itemName,
