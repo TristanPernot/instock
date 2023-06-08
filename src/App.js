@@ -26,9 +26,11 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          {/* <Route path="/" element={<Homepage />} /> */}
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/inventory" element={<InventoryPage />} />
           {/* Display all inventories for a given warehouse */}
+          <Route path="/warehouses" element={<WarehouseList />} />
           <Route path="/warehouse/:id" element={<WarehouseWithInventories />} />
           <Route path="/inventory/:id" element={<InventoryDetail />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
