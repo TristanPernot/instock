@@ -84,63 +84,63 @@ const EditWarehousePage = () => {
   };
 
   return (
-    <div className="form">
-      <div className="form__header">
+    <div className="editForm">
+      <div className="editForm__header">
         <Link to="/">
           <img src={BackIcon} alt="Back Icon" />
         </Link>
-        <div className="form__title">Edit Warehouse</div>
+        <div className="editForm__title">Edit Warehouse</div>
       </div>
-      <div className="form__content">
-        <div className="form__left">
-          <h2 className="form__subtitle">Warehouse Details</h2>
-          <div className="form__control">
-            <label htmlFor="warehouse_name" className="form__label">
+      <div className="editForm__content">
+        <div className="editForm__left">
+          <h2 className="editForm__subtitle">Warehouse Details</h2>
+          <div className="editForm__control">
+            <label htmlFor="warehouse_name" className="editForm__label">
               Warehouse Name
             </label>
             <input
               id="warehouse_name"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="warehouse_name"
               value={formData.warehouse_name}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="address" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="address" className="editForm__label">
               Street Adress
             </label>
             <input
               id="address"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="address"
               value={formData.address}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="city" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="city" className="editForm__label">
               City
             </label>
             <input
               id="city"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="city"
               value={formData.city}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="country" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="country" className="editForm__label">
               Country
             </label>
             <input
               id="country"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="country"
               value={formData.country}
               onChange={handleInputChange}
@@ -148,56 +148,56 @@ const EditWarehousePage = () => {
           </div>
         </div>
         {/* Right Column */}
-        <div className="form__right">
+        <div className="editForm__right">
           {/* Contact Details Column */}
-          <h2 className="form__subtitle">Contact Details</h2>
-          <div className="form__control">
-            <label htmlFor="contact_name" className="form__label">
+          <h2 className="editForm__subtitle">Contact Details</h2>
+          <div className="editForm__control">
+            <label htmlFor="contact_name" className="editForm__label">
               Contact Name
             </label>
             <input
               id="contact_name"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="contact_name"
               value={formData.contact_name}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="position" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="position" className="editForm__label">
               Position
             </label>
             <input
               id="contact_position"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="contact_position"
               value={formData.contact_position}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="phone" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="phone" className="editForm__label">
               Phone Number
             </label>
             <input
               id="contact_phone"
               type="text"
-              className="form__input"
+              className="editForm__input"
               name="contact_phone"
               value={formData.contact_phone}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__control">
-            <label htmlFor="email" className="form__label">
+          <div className="editForm__control">
+            <label htmlFor="email" className="editForm__label">
               Email
             </label>
             <input
               id="contact_email"
               type="email"
-              className="form__input"
+              className="editForm__input"
               name="contact_email"
               value={formData.contact_email}
               onChange={handleInputChange}
@@ -205,9 +205,9 @@ const EditWarehousePage = () => {
           </div>
         </div>
       </div>
-      <div className="form__buttons">
-          <div onClick={()=>navigate(-1)} className="form__btn form__cancel-btn">Cancel</div>
-        <div className="form__btn form__save-btn" onClick={handleSubmit}>
+      <div className="editForm__buttons">
+          <div onClick={()=>navigate(-1)} className="editForm__btn editForm__cancel-btn">Cancel</div>
+        <div className="editForm__btn editForm__save-btn" onClick={handleSubmit}>
           Save
         </div>
       </div>
