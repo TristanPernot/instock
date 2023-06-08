@@ -13,6 +13,7 @@ function Inventory() {
   const [filterInventoryData, setFilterInventoryData] = useState([]);
 
   //~~get inventory data~~
+
   useEffect(() => {
     axios
       .get(`http://localhost:8080/inventory`)
@@ -32,6 +33,37 @@ function Inventory() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  function deleteInventory(id) {
+    axios
+      .delete(`${api}/inventory/${id}`)
+      .then((response) => {
+        getInventoryList(id);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  function deleteButtonClick(inventory) {
+    const info = {
+      id: inventory.id,
+      title: `Delete ${inventory.item_name} inventory?`,
+      text: `Please confirm that you’d like to delete ${inventory.item_name} from the list of inventory. You won’t be able to undo this action.`,
+    };
+
+    setDeleteModalInfo(info);
+  }
+
+  function onDeleteModalCancel() {
+    setDeleteModalInfo({});
+  }
+
+  function onDeleteModalConfirm(id) {
+    deleteWarehouse(id);
+    setDeleteModalInfo({});
+  }
   const headers = [
     "INVENTORY ITEM",
     "CATEGORY",
@@ -164,6 +196,7 @@ function Inventory() {
                           src={deleteIcon}
                           alt="delete"
                           className="inventory_iconImage"
+                          onClick={() => deleteButtonClick(inventory)}
                         />
                       </Link>
                     </div>
