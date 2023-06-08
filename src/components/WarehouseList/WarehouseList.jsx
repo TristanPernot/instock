@@ -50,8 +50,8 @@ function WarehouseList() {
   function deleteButtonClick(warehouse) {
     const info = {
       id: warehouse.id,
-      title: `Delete ${warehouse.name} warehouse?`,
-      text: `Please confirm that you’d like to delete ${warehouse.name} from the list of warehouses. You won’t be able to undo this action.`,
+      title: `Delete ${warehouse.warehouse_name} warehouse?`,
+      text: `Please confirm that you’d like to delete ${warehouse.warehouse_name} from the list of warehouses. You won’t be able to undo this action.`,
     };
 
     setDeleteModalInfo(info);
