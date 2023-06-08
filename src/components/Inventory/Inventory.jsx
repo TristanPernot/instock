@@ -11,6 +11,7 @@ import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function Inventory() {
   const [inventoryData, setInventoryData] = useState([]);
+  const [filterInventoryData, setFilterInventoryData] = useState([]);
   const [deleteModalInfo, setDeleteModalInfo] = useState({});
 
   //~~get inventory data~~
@@ -34,6 +35,23 @@ function Inventory() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  //~~ get warehouse name with ID~~
+  useEffect(() => {
+    if (inventoryData) {
+      inventoryData.forEach((item) => {
+        axios
+          .get(`http://localhost:8080/warehouse/${item.warehouse_id}`)
+          .then((response) => {
+            item.warehouse_name = response.data.warehouse_name;
+
+            setFilterInventoryData({ ...filterInventoryData, item });
+          })
+          .catch((error) => console.log(error));
+      });
+    }
+    console.log(inventoryData);
+  }, [inventoryData]);
 
   // ~~delete inventory ~~//
   function getInventoryList() {
