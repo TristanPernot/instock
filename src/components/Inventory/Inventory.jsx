@@ -77,6 +77,8 @@ function Inventory() {
     deleteInventory(id);
     setDeleteModalInfo({});
   }
+
+  // add header to tablet/desktop view - might delete later.
   const headers = [
     "INVENTORY ITEM",
     "CATEGORY",
