@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Import Components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import WarehouseList from './components/WarehouseList/WarehouseList';
+import WarehouseList from "./components/WarehouseList/WarehouseList";
 // Import Pages
 import Homepage from "./pages/Homepage/Homepage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
@@ -30,18 +30,18 @@ function App() {
           <Route path="/inventory/:id" element={<InventoryDetail />} />
           <Route path="/addWarehouse" element={<AddWarehousePage />} />
           <Route path="/addInventory" element={<AddInventoryPage />} />
-            {/*<Route path="/Ditailsform" element={<Ditailsform/>}/>
+          {/*<Route path="/Ditailsform" element={<Ditailsform/>}/>
           <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
           <Route
             path="warehouses/:warehouseId"
             element={<WarehouseDetails />}
           /> */}
-                  {/* 404 Page */}
+          {/* 404 Page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
-         </div>
+    </div>
   );
 }
 
