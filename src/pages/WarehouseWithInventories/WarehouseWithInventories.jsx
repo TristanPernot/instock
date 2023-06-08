@@ -68,7 +68,7 @@ const WarehouseWithInventories = () => {
             />
             <div className="warehouseInventories__header">
                 <div className="header__heading">
-                    <img onClick={() => navigate("/")} src={BackIcon} alt="" className="header__btn" />
+                    <img onClick={() => navigate("/")} src={BackIcon} alt="" className="header__btn back__btn" />
                     <p className="header__title">{warehouse?.warehouse_name}</p>
                 </div>
                 <Link to={`/editWarehouse/${id}`}>
