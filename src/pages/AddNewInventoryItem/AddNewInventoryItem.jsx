@@ -3,8 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ArrowBack from "../../assets/Icons/arrow_back-24px.svg";
-// import DitailsForm from "../../components/DetailsForm/DitailsForm";
-import Detailsform from "../../components/DetailsForm/Ditailsform";
 import EditItemDetailsForm from "../../components/EditItemDetailsForm/EditItemDetailsForm";
 import ItemAvailabilityForm from "../../components/ItemAvailabilityForm/ItemAvailabilityForm";
 
