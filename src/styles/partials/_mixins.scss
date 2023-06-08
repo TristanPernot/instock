@@ -37,6 +37,9 @@
 
   @include tablet {
     height: 38px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
   }
 }
 
@@ -47,6 +50,10 @@
   color: $primary-white;
   border: none;
   height: 36px;
+
+  &:hover {
+    background-color: $background-graphite;
+  }
   @include tablet {
     height: 38px;
   }
