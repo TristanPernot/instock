@@ -22,23 +22,16 @@ function Inventory() {
       .catch((err) => console.log(err));
   }, []);
 
-  //~~ get warehouse name with ID~~
+  //~~get single inventory description~~
   useEffect(() => {
-    if (inventoryData) {
-      inventoryData.forEach((item) => {
-        axios
-          .get(`http://localhost:8080/warehouse/${item.warehouse_id}`)
-          .then((response) => {
-            item.warehouse_name = response.data.warehouse_name;
-
-            setFilterInventoryData({ ...filterInventoryData, item });
-          })
-          .catch((error) => console.log(error));
-      });
-    }
-    console.log(inventoryData);
-  }, [inventoryData]);
-
+    axios
+      .get(`http://localhost:8080/inventory/:id`)
+      .then((response) => {
+        setInventoryData(response.data);
+        console.log(inventoryData);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   const headers = [
     "INVENTORY ITEM",
     "CATEGORY",
@@ -66,7 +59,9 @@ function Inventory() {
               type="search"
               placeholder="Search..."
             />
-            <button className="inventory__button">+Add New Item</button>
+            <Link to="/inventory/add">
+              <button className="inventory__button">+Add New Item</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -86,7 +81,10 @@ function Inventory() {
                     />
                   </ul>
                   <li className="inventory__tableItems" id="itemName">
-                    <Link to="/" className="inventory__itemDetails">
+                    <Link
+                      to={`/inventory/${inventory.id}`}
+                      className="inventory__itemDetails"
+                    >
                       {inventory.item_name} <img src={goToIcon} alt="goTo" />
                     </Link>
                   </li>
@@ -170,7 +168,7 @@ function Inventory() {
                       </Link>
                     </div>
                     <div className="inventory__icons">
-                      <Link to="/" className="inventory__edit">
+                      <Link to="/EditInventory" className="inventory__edit">
                         <img
                           src={editIcon}
                           alt="edit"
