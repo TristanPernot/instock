@@ -13,7 +13,6 @@ function ItemAvailabilityForm({
 	quantityError,
 	selectWarehouseError,
 	submit }) {
-
 	return (
 		<div className="avail">
 			<h2 className="avail__title">Item Availability</h2>

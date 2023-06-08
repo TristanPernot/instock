@@ -14,6 +14,8 @@ function ItemDetailsForm({
 	descError,
 	categoryError, 
 	submit  }) {
+
+		
 	return (
 		<div className="details">
 			<h2 className="details__title">Item Details</h2>
