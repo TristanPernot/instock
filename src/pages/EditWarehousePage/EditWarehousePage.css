@@ -1,0 +1,136 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+.form {
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .form {
+    margin: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .form {
+    margin: 2rem 8.125rem;
+  }
+}
+.form__header {
+  display: flex;
+  padding: 1.25rem 1rem;
+  gap: 0.5rem;
+  border-bottom: solid 1px #bdc5d5;
+}
+@media (min-width: 768px) {
+  .form__header {
+    padding: 1.5rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .form__header {
+    padding: 1.5rem 2.5rem;
+  }
+}
+.form__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #13182c;
+}
+@media (min-width: 768px) {
+  .form__content {
+    display: flex;
+    margin: 1.5rem 0;
+  }
+}
+.form__control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.form__buttons {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+  background-color: rgba(247, 248, 249, 0.7);
+}
+.form__left {
+  padding: 1rem 1rem;
+  border-bottom: solid 1px #bdc5d5;
+}
+@media (min-width: 768px) {
+  .form__left {
+    border-bottom: none;
+    width: 50%;
+    border-right: solid 1px #bdc5d5;
+    padding: 0 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .form__left {
+    padding: 0 2.5rem;
+  }
+}
+.form__right {
+  padding: 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .form__right {
+    padding: 0 2rem;
+    width: 50%;
+  }
+}
+@media (min-width: 1280px) {
+  .form__right {
+    padding: 0 2.5rem;
+  }
+}
+.form__btn {
+  padding: 0.5rem 0.8rem;
+}
+.form__subtitle {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .form__subtitle {
+    font-size: 1.5rem;
+  }
+}
+.form__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+@media (min-width: 1280px) {
+  .form__label {
+    font-size: 0.875rem;
+  }
+}
+.form__input {
+  border: solid 1px #bdc5d5;
+  border-radius: 20px;
+  padding: 0.4rem 0.7rem;
+}
+@media (min-width: 768px) {
+  .form__input {
+    padding: 0.5rem 0.7rem;
+  }
+}
+.form__btn {
+  border-radius: 20px;
+  font-size: 0.7rem;
+  width: 137px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .form__btn {
+    width: 72px;
+  }
+}
+.form__cancel-btn {
+  border: solid 1px #bdc5d5;
+  background-color: white;
+}
+.form__save-btn {
+  background-color: #2e66e5;
+  color: white;
+}/*# sourceMappingURL=EditWarehousePage.css.map */

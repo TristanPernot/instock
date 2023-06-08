@@ -1,0 +1,238 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+.warehouseInventories {
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .warehouseInventories {
+    margin: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .warehouseInventories {
+    margin: 2rem 8.125rem;
+  }
+}
+.warehouseInventories__header {
+  display: flex;
+  padding: 1.25rem 1rem;
+  border-bottom: solid 1px #bdc5d5;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .warehouseInventories__header {
+    padding: 1.5rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .warehouseInventories__header {
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+.header__heading {
+  display: flex;
+}
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #13182c;
+  margin-left: 0.5rem;
+}
+
+.warehouse__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: solid 1px #bdc5d5;
+}
+@media (min-width: 768px) {
+  .warehouse__content {
+    padding: 2.5rem 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: none;
+  }
+}
+@media (min-width: 1280px) {
+  .warehouse__content {
+    justify-content: start;
+  }
+}
+@media (min-width: 1280px) {
+  .warehouse__content {
+    padding: 1.5rem 2.5rem;
+  }
+}
+.warehouse__title {
+  font-size: 0.7rem;
+  color: #5c667e;
+  margin-bottom: 0.3rem;
+}
+@media (min-width: 768px) {
+  .warehouse__title {
+    margin-bottom: 0.5rem;
+  }
+}
+.warehouse__info {
+  font-size: 0.78rem;
+}
+@media (min-width: 768px) {
+  .warehouse__info {
+    font-size: 0.85rem;
+  }
+}
+@media (min-width: 768px) {
+  .warehouse__left {
+    width: 50%;
+    border-right: solid 1px #bdc5d5;
+  }
+}
+.warehouse__right {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (min-width: 1280px) {
+  .warehouse__right {
+    gap: 4rem;
+  }
+}
+
+.inventories__header {
+  display: none;
+}
+@media (min-width: 768px) {
+  .inventories__header {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(247, 248, 249, 0.7);
+    align-items: start;
+    padding: 1rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .inventories__header {
+    padding: 1rem 2.5rem;
+  }
+}
+
+.inventory__item {
+  border-bottom: solid 1px #bdc5d5;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .inventory__item {
+    align-items: start;
+    padding: 1rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .inventory__item {
+    padding: 1rem 2.5rem;
+  }
+}
+.inventory__btn {
+  background-color: white;
+  border: none;
+}
+.inventory__left {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .inventory__left {
+    width: 45%;
+    display: flex;
+  }
+}
+.inventory__right {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .inventory__right {
+    width: 45%;
+    display: flex;
+  }
+}
+.inventory__bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .inventory__bottom {
+    justify-content: start;
+    width: auto;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+}
+
+.col {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .col {
+    margin-bottom: 0;
+    display: flex;
+  }
+}
+.col__title {
+  font-size: 0.7rem;
+  color: #5c667e;
+  margin-bottom: 0.3rem;
+}
+@media (min-width: 768px) {
+  .col__title {
+    margin-bottom: 0.5rem;
+    display: none;
+  }
+}
+.col__info {
+  font-size: 0.78rem;
+}
+@media (min-width: 768px) {
+  .col__info {
+    font-size: 0.85rem;
+  }
+}
+.col__title-header {
+  font-size: 0.8rem;
+  color: #5c667e;
+}
+.col__btn {
+  margin-left: 0.2rem;
+  width: 17px;
+}
+.col__inventory-name {
+  color: #2e66e5;
+  font-weight: 600;
+  display: flex;
+}
+.col__inventory-name__btn {
+  width: 20px;
+}
+.col__stock {
+  background-color: rgba(21, 132, 99, 0.07);
+  color: #158463;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  margin-right: 5rem;
+}
+.col__stock--red {
+  background-color: rgba(201, 69, 21, 0.07);
+  color: #c94515;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  margin-right: 5rem;
+}
+
+@media (min-width: 768px) {
+  .w-50 {
+    width: 50%;
+  }
+}/*# sourceMappingURL=WarehouseWithInventories.css.map */
