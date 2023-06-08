@@ -1,0 +1,45 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.footer {
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5c667e;
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    height: 8.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    height: 7rem;
+  }
+}
+.footer__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .footer__text {
+    height: 3rem;
+    width: 30vw;
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__text {
+    margin-top: 0rem;
+  }
+}/*# sourceMappingURL=Footer.css.map */

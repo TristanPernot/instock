@@ -1,0 +1,85 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+.delete-modal {
+  padding: 1rem;
+  position: absolute;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .delete-modal {
+    padding: 2rem 4rem;
+    top: 202px;
+    left: 48px;
+    right: 48px;
+    height: 19rem;
+  }
+}
+@media (min-width: 1280px) {
+  .delete-modal {
+    padding: 2rem 4rem;
+    top: 220px;
+    left: 265;
+    right: 265px;
+  }
+}
+.delete-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .delete-modal__overlay {
+    background-color: rgba(19, 24, 44, 0.7);
+  }
+}
+.delete-modal__title {
+  margin: 3.75rem;
+  font-size: 1.75rem;
+}
+.delete-modal__text {
+  margin-bottom: 22rem;
+  font-size: 0.9375rem;
+}
+@media (min-width: 768px) {
+  .delete-modal__text {
+    margin-bottom: 2rem;
+  }
+}
+.delete-modal__btns {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  cursor: pointer;
+}
+.delete-modal__btn {
+  all: unst;
+  width: 100%;
+  min-height: 2.25rem;
+  border-radius: 1.25rem;
+  color: #5c667e;
+  font-weight: 600;
+  border: 0.0625rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .delete-modal__btn {
+    height: 2.375rem;
+    width: 8.625rem;
+  }
+}
+.delete-modal__btn--delete {
+  background-color: #c94515;
+  color: #ffffff;
+  border: none;
+}
+.delete-modal__close-btn {
+  position: absolute;
+  top: 1.3125rem;
+  right: 1rem;
+  border: none;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}/*# sourceMappingURL=DeleteModal.css.map */
