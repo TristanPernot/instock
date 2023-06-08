@@ -9,7 +9,7 @@ import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
 
 const EditWarehousePage = () => {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     warehouse_name: "",
     address: "",
@@ -75,7 +75,8 @@ const EditWarehousePage = () => {
         contact_email,
       })
       .then((response) => {
-        console.log("Warehouse updated successfully", response.data);
+        alert(`Successfully edit the warehouse with id ${id}`)
+        navigate(-1);
       })
       .catch((error) => {
         console.error("Error updating warehouse", error);
@@ -205,9 +206,7 @@ const EditWarehousePage = () => {
         </div>
       </div>
       <div className="form__buttons">
-        <Link to="/warehouses" className="form__btn form__cancel-btn">
-          <div className="form__btn form__cancel-btn">Cancel</div>
-        </Link>
+          <div onClick={()=>navigate(-1)} className="form__btn form__cancel-btn">Cancel</div>
         <div className="form__btn form__save-btn" onClick={handleSubmit}>
           Save
         </div>
