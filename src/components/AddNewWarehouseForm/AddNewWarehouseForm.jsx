@@ -124,7 +124,7 @@ const AddNewWarehouseForm = () => {
     <section className="add-form-wrapper">
       <div className="add-form-wrapper__heading">
         <Link to="/">
-          <img src={ArrowBack} alt="ArrowBackButton" />
+          <img className="back__btn" src={ArrowBack} alt="ArrowBackButton" />
         </Link>
         <h1 className="add-form-wrapper__warehouse">Add New Warehouse</h1>
       </div>
