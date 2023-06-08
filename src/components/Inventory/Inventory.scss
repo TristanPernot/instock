@@ -137,7 +137,8 @@
       padding-right: 1.2rem;
     }
   }
-  &__tabletFirstHeader {
+
+  &__tabletHeader {
     display: none;
 
     @include tablet {
@@ -153,6 +154,8 @@
   &__tabletContainer1 {
     display: flex;
   }
+
+  //hide regular headers
   &__tableHeader {
     @include tablet {
       display: none;
@@ -223,6 +226,15 @@
   #actions {
     display: none;
   }
+
+  #firstItemHeader {
+    padding-left: 2rem;
+  }
+
+  #lastItemHeader {
+    padding-right: 2rem;
+  }
+
   &__listContainer {
     border-top: 2px solid $secondary-cloud;
 
