@@ -1,0 +1,213 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventory {
+  font-family: "Titillium Web", sans-serif;
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  max-width: 60%;
+  margin: auto;
+
+  @include tablet {
+    margin: 2rem;
+    max-width: 100%;
+  }
+
+  &__header {
+    font-size: 2rem;
+  }
+  &__container {
+    margin: auto;
+
+    @include tablet {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+
+  &__searchContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 2rem;
+    }
+  }
+
+  &__tabletSearchContainer {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__searchbar {
+    @include searchbar;
+    display: flex;
+    width: 100%;
+
+    @include tablet {
+      display: inline;
+      margin-right: 1rem;
+      max-width: 11rem;
+    }
+  }
+
+  &__button {
+    @include button;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__mobileContainer1 {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex: 2;
+    }
+  }
+  &__test {
+    display: flex;
+    padding-left: 2rem;
+    @include tablet {
+      flex: 2;
+      padding-left: 0;
+    }
+  }
+  &__mobileContainer2,
+  &__mobileContainer3 {
+    padding-right: 3.5rem;
+    @include tablet {
+      padding-right: 0;
+      display: flex;
+      flex-direction: row;
+      flex: 3;
+    }
+  }
+
+  &__mobileContainer4 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__iconTablet {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__tabletFirstHeader {
+    display: none;
+
+    @include tablet {
+      display: inline;
+      background-color: $background-light-grey;
+      font-size: 1rem;
+      padding-top: 0.68rem;
+      padding-bottom: 0.68rem;
+      flex: 1;
+    }
+  }
+
+  &__tabletContainer1 {
+    display: flex;
+  }
+  &__tableHeader {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__stock {
+    list-style: none;
+
+    background-color: rgba(21, 132, 99, 0.07);
+    color: $supporting-green;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
+  &__stock--red {
+    list-style: none;
+
+    background-color: rgba(201, 69, 21, 0.07);
+    color: $supporting-red;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
+  &__table {
+    padding-top: 1rem;
+    @include tablet {
+      flex: 1;
+      // width: 10rem;
+      padding-top: 0;
+    }
+  }
+  &__tableItems {
+    list-style: none;
+
+    @include tablet {
+      height: 3rem;
+      margin-top: 1rem;
+    }
+
+    &.out-of-stock {
+      color: $out-of-stock;
+      background-color: rgba(201, 69, 21, 0.07);
+    }
+
+    &.in-stock {
+      color: $in-stock;
+      background-color: rgba(21, 132, 99, 0.07);
+      @include stock;
+    }
+  }
+
+  #itemName {
+    color: $primary-indigo;
+    padding-left: 2rem;
+  }
+
+  #actions {
+    display: none;
+  }
+  &__listContainer {
+    border-top: 2px solid $secondary-cloud;
+
+    @include tablet {
+      display: flex;
+      flex: 1;
+      border-top: none;
+
+      border-bottom: 2px solid $secondary-cloud;
+      // justify-content: space-evenly;
+      align-items: stretch;
+    }
+  }
+
+  &__sort {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventory {
+  &__searchContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__tabletSearchContainer {
+    @include tablet {
+      display: flex;
+      margin-top: 1.34rem;
+    }
+  }
+  &__searchbar {
+    @include searchbar;
+    display: flex;
+    width: 100%;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  &__button {
+    @include button;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+}

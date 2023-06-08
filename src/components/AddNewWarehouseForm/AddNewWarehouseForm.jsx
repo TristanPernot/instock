@@ -1,12 +1,10 @@
 import "./AddNewWarehouseForm.scss";
 import ArrowBack from "../../assets/Icons/arrow_back-24px.svg";
-import DitailsForm from "../DitailsForm/Ditailsform";
+import DitailsForm from "../DetailsForm/Ditailsform";
 import ContactDetailsForm from "../ContactDetailsForm/ContactDetailsForm";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const { v4: uuid } = require("uuid");
-export const api = "";
 
 const AddNewWarehouseForm = () => {
   const [warehouse, setWarehouse] = useState("");
@@ -96,8 +94,7 @@ const AddNewWarehouseForm = () => {
     event.preventDefault();
 
     if (isFormValid()) {
-      axios.post(`${api}/warehouses/`, {
-          id: uuid(),
+      axios.post(`http://localhost:8080/warehouse`, {
           warehouse_name: warehouse,
           address: streetAddress,
           city: city,
@@ -106,27 +103,27 @@ const AddNewWarehouseForm = () => {
           contact_position: position,
           contact_phone: phoneNumber,
           contact_email: email,
+        }).then(() => {
+          alert("Warehouse successfully added, redirecting to homepage.");
+          return setTimeout(() => {
+            navigate("/");
+          }, 1000);
         })
         .catch((error) => {
           console.log(error);
         }) 
-      alert("Warehouse successfully added, redirecting to homepage.");
-      return setTimeout(() => {
-        navigate("/warehouses");
-      }, 1000);
-      
     } else {
       alert("Please check your form")
     }
   };
   const handleCancel = () => {
-    return navigate("/warehouses");
+    return navigate("/");
   };
 
   return (
     <section className="add-form-wrapper">
       <div className="add-form-wrapper__heading">
-        <Link to="/warehouses">
+        <Link to="/">
           <img src={ArrowBack} alt="ArrowBackButton" />
         </Link>
         <h1 className="add-form-wrapper__warehouse">Add New Warehouse</h1>
