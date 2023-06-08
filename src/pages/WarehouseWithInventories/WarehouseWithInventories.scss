@@ -168,9 +168,9 @@
 
     &__info {
         font-size: 0.78rem;
-
+        width:fit-content;
         @include tablet {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
     }
     &__title-header {
@@ -194,7 +194,6 @@
         color: $supporting-green;
         padding: 0.1rem 0.5rem;
         border-radius: 20px;
-        margin-right: 5rem;
     }
 
     &__stock--red {
@@ -203,7 +202,6 @@
         color: $supporting-red;
         padding: 0.1rem 0.5rem;
         border-radius: 20px;
-        margin-right: 5rem;
     }
 }
 .w-50 {

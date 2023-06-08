@@ -141,14 +141,12 @@ html {
       display: inline-flex;
       //   flex-wrap: wrap;
       width: 100%;
-      margin-bottom: 0.5rem;
       @include tablet {
         display: flex;
         flex-wrap: nowrap;
         width: 8rem;
         flex: 1;
         align-items: center;
-        margin-bottom: 0;
       }
     }
     &--item > h4 {
@@ -185,10 +183,8 @@ html {
     }
     &--mobile {
       color: #5c667e;
-      margin-bottom: 0.3rem;
       @include tablet {
         display: none;
-        margin-bottom: 0rem;
       }
     }
     &--header {
