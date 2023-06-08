@@ -11,6 +11,7 @@ html {
 .container {
   // bordered
   //   border: 1px solid red;
+  margin-top: -5.5rem;
   background: #ffffff;
   box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
   border-radius: 0.1875rem;
@@ -110,6 +111,7 @@ html {
     // border: 1px red solid;
     padding: 1.5rem;
     padding-left: 4rem;
+    padding-right: 3rem;
     @include tablet {
       flex-wrap: nowrap;
     }
@@ -159,6 +161,7 @@ html {
       text-decoration: underline;
     }
     &--img {
+      margin-top: 1rem;
       display: flex;
       justify-content: space-between;
       flex: 1;
