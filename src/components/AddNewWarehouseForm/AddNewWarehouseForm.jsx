@@ -23,7 +23,6 @@ const AddNewWarehouseForm = () => {
   const [empty, setEmpty] = useState(false);
   const navigate = useNavigate();
 
-
   const handleChangeWarehouse = (event) => {
     setWarehouse(event.target.value);
   };
@@ -56,11 +55,10 @@ const AddNewWarehouseForm = () => {
     setEmail(event.target.value);
   };
 
-
   const validatePhoneNumber = (value) =>
     /^[0-9]*$/.test(value) && value.length >= 10;
 
-    const validateEmail = (value) =>
+  const validateEmail = (value) =>
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value);
 
   const isFormValid = () => {
@@ -77,12 +75,12 @@ const AddNewWarehouseForm = () => {
       return setEmpty(true);
     }
     setEmpty(false);
-  
+
     if (!validatePhoneNumber(phoneNumber)) {
       return setPhoneError(true);
     }
     setPhoneError(false);
-  
+
     if (!validateEmail(email)) {
       return setEmailError(true);
     }
@@ -96,7 +94,8 @@ const AddNewWarehouseForm = () => {
     event.preventDefault();
 
     if (isFormValid()) {
-      axios.post(`${api}/warehouses/`, {
+      axios
+        .post(`${api}/warehouses/`, {
           id: uuid(),
           warehouse_name: warehouse,
           address: streetAddress,
@@ -109,18 +108,17 @@ const AddNewWarehouseForm = () => {
         })
         .catch((error) => {
           console.log(error);
-        }) 
+        });
       alert("Warehouse successfully added, redirecting to homepage.");
       return setTimeout(() => {
         navigate("/warehouses");
       }, 1000);
-      
     } else {
-      alert("Please check your form")
+      alert("Please check your form");
     }
   };
   const handleCancel = () => {
-    return navigate("/warehouses");
+    return navigate("/");
   };
 
   return (
