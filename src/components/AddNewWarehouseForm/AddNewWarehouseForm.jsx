@@ -5,8 +5,6 @@ import ContactDetailsForm from "../ContactDetailsForm/ContactDetailsForm";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const { v4: uuid } = require("uuid");
-export const api = "";
 
 const AddNewWarehouseForm = () => {
   const [warehouse, setWarehouse] = useState("");
@@ -95,8 +93,7 @@ const AddNewWarehouseForm = () => {
 
     if (isFormValid()) {
       axios
-        .post(`${api}/warehouses/`, {
-          id: uuid(),
+        .post(`http://localhost:8080/warehouse`, {
           warehouse_name: warehouse,
           address: streetAddress,
           city: city,
@@ -106,13 +103,15 @@ const AddNewWarehouseForm = () => {
           contact_phone: phoneNumber,
           contact_email: email,
         })
+        .then(() => {
+          alert("Warehouse successfully added, redirecting to homepage.");
+          return setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        })
         .catch((error) => {
           console.log(error);
         });
-      alert("Warehouse successfully added, redirecting to homepage.");
-      return setTimeout(() => {
-        navigate("/warehouses");
-      }, 1000);
     } else {
       alert("Please check your form");
     }
