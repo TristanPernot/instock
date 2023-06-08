@@ -1,0 +1,137 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouseInventories {
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+    margin: 1rem;
+
+    @include tablet {
+        margin: 2rem;
+    }
+
+    @include desktop {
+        margin: 2rem 8.125rem;
+    }
+    &__header {
+        display: flex;
+        padding: 1.25rem 1rem;
+        border-bottom: solid 1px $secondary-cloud;
+        justify-content: space-between;
+        @include tablet {
+            padding: 1.5rem 2rem;
+        }
+    
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+}
+.header {
+    &__heading {
+        display: flex;
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary-black;
+        margin-left: 0.5rem;
+    }
+}
+.warehouse {
+    &__content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        @include tablet {
+            padding: 1.5rem 2rem;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include desktop{
+            justify-content: start;
+        }
+    
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+    &__title {
+        font-size: 0.7rem;
+        color: $secondary-slate;
+        margin-bottom: 0.3rem;
+        @include tablet{
+            margin-bottom: 0.5rem;
+        }
+    }
+    &__info {
+        font-size: 0.78rem;
+        @include tablet {
+            font-size: 0.85rem;
+        }
+    }
+    &__left {
+        @include tablet{
+            width: 50%;
+            border-right: solid 1px $secondary-cloud;
+        }
+    }
+    &__right{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        @include desktop{
+            gap: 4rem;
+        }
+    }
+}
+.inventories {
+}
+.inventory {
+    &__item {
+        border-top: solid 1px $secondary-cloud;
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__btn {
+        background-color: white;
+        border: none;
+    }
+    &__left {
+        width: 50%;
+    }
+    &__right{
+        width: 50%;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include tablet{
+            justify-content: start;
+            width: auto;
+        }
+    }
+}
+.col {
+    &__title {
+        font-size: 0.7rem;
+        color: $secondary-slate;
+        margin-bottom: 0.3rem;
+
+        @include tablet {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__info {
+        font-size: 0.78rem;
+
+        @include tablet {
+            font-size: 0.85rem;
+        }
+    }
+    
+}
