@@ -45,7 +45,7 @@
         flex-direction: column;
         gap: 1.5rem;
         @include tablet {
-            padding: 1.5rem 2rem;
+            padding: 2.5rem 2rem;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -80,20 +80,42 @@
     &__right{
         display: flex;
         justify-content: space-between;
-        gap: 0.5rem;
+        gap: 2rem;
         @include desktop{
             gap: 4rem;
         }
     }
 }
 .inventories {
+    &__header {
+        display: none;
+        @include tablet {
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgba(247, 248, 249, 0.7);
+            align-items: start;
+            padding: 1rem 2rem;
+        }
+        @include desktop {
+            padding: 1rem 2.5rem;
+        }
+    }
 }
+
 .inventory {
     &__item {
-        border-top: solid 1px $secondary-cloud;
+        border-bottom: solid 1px $secondary-cloud;
         padding: 1rem;
         display: flex;
         flex-wrap: wrap;
+        @include tablet{
+            align-items: start;
+            padding: 1rem 2rem;
+        }
+        @include desktop {
+            padding: 1rem 2.5rem;
+        }
     }
     &__btn {
         background-color: white;
@@ -101,9 +123,17 @@
     }
     &__left {
         width: 50%;
+        @include tablet {
+            width: 45%;
+            display: flex;
+        }
     }
     &__right{
         width: 50%;
+        @include tablet {
+            width: 45%;
+            display: flex;
+        }
     }
     &__bottom {
         display: flex;
@@ -112,10 +142,17 @@
         @include tablet{
             justify-content: start;
             width: auto;
+            flex-grow: 1;
+            justify-content: space-around;
         }
     }
 }
 .col {
+    margin-bottom: 1rem;
+    @include tablet {
+        margin-bottom: 0;
+        display: flex;
+    }
     &__title {
         font-size: 0.7rem;
         color: $secondary-slate;
@@ -123,6 +160,7 @@
 
         @include tablet {
             margin-bottom: 0.5rem;
+            display: none;
         }
     }
 
@@ -132,6 +170,27 @@
         @include tablet {
             font-size: 0.85rem;
         }
+    }
+    &__title-header {
+        font-size: 0.8rem;
+        color: $secondary-slate;
+    }
+    &__btn {
+        margin-left: 0.2rem;
+        width:17px;
+    }
+    &__inventory-name {
+        color: $primary-indigo;
+        font-weight: 600;
+        display: flex;
+        &__btn {
+            width: 20px;
+        }
+    }
+}
+.w-50 {
+    @include tablet {
+        width: 50%;
     }
     
 }
