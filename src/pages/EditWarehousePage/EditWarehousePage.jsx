@@ -23,9 +23,10 @@ const EditWarehousePage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/warehouses/${id}`)
+      .get(`http://localhost:8080/warehouse/${id}`)
       .then((response) => {
         const warehouseData = response.data;
+        console.log(warehouseData);
         setFormData(warehouseData);
         // setFormData({
         // warehouse_name: warehouseData.warehouse_name,
@@ -41,7 +42,7 @@ const EditWarehousePage = () => {
       .catch((error) => {
         console.error("Error fetching warehouse data", error);
       });
-  }, [id]);
+  }, []);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -52,8 +53,27 @@ const EditWarehousePage = () => {
   };
 
   const handleSubmit = () => {
+    const {
+      warehouse_name,
+      address,
+      city,
+      country,
+      contact_name,
+      contact_phone,
+      contact_position,
+      contact_email,
+    } = formData;
     axios
-      .put(`http://localhost:8080/warehouses/${id}`, formData)
+      .put(`http://localhost:8080/warehouse/${id}`, {
+        warehouse_name,
+        address,
+        city,
+        country,
+        contact_name,
+        contact_phone,
+        contact_position,
+        contact_email,
+      })
       .then((response) => {
         console.log("Warehouse updated successfully", response.data);
       })
