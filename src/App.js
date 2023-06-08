@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      {/* Header */}
         <Header />
-
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/inventory" element={<InventoryPage />} />
@@ -43,7 +43,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
