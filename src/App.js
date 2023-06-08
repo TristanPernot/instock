@@ -19,7 +19,6 @@ import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import WarehouseWithInventories from "./pages/WarehouseWithInventories/WarehouseWithInventories";
 import Ditailsform from "./components/DetailsForm/Ditailsform";
-import Ditailsform from "./components/DetailsForm/Ditailsform";
 
 import InventoryList from "./components/InventoryList/InventoryList";
 import EditInventory from "./components/EditInventory/EditInventory";
