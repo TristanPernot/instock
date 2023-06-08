@@ -21,7 +21,6 @@ const AddNewWarehouseForm = () => {
   const [empty, setEmpty] = useState(false);
   const navigate = useNavigate();
 
-
   const handleChangeWarehouse = (event) => {
     setWarehouse(event.target.value);
   };
@@ -54,11 +53,10 @@ const AddNewWarehouseForm = () => {
     setEmail(event.target.value);
   };
 
-
   const validatePhoneNumber = (value) =>
     /^[0-9]*$/.test(value) && value.length >= 10;
 
-    const validateEmail = (value) =>
+  const validateEmail = (value) =>
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value);
 
   const isFormValid = () => {
@@ -75,12 +73,12 @@ const AddNewWarehouseForm = () => {
       return setEmpty(true);
     }
     setEmpty(false);
-  
+
     if (!validatePhoneNumber(phoneNumber)) {
       return setPhoneError(true);
     }
     setPhoneError(false);
-  
+
     if (!validateEmail(email)) {
       return setEmailError(true);
     }
@@ -94,7 +92,8 @@ const AddNewWarehouseForm = () => {
     event.preventDefault();
 
     if (isFormValid()) {
-      axios.post(`http://localhost:8080/warehouse`, {
+      axios
+        .post(`http://localhost:8080/warehouse`, {
           warehouse_name: warehouse,
           address: streetAddress,
           city: city,
@@ -103,7 +102,8 @@ const AddNewWarehouseForm = () => {
           contact_position: position,
           contact_phone: phoneNumber,
           contact_email: email,
-        }).then(() => {
+        })
+        .then(() => {
           alert("Warehouse successfully added, redirecting to homepage.");
           return setTimeout(() => {
             navigate("/");
@@ -111,9 +111,9 @@ const AddNewWarehouseForm = () => {
         })
         .catch((error) => {
           console.log(error);
-        }) 
+        });
     } else {
-      alert("Please check your form")
+      alert("Please check your form");
     }
   };
   const handleCancel = () => {
@@ -124,7 +124,7 @@ const AddNewWarehouseForm = () => {
     <section className="add-form-wrapper">
       <div className="add-form-wrapper__heading">
         <Link to="/">
-          <img src={ArrowBack} alt="ArrowBackButton" />
+          <img className="back__btn" src={ArrowBack} alt="ArrowBackButton" />
         </Link>
         <h1 className="add-form-wrapper__warehouse">Add New Warehouse</h1>
       </div>
