@@ -101,16 +101,18 @@ const WarehouseWithInventories = () => {
                 {
                     inventories.map((inventory) => {
                         return (
-                            <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
-                                <div  className="inventory__item">
+                            
+                                <div key={inventory.id} className="inventory__item">
                                 {/* One */}
                                 <div className="inventory__left">
                                     <div className="col w-50">
                                         <p className="col__title">INVENTORY ITEM</p>
-                                        <div className="col__info col__inventory-name">
-                                            <p>{inventory.item_name}</p>
-                                            <img className="col__inventory-name__btn" src={FowardIcon} alt="Menu Icon"/>
-                                        </div>
+                                        <Link  to={`/inventory/${inventory.id}`}>
+                                            <div className="col__info col__inventory-name">
+                                                <p>{inventory.item_name}</p>
+                                                <img className="col__inventory-name__btn" src={FowardIcon} alt="Menu Icon"/>
+                                            </div>
+                                        </Link>
                                     </div>
                                     <div className="col">
                                         <p className="col__title">CATEGORY</p>
@@ -133,12 +135,15 @@ const WarehouseWithInventories = () => {
                                     <button className="inventory__btn">
                                         <img className="inventory__deleteBtn" src={DeleteIcon} alt="Delete Icon"/>
                                     </button>
-                                    <button className="inventory__btn">
-                                        <img src={BlueEditIcon} alt="Edit Icon"/>
-                                    </button>
+                                    <Link to={`/editInventory/${inventory.id}`}>
+                                        <button className="inventory__btn">
+                                            <img src={BlueEditIcon} alt="Edit Icon"/>
+                                        </button>
+                                    </Link>
+ 
                                 </div>
                             </div>
-                        </Link>
+                        
                         )
                     })
                 }

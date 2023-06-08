@@ -64,7 +64,7 @@ const EditWarehousePage = () => {
     return (
         <div className="form">
         <div className="form__header">
-            <Link to="/warehouses">
+            <Link to="/">
             <img src={BackIcon} alt="Back Icon" />
             </Link>
             <div className="form__title">Edit Warehouse</div>
