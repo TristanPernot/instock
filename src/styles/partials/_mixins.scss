@@ -33,7 +33,7 @@
   background: url("../../assets/Icons/search-24px.svg") no-repeat;
   background-position: right;
   height: 36px;
-  border-color: $secondary-cloud;
+  border: 1px solid $secondary-cloud;
 
   @include tablet {
     height: 38px;
