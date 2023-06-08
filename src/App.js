@@ -15,9 +15,9 @@ import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import WarehouseWithInventories from "./pages/WarehouseWithInventories/WarehouseWithInventories";
 // import Ditailsform from './components/DetailsForm/Ditailsform';
-import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
-import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
-import InventoryList from "./components/InventoryList/InventoryList";
+// import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
+// // import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+// import InventoryList from "./components/InventoryList/InventoryList";
 // App Components
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
-         </div>
+    </div>
   );
 }
 
