@@ -32,8 +32,10 @@
         }
     }
     &__title{
-        margin: 3.75rem;
-        font-size: 1.75rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
     }
     &__text{
         margin-bottom: 22rem;
@@ -55,13 +57,13 @@
         min-height: 2.25rem;
         border-radius: 1.25rem;
         color: $secondary-slate;
-        font-weight: 600;
         border: 0.0625rem;
         text-align: center;
-        
+        background-color: white;
+        border: solid 1px $secondary-cloud;
         @include tablet{
             height: 2.375rem;
-      width: 8.625rem;
+        width: 8.625rem;
         }
         &--delete{
             background-color: $supporting-red;
@@ -71,6 +73,7 @@
     }
     &__close-btn {
         position: absolute;
+        background-color: white;
         top:1.3125rem;
         right:1rem;
         border:none ;
