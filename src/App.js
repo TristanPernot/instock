@@ -3,7 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Import Components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+// Home page
 import WarehouseList from "./components/WarehouseList/WarehouseList";
+// Add warehouse page
+import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehouseForm";
 // Import Pages
 import Homepage from "./pages/Homepage/Homepage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
@@ -26,12 +29,15 @@ function App() {
       {/* Header */}
         <Header />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          {/* Homepage - Warehouse List */}
+          <Route path="/" element={<WarehouseList />} />
+          {/* Add Warehouse Page */}
+          <Route path="/addWarehouse" element={<AddNewWarehouseForm />} />
           <Route path="/inventory" element={<InventoryPage />} />
           {/* Display all inventories for a given warehouse */}
           <Route path="/warehouse/:id" element={<WarehouseWithInventories />} />
           <Route path="/inventory/:id" element={<InventoryDetail />} />
-          <Route path="/addWarehouse" element={<AddWarehousePage />} />
+          
           <Route path="/addInventory" element={<AddInventoryPage />} />
           {/*<Route path="/Ditailsform" element={<Ditailsform/>}/>
           <Route path="/AddNewWarehouseForm" element={<AddNewWarehouseForm/>}/>
