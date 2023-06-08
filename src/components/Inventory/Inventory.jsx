@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "../Inventory/Inventory.scss";
@@ -63,7 +64,9 @@ function Inventory() {
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
                 <li className="inventory__tableItems" id="itemName">
-                  {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                  <Link to="/" className="inventory__itemDetails">
+                    {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                  </Link>
                 </li>
               </div>
               <div className="inventory__table">
@@ -114,18 +117,22 @@ function Inventory() {
               <li className="inventory__tableItems">
                 <div className="inventory__iconTablet">
                   <div className="inventory__icons">
-                    <img
-                      src={deleteIcon}
-                      alt="delete"
-                      className="inventory_iconImage"
-                    />
+                    <Link to="/" className="inventory__delete">
+                      <img
+                        src={deleteIcon}
+                        alt="delete"
+                        className="inventory_iconImage"
+                      />
+                    </Link>
                   </div>
                   <div className="inventory__icons">
-                    <img
-                      src={editIcon}
-                      alt="edit"
-                      className="inventory_iconImage"
-                    />
+                    <Link to="/" className="inventory__edit">
+                      <img
+                        src={editIcon}
+                        alt="edit"
+                        className="inventory_iconImage"
+                      />
+                    </Link>
                   </div>
                 </div>
               </li>
