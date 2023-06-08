@@ -130,7 +130,7 @@ function Inventory() {
               placeholder="Search..."
             />
             <Link to="/inventory/add">
-              <button className="inventory__button">+Add New Item</button>
+              <button className="inventory__button">+ Add New Item</button>
             </Link>
           </div>
         </div>
@@ -155,7 +155,12 @@ function Inventory() {
                       to={`/inventory/${inventory.id}`}
                       className="inventory__itemDetails"
                     >
-                      {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                      {inventory.item_name}{" "}
+                      <img
+                        src={goToIcon}
+                        alt="goTo"
+                        className="inventory__chevron"
+                      />
                     </Link>
                   </li>
                 </div>
