@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      {/* Header */}
+        {/* Header */}
         <Header />
         <Routes>
           {/* Homepage - Warehouse List */}
@@ -43,7 +43,7 @@ function App() {
           {/* Inventory Detail */}
           <Route path="/inventory/:id" element={<InventoryDetail />} />
           {/* Edit Inventory */}
-          <Route path="/editInventory/:id"element={<EditInventory/>}/>
+          <Route path="/editInventory/:id" element={<EditInventory />} />
 
           <Route path="/addInventory" element={<AddInventoryPage />} />
           <Route path="/Ditailsform" element={<Ditailsform />} />
@@ -52,7 +52,7 @@ function App() {
             element={<AddNewWarehouseForm />}
           />
           <Route path="/inventory/add" element={<AddNewInventoryItem />} />
-          <Route path="/InventoryList"element={<InventoryList/>}/>
+          <Route path="/InventoryList" element={<InventoryList />} />
           <Route path="/InventoryList" element={<InventoryList />} />
           <Route path="/EditInventory" element={<EditInventory />} />
           <Route path="*" element={<NotFoundPage />} />

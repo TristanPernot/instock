@@ -1,0 +1,104 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+@media (min-width: 768px) {
+  .details {
+    border-right: 1px solid #bdc5d5;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 1.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .details {
+    padding: 0 2.5rem;
+  }
+}
+.details__title {
+  padding: 0 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .details__title {
+    padding: 0 0 2rem;
+  }
+}
+.details__label {
+  display: block;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+}
+.details__input {
+  border: 1px solid #bdc5d5;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 2.25rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .details__input {
+    height: 2.375rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.details__input:focus {
+  outline: #2e66e5 solid 1px;
+}
+.details__desc-input {
+  border: 1px solid #bdc5d5;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 7.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  resize: none;
+}
+@media (min-width: 768px) {
+  .details__desc-input {
+    margin-bottom: 1.5rem;
+  }
+}
+.details__desc-input:focus {
+  outline: #2e66e5 solid 1px;
+}
+.details__select-wrap {
+  position: relative;
+}
+.details__select-wrap::after {
+  content: url("../../assets/Icons/arrow_drop_down-24px.svg");
+  fill: #5c667e;
+  font-size: 1rem;
+  top: 6px;
+  right: 1.25rem;
+  position: absolute;
+}
+.details__select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #bdc5d5;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 2.25rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .details__select {
+    height: 2.375rem;
+  }
+}
+.details__select:focus {
+  outline: #2e66e5 solid 1px;
+}
+
+.error {
+  outline: #c94515 solid 1px;
+}
+
+.details__required {
+  display: none;
+}
+
+.show {
+  display: flex;
+}/*# sourceMappingURL=ItemDetailsForm.css.map */

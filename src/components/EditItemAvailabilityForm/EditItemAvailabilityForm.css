@@ -1,0 +1,105 @@
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap";
+@media (min-width: 768px) {
+  .avail {
+    width: 100%;
+    padding: 0 2rem;
+    margin: 1.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .avail {
+    padding: 0 2.5rem;
+  }
+}
+.avail__title {
+  padding: 0 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .avail__title {
+    padding: 0 0 2rem;
+  }
+}
+.avail__label {
+  display: block;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+}
+.avail__input {
+  border: 1px solid #bdc5d5;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 2.25rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .avail__input {
+    height: 2.375rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.avail__input:focus {
+  outline: #ffffff solid 1px;
+}
+.avail__radio-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .avail__radio-container {
+    padding-bottom: 1.625rem;
+  }
+}
+.avail__radio-set {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+}
+.avail__radio {
+  height: 1rem;
+  width: 1rem;
+}
+.avail__radio-label {
+  font-size: 0.8125rem;
+  padding-left: 0.5rem;
+}
+.avail__select-wrap {
+  position: relative;
+}
+.avail__select-wrap::after {
+  content: url("../../assets/Icons/arrow_drop_down-24px.svg");
+  fill: #5c667e;
+  font-size: 1rem;
+  top: 6px;
+  right: 1.25rem;
+  position: absolute;
+}
+.avail__warehouse {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #bdc5d5;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 2.25rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .avail__warehouse {
+    height: 2.375rem;
+  }
+}
+.avail__warehouse:focus {
+  outline: #ffffff solid 1px;
+}
+
+.error {
+  outline: #c94515 solid 1px;
+}
+
+.out-of-stock {
+  display: none;
+}/*# sourceMappingURL=EditItemAvailabilityForm.css.map */
