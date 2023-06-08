@@ -4,16 +4,18 @@
 .inventory {
   font-family: "Titillium Web", sans-serif;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
-  margin: 1rem;
+  max-width: 60%;
+  margin: auto;
+
   @include tablet {
     margin: 2rem;
+    max-width: 100%;
   }
 
   &__header {
     font-size: 2rem;
   }
   &__container {
-    max-width: 21rem;
     margin: auto;
 
     @include tablet {
@@ -69,14 +71,22 @@
 
   &__mobileContainer1 {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
     @include tablet {
       display: flex;
       flex-direction: row;
       flex: 2;
     }
   }
-  //
+  &__test {
+    display: flex;
+    padding-left: 2rem;
+    @include tablet {
+      flex: 2;
+      padding-left: 0;
+    }
+  }
   &__mobileContainer2,
   &__mobileContainer3 {
     padding-right: 3.5rem;
@@ -85,6 +95,14 @@
       display: flex;
       flex-direction: row;
       flex: 3;
+    }
+  }
+
+  &__mobileContainer4 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include tablet {
+      padding: 0;
     }
   }
 
@@ -97,19 +115,45 @@
     }
   }
 
-  &__tableHeader {
-    list-style: none;
+  &__tabletFirstHeader {
+    display: none;
+
     @include tablet {
+      display: inline;
       background-color: $background-light-grey;
       font-size: 1rem;
       padding-top: 0.68rem;
       padding-bottom: 0.68rem;
-      display: flex;
-
-      align-items: center;
+      flex: 1;
     }
   }
 
+  &__tabletContainer1 {
+    display: flex;
+  }
+  &__tableHeader {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__stock {
+    list-style: none;
+
+    background-color: rgba(21, 132, 99, 0.07);
+    color: $supporting-green;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
+  &__stock--red {
+    list-style: none;
+
+    background-color: rgba(201, 69, 21, 0.07);
+    color: $supporting-red;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
   &__table {
     padding-top: 1rem;
     @include tablet {
@@ -123,7 +167,6 @@
 
     @include tablet {
       height: 3rem;
-      padding-left: 2rem;
       margin-top: 1rem;
     }
 
@@ -141,11 +184,11 @@
 
   #itemName {
     color: $primary-indigo;
+    padding-left: 2rem;
   }
 
   #actions {
-    flex: 1;
-    // position: absolute;
+    display: none;
   }
   &__listContainer {
     border-top: 2px solid $secondary-cloud;
@@ -166,22 +209,5 @@
     @include tablet {
       display: inline;
     }
-  }
-}
-
-.inventory {
-  &__stock {
-    background-color: rgba(21, 132, 99, 0.07);
-    color: $supporting-green;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
-  }
-  &__stock--red {
-    background-color: rgba(201, 69, 21, 0.07);
-    color: $supporting-red;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
   }
 }

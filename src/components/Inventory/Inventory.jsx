@@ -39,6 +39,22 @@ function Inventory() {
     console.log(inventoryData);
   }, [inventoryData]);
 
+  const headers = [
+    "INVENTORY ITEM",
+    "CATEGORY",
+    "STATUS",
+    "QTY",
+    "WAREHOUSE",
+    "ACTIONS",
+  ];
+
+  const headerElements = headers.map((header) => (
+    <ul key={header} className="inventory__tabletFirstHeader">
+      {header}
+      <img src={sortIcon} alt="sort" className="inventory__sort" />
+    </ul>
+  ));
+
   return (
     <div className="inventory">
       <div className="inventory__container">
@@ -54,88 +70,117 @@ function Inventory() {
           </div>
         </div>
       </div>
+      <div className="inventory__tabletContainer1">{headerElements}</div>
       {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
           <div className="inventory__mobileContainer1">
-            <div className="inventory__mobileContainer2">
-              <div className="inventory__table">
-                <ul className="inventory__tableHeader">
-                  INVENTORY ITEM
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </ul>
-                <li className="inventory__tableItems" id="itemName">
-                  <Link to="/" className="inventory__itemDetails">
-                    {inventory.item_name} <img src={goToIcon} alt="goTo" />
-                  </Link>
-                </li>
+            <div className="inventory__test">
+              <div className="inventory__mobileContainer2">
+                <div className="inventory__table">
+                  <ul className="inventory__tableHeader">
+                    INVENTORY ITEM
+                    <img
+                      src={sortIcon}
+                      alt="sort"
+                      className="inventory__sort"
+                    />
+                  </ul>
+                  <li className="inventory__tableItems" id="itemName">
+                    <Link to="/" className="inventory__itemDetails">
+                      {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                    </Link>
+                  </li>
+                </div>
+                <div className="inventory__table">
+                  <ul className="inventory__tableHeader">
+                    CATEGORY
+                    <img
+                      src={sortIcon}
+                      alt="sort"
+                      className="inventory__sort"
+                    />
+                  </ul>
+                  <li className="inventory__tableItems">
+                    {inventory.category}
+                  </li>
+                </div>
               </div>
-              <div className="inventory__table">
-                <ul className="inventory__tableHeader">
-                  CATEGORY
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </ul>
-                <li className="inventory__tableItems">{inventory.category}</li>
+              <div className="inventory__mobileContainer3">
+                <div className="inventory__table">
+                  <ul className="inventory__tableHeader">
+                    STATUS
+                    <img
+                      src={sortIcon}
+                      alt="sort"
+                      className="inventory__sort"
+                    />
+                  </ul>
+                  <li
+                    className={
+                      inventory.quantity > 0
+                        ? "inventory__stock"
+                        : "inventory__stock--red"
+                    }
+                  >
+                    {inventory.status.toUpperCase()}
+                  </li>
+                </div>
+                <div className="inventory__table">
+                  <ul className="inventory__tableHeader">
+                    QTY
+                    <img
+                      src={sortIcon}
+                      alt="sort"
+                      className="inventory__sort"
+                    />
+                  </ul>
+                  <li className="inventory__tableItems">
+                    {inventory.quantity}
+                  </li>
+                </div>
+                <div className="inventory__table">
+                  <ul className="inventory__tableHeader">
+                    WAREHOUSE
+                    <img
+                      src={sortIcon}
+                      alt="sort"
+                      className="inventory__sort"
+                    />
+                  </ul>
+                  <li className="inventory__tableItems">
+                    {inventory.warehouse_name}
+                  </li>
+                </div>
               </div>
             </div>
-            <div className="inventory__mobileContainer3">
+            <div className="inventory__mobileContainer4">
               <div className="inventory__table">
-                <ul className="inventory__tableHeader">
-                  STATUS
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </ul>
-                <li
-                  className={
-                    inventory.quantity > 0
-                      ? "inventory__tableHeader inventory__stock"
-                      : "inventory__tableHeader inventory__stock--red"
-                  }
-                >
-                  {inventory.status.toUpperCase()}
-                </li>
-              </div>
-              <div className="inventory__table">
-                <ul className="inventory__tableHeader">
-                  QTY
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
-                </ul>
-                <li className="inventory__tableItems">{inventory.quantity}</li>
-              </div>
-              <div className="inventory__table">
-                <ul className="inventory__tableHeader">
-                  WAREHOUSE
-                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                <ul className="inventory__tableHeader" id="actions">
+                  ACTIONS
                 </ul>
                 <li className="inventory__tableItems">
-                  {inventory.warehouse_name}
+                  <div className="inventory__iconTablet">
+                    <div className="inventory__icons">
+                      <Link to="/" className="inventory__delete">
+                        <img
+                          src={deleteIcon}
+                          alt="delete"
+                          className="inventory_iconImage"
+                        />
+                      </Link>
+                    </div>
+                    <div className="inventory__icons">
+                      <Link to="/" className="inventory__edit">
+                        <img
+                          src={editIcon}
+                          alt="edit"
+                          className="inventory_iconImage"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </li>
               </div>
-            </div>
-            <div className="inventory__table">
-              <ul className="inventory__tableHeader" id="actions">
-                ACTIONS
-              </ul>
-              <li className="inventory__tableItems">
-                <div className="inventory__iconTablet">
-                  <div className="inventory__icons">
-                    <Link to="/" className="inventory__delete">
-                      <img
-                        src={deleteIcon}
-                        alt="delete"
-                        className="inventory_iconImage"
-                      />
-                    </Link>
-                  </div>
-                  <div className="inventory__icons">
-                    <Link to="/" className="inventory__edit">
-                      <img
-                        src={editIcon}
-                        alt="edit"
-                        className="inventory_iconImage"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </li>
             </div>
           </div>
         </div>
