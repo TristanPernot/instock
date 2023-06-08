@@ -27,6 +27,7 @@ const WarehouseWithInventories = () => {
             .then((response) => setInventories(response.data))
             .catch((error) => console.log(error))
     }, [])
+    // Delete Inventory
     return (
         <div className="warehouseInventories">
             {/* Header */}
