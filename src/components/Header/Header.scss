@@ -3,6 +3,20 @@
 
 .header {
     display: flex;
+<<<<<<< HEAD
+    justify-content: center;
+    gap: 40rem;
+  }
+  &__logo {
+    background-image: url(../../assets/Logo/InStock-Logo.svg);
+    width: 12rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9rem;
+=======
     flex-direction: column;
     align-items: center;
     background-color: green;
@@ -12,6 +26,7 @@
     padding: 1rem 1rem;
 
 
+>>>>>>> develop
     @include tablet {
         flex-direction: row;
         align-items: flex-start;
