@@ -1,75 +1,62 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.InventoryList {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.1875rem;
+  width: 100%;
+  margin-top: -4rem;
+  bottom: 4rem;
+  background-color: $primary-white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
-// $primary-black: #13182c;
-// $primary-indigo: #2e66e5;
-// $primary-white: #ffffff;
-
-// $secondary-slate: #5c667e;
-// $secondary-cloud: #bdc5d5;
-
-// $background-graphite: #232940;
-// $background-light-grey: #f7f8f9;
-// $background-color-light: #f7f8f9;
-
-
-.InventoryList{
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.1875rem;
-    width: 100%;
-    margin-top: -4rem;
-    bottom: 4rem;
-    background-color: $primary-white;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-
-@include tablet {
+  @include tablet {
     margin-top: -5.55rem;
   }
-  &__box{
+  &__box {
     padding-top: 2rem;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-    @include tablet{
-    padding:1rem
+    @include tablet {
+      padding: 1rem;
+    }
   }
-}
-&__search {
+  &__search {
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
     padding-right: 1rem;
     gap: 1rem;
     @include tablet {
-       flex-direction: row;
-       padding: 0.4rem;
-        }
-}
-&__btn{
+      flex-direction: row;
+      padding: 0.4rem;
+    }
+  }
+  &__btn {
     display: flex;
     align-items: center;
     background: $primary-indigo;
     border-radius: 20px;
     border: 1px solid transparent;
-    color:$primary-white ;
+    color: $primary-white;
     padding: 0.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     justify-content: center;
-    &:hover{
-        background-color: $background-graphite;
+    &:hover {
+      background-color: $background-graphite;
     }
     @include tablet {
-        margin: 0;
-        width: 35%;
-        height: 38px;
-      }
-  
-      @include desktop {
-        width: 25%;
-      }
-}
-&__form {
+      margin: 0;
+      width: 35%;
+      height: 38px;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+  &__form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -220,7 +207,7 @@
   }
 
   &__tag {
-   color: $supporting-green;
+    color: $supporting-green;
     background: rgba(21, 132, 99, 0.07);
     height: 1.5rem;
     font-size: 0.6875rem;
@@ -255,5 +242,3 @@
     cursor: pointer;
   }
 }
-
-

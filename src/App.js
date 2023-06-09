@@ -10,12 +10,9 @@ import AddNewWarehouseForm from "./components/AddNewWarehouseForm/AddNewWarehous
 // Edit warehouse page
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 // Import Pages
-import Homepage from "./pages/Homepage/Homepage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import SingleWarehousePage from "./pages/SingleWarehousePage/SingleWarehousePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import InventoryDetail from "./pages/InventoryDetail/InventoryDetail";
-import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import WarehouseWithInventories from "./pages/WarehouseWithInventories/WarehouseWithInventories";
 import Ditailsform from "./components/DetailsForm/Ditailsform";

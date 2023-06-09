@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./EditWarehousePage.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -26,18 +26,7 @@ const EditWarehousePage = () => {
       .get(`http://localhost:8080/warehouse/${id}`)
       .then((response) => {
         const warehouseData = response.data;
-        console.log(warehouseData);
         setFormData(warehouseData);
-        // setFormData({
-        // warehouse_name: warehouseData.warehouse_name,
-        // address: warehouseData.address,
-        // city: warehouseData.city,
-        // country: warehouseData.country,
-        // contact_name: warehouseData.contact_name,
-        // contact_position: warehouseData.contact_position,
-        // contact_phone: warehouseData.contact_phone,
-        // contact_email: warehouseData.contact_email,
-        // });
       })
       .catch((error) => {
         console.error("Error fetching warehouse data", error);
@@ -63,7 +52,16 @@ const EditWarehousePage = () => {
       contact_position,
       contact_email,
     } = formData;
-    if (!warehouse_name || !address || !city || !country || !contact_name || !contact_phone || !contact_position || !contact_email) {
+    if (
+      !warehouse_name ||
+      !address ||
+      !city ||
+      !country ||
+      !contact_name ||
+      !contact_phone ||
+      !contact_position ||
+      !contact_email
+    ) {
       return alert("Please enter all the required fields");
     }
     axios
@@ -78,7 +76,7 @@ const EditWarehousePage = () => {
         contact_email,
       })
       .then((response) => {
-        alert(`Successfully edit the warehouse with id ${id}`)
+        alert(`Successfully edit the warehouse with id ${id}`);
         navigate(-1);
       })
       .catch((error) => {
@@ -89,8 +87,13 @@ const EditWarehousePage = () => {
   return (
     <div className="editForm">
       <div className="editForm__header">
-          <img className="back__btn" onClick={() => navigate(-1)} src={BackIcon} alt="Back Icon" />
-          <div className="editForm__title">Edit Warehouse</div>
+        <img
+          className="back__btn"
+          onClick={() => navigate(-1)}
+          src={BackIcon}
+          alt="Back Icon"
+        />
+        <div className="editForm__title">Edit Warehouse</div>
       </div>
       <div className="editForm__content">
         <div className="editForm__left">
@@ -207,8 +210,16 @@ const EditWarehousePage = () => {
         </div>
       </div>
       <div className="editForm__buttons">
-          <div onClick={()=>navigate(-1)} className="editForm__btn editForm__cancel-btn">Cancel</div>
-        <div className="editForm__btn editForm__save-btn" onClick={handleSubmit}>
+        <div
+          onClick={() => navigate(-1)}
+          className="editForm__btn editForm__cancel-btn"
+        >
+          Cancel
+        </div>
+        <div
+          className="editForm__btn editForm__save-btn"
+          onClick={handleSubmit}
+        >
           Save
         </div>
       </div>

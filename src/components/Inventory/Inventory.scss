@@ -38,7 +38,8 @@
   &__searchContainer {
     display: flex;
     flex-direction: column;
-
+    padding-left: 2rem;
+    padding-right: 2rem;
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
@@ -60,7 +61,6 @@
     @include tablet {
       display: inline;
       margin-right: 1rem;
-      // max-width: 11rem;
       flex: 2;
     }
   }

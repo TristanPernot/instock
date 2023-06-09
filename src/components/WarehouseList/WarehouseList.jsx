@@ -18,7 +18,6 @@ function WarehouseList() {
     axios
       .get(`http://localhost:8080/warehouse`)
       .then((response) => {
-        console.log(response.data);
         setWarehouse(response.data);
       })
       .catch((err) => console.log(err));
