@@ -2,9 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .inventory {
-  background-color: $primary-white;
   padding-top: 2rem;
-
+  background-color: $primary-white;
   font-family: "Titillium Web", sans-serif;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
   max-width: 60%;
@@ -110,7 +109,7 @@
       padding-right: 0;
       display: flex;
       flex-direction: row;
-      flex: 3;
+      flex: 2;
     }
   }
 
@@ -227,12 +226,39 @@
     display: none;
   }
 
+  #testHeader {
+    @include tablet {
+      background-color: $background-light-grey;
+
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+  }
   #firstItemHeader {
     padding-left: 2rem;
   }
 
   #lastItemHeader {
     padding-right: 2rem;
+  }
+
+  #column1 {
+    width: 91px;
+    height: 18px;
+    left: 64px;
+    top: 197px;
+  }
+
+  #column2 {
+    width: 56px;
+    height: 18px;
+    left: 214px;
+    top: 197px;
+  }
+
+  #column3 {
+    width: 49px;
+    height: 18px;
   }
 
   &__listContainer {
