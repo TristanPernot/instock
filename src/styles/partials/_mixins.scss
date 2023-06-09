@@ -38,6 +38,10 @@
   width: 90%;
   height: 2.3rem;
   padding: 0.5rem 1rem;
+  &:focus{
+    border: 1px solid #2e66e5;
+    outline: none;
+  }
   @include tablet {
     width: 27%;
   }
