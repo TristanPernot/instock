@@ -25,16 +25,6 @@ function Inventory() {
       .catch((err) => console.log(err));
   }, []);
 
-  //~~get single inventory description~~
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/inventory/:id`)
-      .then((response) => {
-        setInventoryData(response.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
   //~~ get warehouse name with ID~~
   useEffect(() => {
     if (inventoryData) {
@@ -161,7 +151,7 @@ function Inventory() {
 
             <div className="inventory__mobileContainer4">
               <div className="inventory__table" id="lastItemHeader">
-                <ul classNam="inventory__Header">ACTIONS</ul>
+                <ul className="inventory__Header">ACTIONS</ul>
               </div>
             </div>
           </div>
@@ -169,7 +159,7 @@ function Inventory() {
       </div>
       {/* inventory data */}
       {inventoryData?.map((inventory) => (
-        <div className="inventory__listContainer">
+        <div className="inventory__listContainer" key={inventory.id}>
           <div className="inventory__mobileContainer1">
             <div className="inventory__test">
               <div className="inventory__mobileContainer2">
