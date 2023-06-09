@@ -11,7 +11,7 @@ function EditInventory() {
 	// const api = process.env.REACT_APP_API_URL;
 	const { v4 } = require("uuid");
 	const navigate = useNavigate();
-	const id = useParams();
+	const {id} = useParams();
 
 	const [warehouses, setWarehouses] = useState([]);
 	const [inventories, setInventories] = useState([]);
@@ -125,7 +125,7 @@ function EditInventory() {
   //api get call function to get inventories ==move function up later
   function getInventoryItem() {
     axios
-      .get(`http://localhost:8080/inventory/${id.inventoryId}`)
+      .get(`http://localhost:8080/inventory/${id}`)
       .then((data) => {
         if (data) {
           const inventoryItem = data.data;
@@ -191,11 +191,8 @@ function EditInventory() {
 			return array.warehouse_name === selectWarehouse;
 		}
 		let warehouseId = warehouses.find(getWarehouseId);
-		//set new id variable to be able to navigate to page after
-		let newId = v4();
-
 			axios
-				.put(`http://localhost:8080/inventory/${id.inventoryId}`, {
+				.put(`http://localhost:8080/inventory/${id}`, {
 					warehouse_id: warehouseId.id,
 					item_name: itemName,
 					description: desc,
@@ -214,7 +211,7 @@ function EditInventory() {
 					setCategory("");
 					setStatus("");
 					setQuantity(0);
-					navigate(`/inventory/${id.inventoryId}`);
+					navigate(-1);
 				})
 				.catch((err) => {
 					console.error(err);
@@ -236,7 +233,7 @@ function EditInventory() {
 	}
 
 	return (
-		<section className="container">
+		<section id="editInventory__container" className="container">
 			<div className="heading">
 				<Link
 					className="heading__link"
