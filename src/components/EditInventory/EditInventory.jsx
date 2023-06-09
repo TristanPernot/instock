@@ -8,7 +8,7 @@ import EditItemAvailabilityForm from "../../components/EditItemAvailabilityForm/
 
 function EditInventory() {
 	//bring in Api address for axios calls
-	const api = process.env.REACT_APP_API_URL;
+	// const api = process.env.REACT_APP_API_URL;
 	const { v4 } = require("uuid");
 	const navigate = useNavigate();
 	const id = useParams();
@@ -85,7 +85,7 @@ function EditInventory() {
   //api get call function to get warehouses
   function getWarehouses() {
     axios
-      .get(`${api}/warehouses`)
+      .get(`http://localhost:8080/warehouse`)
       .then((data) => {
         if (data) {
           setWarehouses(data.data);
@@ -110,7 +110,7 @@ function EditInventory() {
   //api get call function to get inventories ==move function up later
   function getInventories() {
     axios
-      .get(`${api}/inventories`)
+      .get(`http://localhost:8080/inventory`)
       .then((data) => {
         if (data) {
           setInventories(data.data);
@@ -125,7 +125,7 @@ function EditInventory() {
   //api get call function to get inventories ==move function up later
   function getInventoryItem() {
     axios
-      .get(`${api}/inventories/${id.inventoryId}`)
+      .get(`http://localhost:8080/inventory/${id.inventoryId}`)
       .then((data) => {
         if (data) {
           const inventoryItem = data.data;
@@ -195,7 +195,7 @@ function EditInventory() {
 		let newId = v4();
 
 			axios
-				.put(`${api}/inventories/${id.inventoryId}`, {
+				.put(`http://localhost:8080/inventory/${id.inventoryId}`, {
 					warehouse_id: warehouseId.id,
 					item_name: itemName,
 					description: desc,
