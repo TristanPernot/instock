@@ -28,7 +28,7 @@ const InventoryDetail = () => {
       {/* Header */}
         <div className="item__header">
             <div className="item__left">
-            <img onClick={() => navigate(-1)} src={BackIcon} alt="Back Icon" />
+            <img className="back__btn" onClick={() => navigate(-1)} src={BackIcon} alt="Back Icon" />
             <div className="form__title">{item?.item_name}</div>
             </div>
                     <Link to={`/editInventory/${item.id}`}>
