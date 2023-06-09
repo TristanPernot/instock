@@ -90,16 +90,21 @@
   }
   &__test {
     display: flex;
-    padding-left: 2rem;
     justify-content: space-around;
     @include tablet {
       flex: 2;
       padding-left: 0;
     }
   }
+  &__chevron {
+    width: 16px;
+  }
+  &__itemDetails {
+    display: flex;
+    align-items: center;
+  }
   &__mobileContainer2,
   &__mobileContainer3 {
-    padding-right: 3rem;
     @include tablet {
       padding-right: 0;
       display: flex;
@@ -180,6 +185,7 @@
   }
   &__tableItems {
     list-style: none;
+    font-size: 0.8rem;
 
     @include tablet {
       height: 3rem;
