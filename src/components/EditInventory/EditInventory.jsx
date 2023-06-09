@@ -12,10 +12,7 @@ function EditInventory() {
   const { v4 } = require("uuid");
   const navigate = useNavigate();
   const { id } = useParams();
-	//bring in Api address for axios calls
-	const { v4 } = require("uuid");
-	const navigate = useNavigate();
-	const {id} = useParams();
+	
 
   const [warehouses, setWarehouses] = useState([]);
   const [inventories, setInventories] = useState([]);
