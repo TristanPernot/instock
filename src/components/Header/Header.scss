@@ -9,7 +9,8 @@
     height: 12.5rem;
     background-color: $background-graphite;
     margin: 0 -1rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+
 
     @include tablet {
         flex-direction: row;
@@ -17,12 +18,12 @@
         height: 11.625rem;
         justify-content: space-between;
         margin: 0 -2rem;
-        padding: 0 2rem;
+        padding: 0 4rem;
     }
 
     @include desktop {
         margin: 0 -8.125rem;
-        padding: 0 8.125rem;
+        padding: 0 16.25rem;
     }
 
     &__img {

@@ -31,7 +31,7 @@
 @mixin searchbar {
   border-radius: 20px;
   background: url("../../assets/Icons/search-24px.svg") no-repeat;
-  background-position: right;
+  background-position: center right 1rem;
   height: 36px;
   border: 1px solid $secondary-cloud;
 
@@ -39,7 +39,7 @@
     height: 38px;
     padding-left: 1rem;
     padding-right: 1rem;
-    width: 100%;
+    width: 27%;
   }
 }
 
@@ -67,7 +67,6 @@
   height: 1.6rem;
   width: fit-content;
 }
-
 
 // Body Font Sizes for mobile (just for p tags) //
 
