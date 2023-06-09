@@ -29,43 +29,49 @@
 
 // searchbar
 @mixin searchbar {
-  border-radius: 20px;
+  border-radius: 2rem;
   background: url("../../assets/Icons/search-24px.svg") no-repeat;
   background-position: center right 1rem;
-  height: 36px;
+
   border: 1px solid $secondary-cloud;
 
+  width: 90%;
+  height: 2.3rem;
+  padding: 0.5rem 1rem;
   @include tablet {
-    height: 38px;
-    padding-left: 1rem;
-    padding-right: 1rem;
     width: 27%;
+  }
+  @include desktop {
+    width: 35%;
   }
 }
 
 // button
 @mixin button {
-  border-radius: 20px;
+  border-radius: 2rem;
   background-color: $primary-indigo;
   color: $primary-white;
   border: none;
-  height: 36px;
+  height: 2.3rem;
+  font-weight: 600;
 
   &:hover {
     background-color: $background-graphite;
-  }
-  @include tablet {
-    height: 38px;
   }
 }
 
 //tags
 @mixin stock {
-  border-radius: 20px;
-  padding-right: 8px;
-  padding-left: 8px;
-  height: 1.6rem;
+  list-style: none;
   width: fit-content;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  @include tablet{
+    margin-top: 1rem;
+  }
 }
 
 // Body Font Sizes for mobile (just for p tags) //
