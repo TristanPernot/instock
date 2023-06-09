@@ -53,6 +53,9 @@
     }
   }
 
+  &__Header {
+    display: flex;
+  }
   &__searchbar {
     @include searchbar;
     display: flex;
@@ -237,7 +240,6 @@
   }
 
   #lastItemHeader {
-    padding-top: 0.2rem;
     padding-right: 2.7rem;
     padding-left: 0;
   }

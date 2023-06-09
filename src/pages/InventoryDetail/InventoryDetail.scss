@@ -86,6 +86,10 @@
     }
   }
 
+  &__Header {
+    display: flex;
+  }
+
   &__right {
     @include tablet {
       padding: 0 2rem;
