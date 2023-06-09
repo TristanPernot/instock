@@ -7,17 +7,6 @@
   padding: 0px;
   font-family: "Titillium Web", sans-serif;
 }
-.App {
-  padding: 0 1rem;
-
-  @include tablet {
-    padding: 0 2rem;
-  }
-
-  @include desktop {
-    padding: 0 8.125rem;
-  }
-}
 
 h1 {
   font-size: 1.75rem;
