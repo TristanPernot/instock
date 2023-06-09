@@ -111,6 +111,19 @@
         background-color: $primary-indigo;
         color: white;
     }
+    &__error {
+        display: flex;
+        gap: 0.3rem;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+    &__errorMsg{
+        color: red;
+        font-size: 0.8rem;
+    }
+    &__errorBtn {
+        width: 20px;
+    }
 }
 .back__btn {
     transition: transform 0.3s;
