@@ -1,5 +1,5 @@
 // import "./InventoryItemErrorMessage.scss"
-import ErrorLogo from "../../assets/Icons/error-24px.svg"
+import ErrorLogo from "../../assets/Icons/error-24px.svg";
 
 function InventoryItemErrorMessage() {
   return (
