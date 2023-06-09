@@ -96,30 +96,15 @@ function Inventory() {
     setDeleteModalInfo({});
   }
 
-  // add header to tablet/desktop view - might delete later.
-  // const headers = [
-  //   "INVENTORY ITEM",
-  //   "CATEGORY",
-  //   "STATUS",
-  //   "QTY",
-  //   "WAREHOUSE",
-  //   "ACTIONS",
-  // ];
-
-  // const headerElements = headers.map((header) => (
-  //   <ul key={header} className="inventory__tabletFirstHeader">
-  //     {header}
-  //     <img src={sortIcon} alt="sort" className="inventory__sort" />
-  //   </ul>
-  // ));
-
   return (
     <div className="inventory">
+      {/* delete cancel/confirm functionality */}
       <DeleteModal
         deleteModalInfo={deleteModalInfo}
         onCancel={onDeleteModalCancel}
         onConfirm={onDeleteModalConfirm}
       />
+      {/* search and new item button */}
       <div className="inventory__container">
         <div className="inventory__searchContainer">
           <h1 className="inventory__header">Inventory</h1>
@@ -135,6 +120,7 @@ function Inventory() {
           </div>
         </div>
       </div>
+      {/* header for tablet and desktop view */}
       <div className="inventory__tabletHeader">
         <div
           className="inventory__mobileContainer1 tabletHeader"
@@ -156,19 +142,19 @@ function Inventory() {
               </div>
             </div>
             <div className="inventory__mobileContainer3">
-              <div className="inventory__table">
+              <div className="inventory__table" id="status">
                 <ul className="inventory__Header">
                   STATUS
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
               </div>
-              <div className="inventory__table">
+              <div className="inventory__table" id="qty">
                 <ul className="inventory__Header">
                   QTY
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
               </div>
-              <div className="inventory__table">
+              <div className="inventory__table" id="warehouse">
                 <ul className="inventory__Header">
                   WAREHOUSE
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
@@ -184,7 +170,7 @@ function Inventory() {
           </div>
         </div>
       </div>
-      {/* <div className="inventory__tabletContainer1">{headerElements}</div> */}
+      {/* inventory data */}
       {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
           <div className="inventory__mobileContainer1">

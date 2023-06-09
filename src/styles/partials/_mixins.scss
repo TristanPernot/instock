@@ -31,7 +31,7 @@
 @mixin searchbar {
   border-radius: 20px;
   background: url("../../assets/Icons/search-24px.svg") no-repeat;
-  background-position: right;
+  background-position: center right 1rem;
   height: 36px;
   border: 1px solid $secondary-cloud;
 

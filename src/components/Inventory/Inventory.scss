@@ -6,14 +6,15 @@
   background-color: $primary-white;
   font-family: "Titillium Web", sans-serif;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
-  max-width: 60%;
+  width: 30rem;
   margin: auto;
   margin-top: -4rem;
+
   overflow: hidden;
 
   @include tablet {
-    margin: 2rem;
-    max-width: 100%;
+    width: 100%;
+    max-width: 90%;
     margin-top: -4rem;
     overflow: hidden;
   }
@@ -239,14 +240,30 @@
   }
 
   #lastItemHeader {
-    padding-right: 2rem;
+    padding-top: 0.3rem;
+    padding-right: 2.3rem;
+  }
+
+  #status {
+    @include tablet {
+      flex: 0.8;
+    }
+  }
+
+  #qty {
+    @include tablet {
+      flex: 0.8;
+    }
+  }
+
+  #warehouse {
+    @include tablet {
+      flex: 0.9;
+    }
   }
 
   #column1 {
-    width: 91px;
     height: 18px;
-    left: 64px;
-    top: 197px;
   }
 
   #column2 {
@@ -270,7 +287,6 @@
       border-top: none;
 
       border-bottom: 2px solid $secondary-cloud;
-      // justify-content: space-evenly;
       align-items: stretch;
     }
 
