@@ -1,6 +1,15 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
 .header {
   display: flex;
   flex-direction: column;
