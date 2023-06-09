@@ -98,7 +98,7 @@ function Inventory() {
           <div className="inventory__tabletSearchContainer">
             <input
               className="inventory__searchbar"
-              type="search"
+              type="text"
               placeholder="Search..."
             />
             <Link to="/inventory/add">
@@ -264,7 +264,10 @@ function Inventory() {
                       />
                     </div>
                     <div className="inventory__icons">
-                      <Link to={`/editInventory/${inventory.id}`} className="inventory__edit">
+                      <Link
+                        to={`/editInventory/${inventory.id}`}
+                        className="inventory__edit"
+                      >
                         <img
                           src={editIcon}
                           alt="edit"
