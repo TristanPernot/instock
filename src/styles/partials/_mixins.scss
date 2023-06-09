@@ -66,9 +66,12 @@
   width: fit-content;
   padding: 0.1rem 0.5rem;
   border-radius: 20px;
-  margin-top: 1rem;
-  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
   font-weight: 600;
+  @include tablet{
+    margin-top: 1rem;
+  }
 }
 
 // Body Font Sizes for mobile (just for p tags) //
