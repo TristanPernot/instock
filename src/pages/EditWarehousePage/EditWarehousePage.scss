@@ -10,6 +10,10 @@
     @include tablet {
         margin: -6rem 2rem 0 2rem;
     }
+
+    @include desktop {
+        margin: -6rem 8.125rem 0 8.125rem;
+    }
     &__header {
         display: flex;
         padding: 1.25rem 1rem;
