@@ -289,7 +289,6 @@ function Inventory() {
           </div>
         </div>
       ))}
-      ;
     </div>
   );
 }
