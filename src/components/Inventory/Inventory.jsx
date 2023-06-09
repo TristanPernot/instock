@@ -126,7 +126,7 @@ function Inventory() {
           className="inventory__mobileContainer1 tabletHeader"
           id="testHeader"
         >
-          <div className="inventory__test" id="testHeader">
+          <div className="inventory__test" id="TabletHeader">
             <div className="inventory__mobileContainer2">
               <div className="inventory__table">
                 <ul className="inventory__Header" id="firstItemHeader">

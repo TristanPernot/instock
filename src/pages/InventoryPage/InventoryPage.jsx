@@ -5,7 +5,7 @@ import ListSearch from "../../components/ListSearch/ListSearch";
 const InventoryPage = () => {
   return (
     <div>
-      <ListSearch />
+      {/* <ListSearch /> */}
       <Inventory />
     </div>
   );

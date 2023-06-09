@@ -14,7 +14,7 @@
 
   @include tablet {
     max-width: 90%;
-    margin-top: -4rem;
+    margin-top: -5rem;
     overflow: hidden;
   }
 
@@ -22,7 +22,7 @@
     font-size: 2rem;
     padding-bottom: 1rem;
     @include tablet {
-      flex: 3;
+      flex: 2;
     }
   }
   &__container {
@@ -32,21 +32,22 @@
       max-width: 100%;
       display: flex;
       flex-direction: column;
-      margin-left: 2rem;
-      margin-right: 2rem;
+      // margin-left: 2rem;
+      // margin-right: 2rem;
     }
   }
 
   &__searchContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    // margin-left: 1.5rem;
+    // margin-right: 1.5rem;
 
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      margin: 2rem;
+      // margin: 2rem;
+      // margin-top: 1rem;
     }
   }
 
@@ -65,7 +66,7 @@
     @include tablet {
       display: inline;
       margin-right: 1rem;
-      max-width: 11rem;
+      // max-width: 11rem;
       flex: 2;
     }
   }
@@ -80,7 +81,6 @@
       margin: 0;
       padding-left: 1rem;
       padding-right: 1rem;
-      flex: 1;
     }
   }
 
@@ -171,6 +171,7 @@
     padding: 0.1rem 0.5rem;
     border-radius: 20px;
     margin-top: 1rem;
+    font-size: 0.8rem;
   }
   &__stock--red {
     list-style: none;
@@ -180,13 +181,9 @@
     padding: 0.1rem 0.5rem;
     border-radius: 20px;
     margin-top: 1rem;
+    font-size: 0.8rem;
   }
-  &__itemDetails {
-    font-size: 1.2rem;
-    @include tablet {
-      margin-bottom: 1rem;
-    }
-  }
+
   &__table {
     padding-top: 1rem;
     @include tablet {
@@ -201,17 +198,6 @@
     @include tablet {
       height: 3rem;
       margin-top: 1rem;
-    }
-
-    &.out-of-stock {
-      color: $out-of-stock;
-      background-color: rgba(201, 69, 21, 0.07);
-    }
-
-    &.in-stock {
-      color: $in-stock;
-      background-color: rgba(21, 132, 99, 0.07);
-      @include stock;
     }
   }
 
@@ -228,11 +214,11 @@
     display: none;
   }
 
-  #testHeader {
+  #TabletHeader {
     @include tablet {
       background-color: $background-light-grey;
 
-      padding-top: 0.3rem;
+      // padding-top: 0.3rem;
       padding-bottom: 0.3rem;
     }
   }
@@ -261,22 +247,6 @@
     @include tablet {
       flex: 0.9;
     }
-  }
-
-  #column1 {
-    height: 18px;
-  }
-
-  #column2 {
-    width: 56px;
-    height: 18px;
-    left: 214px;
-    top: 197px;
-  }
-
-  #column3 {
-    width: 49px;
-    height: 18px;
   }
 
   &__listContainer {
