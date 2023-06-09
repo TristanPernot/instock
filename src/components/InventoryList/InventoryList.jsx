@@ -8,7 +8,6 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import DeleteModal from "../DeleteModal/DeleteModal";
 function InventoryList(){
-    const api = process.env.REACT_APP_API_URL;
     const [inventory, setInventory] = useState([]);
     const [deleteModalInfo, setDeleteModalInfo] = useState({});
   
@@ -18,7 +17,7 @@ function InventoryList(){
   
     function getInventoryList() {
       axios
-        .get(`${api}/inventories`)
+        .get(`http://localhost:8080/inventory`)
         .then((response) => {
           setInventory(response.data);
         })
@@ -29,7 +28,7 @@ function InventoryList(){
     }
     function deleteInventoryItem(id) {
       axios
-        .delete(`${api}/inventories/${id}`)
+        .delete(`http://localhost:8080/inventory${id}`)
         .then((response) => {
           getInventoryList(id);
           console.log(response.data);

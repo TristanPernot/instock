@@ -10,7 +10,6 @@ import editing from "../../assets/Icons/edit-24px.svg";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
 function WarehouseList() {
-  const api = process.env.REACT_APP_API_URL;
   const [warehouse, setWarehouse] = useState([]);
   const [deleteModalInfo, setDeleteModalInfo] = useState({});
 
