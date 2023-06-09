@@ -217,7 +217,7 @@ function InventoryList(){
                       </Link>
                     </div>
                   </li>
-                );
+                )
               })}
             </ul>
           </div>
