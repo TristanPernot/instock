@@ -175,7 +175,7 @@ function EditInventory() {
     }
 
     // if (inputValues.selectWarehouse === '') {
-    if (selectWarehouse === "") {
+    if (selectWarehouse === undefined) {
       console.log(selectWarehouse);
       setSelectWarehouseError(true);
 
