@@ -4,7 +4,7 @@ import axios from "axios";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
 import "../Inventory/Inventory.scss";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg"
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
@@ -25,17 +25,6 @@ function Inventory() {
       .catch((err) => console.log(err));
   }, []);
 
-  //~~get single inventory description~~
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/inventory/:id`)
-      .then((response) => {
-        setInventoryData(response.data);
-        console.log(inventoryData);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
   //~~ get warehouse name with ID~~
   useEffect(() => {
     if (inventoryData) {
@@ -50,7 +39,6 @@ function Inventory() {
           .catch((error) => console.log(error));
       });
     }
-    console.log(inventoryData);
   }, [inventoryData]);
 
   // ~~delete inventory ~~//
@@ -70,7 +58,6 @@ function Inventory() {
       .delete(`http://localhost:8080/inventory/${id}`)
       .then((response) => {
         getInventoryList(id);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -96,53 +83,88 @@ function Inventory() {
     setDeleteModalInfo({});
   }
 
-  // add header to tablet/desktop view - might delete later.
-  const headers = [
-    "INVENTORY ITEM",
-    "CATEGORY",
-    "STATUS",
-    "QTY",
-    "WAREHOUSE",
-    "ACTIONS",
-  ];
-
-  const headerElements = headers.map((header) => (
-    <ul key={header} className="inventory__tabletFirstHeader">
-      {header}
-      <img src={sortIcon} alt="sort" className="inventory__sort" />
-    </ul>
-  ));
-
   return (
     <div className="inventory">
+      {/* delete cancel/confirm functionality */}
       <DeleteModal
         deleteModalInfo={deleteModalInfo}
         onCancel={onDeleteModalCancel}
         onConfirm={onDeleteModalConfirm}
       />
+      {/* search and new item button */}
       <div className="inventory__container">
         <div className="inventory__searchContainer">
           <h1 className="inventory__header">Inventory</h1>
           <div className="inventory__tabletSearchContainer">
             <input
               className="inventory__searchbar"
-              type="search"
+              type="text"
               placeholder="Search..."
             />
             <Link to="/inventory/add">
-              <button className="inventory__button">+Add New Item</button>
+              <button className="inventory__button">+ Add New Item</button>
             </Link>
           </div>
         </div>
       </div>
-      <div className="inventory__tabletContainer1">{headerElements}</div>
+      {/* header for tablet and desktop view */}
+      <div className="inventory__tabletHeader">
+        <div
+          className="inventory__mobileContainer1 tabletHeader"
+          id="testHeader"
+        >
+          <div className="inventory__test" id="TabletHeader">
+            <div className="inventory__mobileContainer2">
+              <div className="inventory__table" id="inventoryItem">
+                <ul className="inventory__Header" id="firstItemHeader">
+                  INVENTORY ITEM
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table" id="category">
+                <ul className="inventory__Header">
+                  CATEGORY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+            </div>
+            <div className="inventory__mobileContainer3">
+              <div className="inventory__table" id="status">
+                <ul className="inventory__Header">
+                  STATUS
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table" id="qty">
+                <ul className="inventory__Header">
+                  QTY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table" id="warehouse">
+                <ul className="inventory__Header">
+                  WAREHOUSE
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+            </div>
+
+            <div className="inventory__mobileContainer4">
+              <div className="inventory__table" id="lastItemHeader">
+                <ul className="inventory__Header">ACTIONS</ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* inventory data */}
       {inventoryData?.map((inventory) => (
-        <div className="inventory__listContainer">
+        <div className="inventory__listContainer" key={inventory.id}>
           <div className="inventory__mobileContainer1">
             <div className="inventory__test">
               <div className="inventory__mobileContainer2">
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column1">
                     INVENTORY ITEM
                     <img
                       src={sortIcon}
@@ -155,12 +177,17 @@ function Inventory() {
                       to={`/inventory/${inventory.id}`}
                       className="inventory__itemDetails"
                     >
-                      {inventory.item_name} <img src={goToIcon} alt="goTo" />
+                      {inventory.item_name}{" "}
+                      <img
+                        src={goToIcon}
+                        alt="goTo"
+                        className="inventory__chevron"
+                      />
                     </Link>
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column2">
                     CATEGORY
                     <img
                       src={sortIcon}
@@ -175,7 +202,7 @@ function Inventory() {
               </div>
               <div className="inventory__mobileContainer3">
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column3">
                     STATUS
                     <img
                       src={sortIcon}
@@ -194,7 +221,7 @@ function Inventory() {
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column4">
                     QTY
                     <img
                       src={sortIcon}
@@ -207,7 +234,7 @@ function Inventory() {
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column5">
                     WAREHOUSE
                     <img
                       src={sortIcon}
@@ -237,7 +264,10 @@ function Inventory() {
                       />
                     </div>
                     <div className="inventory__icons">
-                      <Link to="/EditInventory" className="inventory__edit">
+                      <Link
+                        to={`/editInventory/${inventory.id}`}
+                        className="inventory__edit"
+                      >
                         <img
                           src={editIcon}
                           alt="edit"
@@ -252,7 +282,6 @@ function Inventory() {
           </div>
         </div>
       ))}
-      ;
     </div>
   );
 }

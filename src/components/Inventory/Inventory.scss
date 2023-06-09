@@ -2,26 +2,28 @@
 @use "../../styles/partials/mixins" as *;
 
 .inventory {
-  background-color: $primary-white;
   padding-top: 2rem;
-
+  background-color: $primary-white;
   font-family: "Titillium Web", sans-serif;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
-  max-width: 60%;
+  width: 90%;
   margin: auto;
   margin-top: -4rem;
+
   overflow: hidden;
 
   @include tablet {
-    margin: 2rem;
-    max-width: 100%;
-    margin-top: -4rem;
+    max-width: 90%;
+    margin-top: -5rem;
     overflow: hidden;
   }
 
   &__header {
     font-size: 2rem;
     padding-bottom: 1rem;
+    @include tablet {
+      flex: 2;
+    }
   }
   &__container {
     margin: auto;
@@ -30,30 +32,30 @@
       max-width: 100%;
       display: flex;
       flex-direction: column;
-      margin-left: 2rem;
-      margin-right: 2rem;
     }
   }
 
   &__searchContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-
+    padding-left: 2rem;
+    padding-right: 2rem;
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      margin: 2rem;
     }
   }
 
   &__tabletSearchContainer {
     @include tablet {
       display: flex;
+      flex: 2;
     }
   }
 
+  &__Header {
+    display: flex;
+  }
   &__searchbar {
     @include searchbar;
     display: flex;
@@ -62,7 +64,7 @@
     @include tablet {
       display: inline;
       margin-right: 1rem;
-      max-width: 11rem;
+      flex: 2;
     }
   }
 
@@ -74,6 +76,8 @@
 
     @include tablet {
       margin: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
@@ -89,20 +93,26 @@
   }
   &__test {
     display: flex;
-    padding-left: 2rem;
+    justify-content: space-around;
     @include tablet {
       flex: 2;
       padding-left: 0;
     }
   }
+  &__chevron {
+    width: 16px;
+  }
+  &__itemDetails {
+    display: flex;
+    align-items: center;
+  }
   &__mobileContainer2,
   &__mobileContainer3 {
-    padding-right: 3rem;
     @include tablet {
       padding-right: 0;
       display: flex;
       flex-direction: row;
-      flex: 3;
+      flex: 2;
     }
   }
 
@@ -120,16 +130,25 @@
     padding-bottom: 1rem;
     @include tablet {
       justify-content: flex-start;
+      padding-right: 1rem;
     }
   }
 
-  &__tabletFirstHeader {
+  &__icons {
+    @include tablet {
+      padding-right: 1.2rem;
+    }
+  }
+
+  &__tabletHeader {
     display: none;
 
     @include tablet {
       display: inline;
       background-color: $background-light-grey;
-      font-size: 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: $secondary-slate;
       padding-top: 0.68rem;
       padding-bottom: 0.68rem;
       flex: 1;
@@ -139,36 +158,26 @@
   &__tabletContainer1 {
     display: flex;
   }
+
+  //hide regular headers
   &__tableHeader {
+    min-width: fit-content;
+    font-size: 0.7rem;
     @include tablet {
       display: none;
     }
   }
   &__stock {
-    list-style: none;
-    width: fit-content;
-
+    @include stock;
     background-color: rgba(21, 132, 99, 0.07);
     color: $supporting-green;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
   }
   &__stock--red {
-    list-style: none;
-    width: fit-content;
+    @include stock;
     background-color: rgba(201, 69, 21, 0.07);
     color: $supporting-red;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
   }
-  &__itemDetails {
-    font-size: 1.2rem;
-    @include tablet {
-      margin-bottom: 1rem;
-    }
-  }
+
   &__table {
     padding-top: 1rem;
     @include tablet {
@@ -179,21 +188,11 @@
   }
   &__tableItems {
     list-style: none;
+    font-size: 0.8rem;
 
     @include tablet {
       height: 3rem;
       margin-top: 1rem;
-    }
-
-    &.out-of-stock {
-      color: $out-of-stock;
-      background-color: rgba(201, 69, 21, 0.07);
-    }
-
-    &.in-stock {
-      color: $in-stock;
-      background-color: rgba(21, 132, 99, 0.07);
-      @include stock;
     }
   }
 
@@ -203,11 +202,46 @@
 
     @include tablet {
       padding-left: 2rem;
+      flex: 1;
     }
   }
 
   #actions {
     display: none;
+  }
+
+  #TabletHeader {
+    @include tablet {
+      background-color: $background-light-grey;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+  }
+  #firstItemHeader {
+    padding-left: 2rem;
+  }
+
+  #status {
+    @include tablet {
+      flex: 0.7;
+    }
+  }
+
+  #qty {
+    @include tablet {
+      flex: 0.8;
+    }
+  }
+
+  #warehouse {
+    @include tablet {
+      flex: 0.9;
+    }
+  }
+
+  #lastItemHeader {
+    padding-right: 2.7rem;
+    padding-left: 0;
   }
   &__listContainer {
     border-top: 2px solid $secondary-cloud;
@@ -218,8 +252,11 @@
       border-top: none;
 
       border-bottom: 2px solid $secondary-cloud;
-      // justify-content: space-evenly;
       align-items: stretch;
+    }
+
+    &:hover {
+      background: rgba(46, 102, 230, 0.07);
     }
   }
 
@@ -227,6 +264,7 @@
     display: none;
     @include tablet {
       display: inline;
+      height: 1rem;
     }
   }
 }
