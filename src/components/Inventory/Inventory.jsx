@@ -274,7 +274,7 @@ function Inventory() {
                       />
                     </div>
                     <div className="inventory__icons">
-                      <Link to="/EditInventory" className="inventory__edit">
+                      <Link to={`/editInventory/${inventory.id}`} className="inventory__edit">
                         <img
                           src={editIcon}
                           alt="edit"
