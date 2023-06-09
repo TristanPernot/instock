@@ -72,6 +72,10 @@ a {
     @include desktop {
       width: 25%;
     }
+    &:focus{
+      border: 1px solid #2e66e5;
+      outline: none;
+    }
   }
   &__btn {
     margin-left: 5vw;
