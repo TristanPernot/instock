@@ -3,9 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import "./EditWarehousePage.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 // Icon
 import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
+import ErrorIcon from "../../assets/Icons/error-24px.svg";
 
 const EditWarehousePage = () => {
   const { id } = useParams();
@@ -20,6 +20,8 @@ const EditWarehousePage = () => {
     contact_phone: "",
     contact_email: "",
   });
+  // To store any error message if there is any error
+  const [errMsg, setErrMsg] = useState({});
 
   useEffect(() => {
     axios
@@ -28,16 +30,6 @@ const EditWarehousePage = () => {
         const warehouseData = response.data;
         console.log(warehouseData);
         setFormData(warehouseData);
-        // setFormData({
-        // warehouse_name: warehouseData.warehouse_name,
-        // address: warehouseData.address,
-        // city: warehouseData.city,
-        // country: warehouseData.country,
-        // contact_name: warehouseData.contact_name,
-        // contact_position: warehouseData.contact_position,
-        // contact_phone: warehouseData.contact_phone,
-        // contact_email: warehouseData.contact_email,
-        // });
       })
       .catch((error) => {
         console.error("Error fetching warehouse data", error);
@@ -64,7 +56,17 @@ const EditWarehousePage = () => {
       contact_email,
     } = formData;
     if (!warehouse_name || !address || !city || !country || !contact_name || !contact_phone || !contact_position || !contact_email) {
-      return alert("Please enter all the required fields");
+      let errorMessage = {};
+      if(!warehouse_name) errorMessage.warehouse_name = true;
+      if(!address) errorMessage.address = true;
+      if(!city) errorMessage.city = true;
+      if(!country) errorMessage.country = true;
+      if(!contact_name) errorMessage.contact_name = true;
+      if(!contact_phone) errorMessage.contact_phone = true;
+      if(!contact_position) errorMessage.contact_position = true;
+      if(!contact_email) errorMessage.contact_email = true;
+      setErrMsg(errorMessage);
+      return;
     }
     axios
       .put(`http://localhost:8080/warehouse/${id}`, {
@@ -107,6 +109,12 @@ const EditWarehousePage = () => {
               value={formData.warehouse_name}
               onChange={handleInputChange}
             />
+            {errMsg.warehouse_name  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
           <div className="editForm__control">
             <label htmlFor="address" className="editForm__label">
@@ -120,6 +128,12 @@ const EditWarehousePage = () => {
               value={formData.address}
               onChange={handleInputChange}
             />
+            {errMsg.address  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
           <div className="editForm__control">
             <label htmlFor="city" className="editForm__label">
@@ -134,6 +148,7 @@ const EditWarehousePage = () => {
               onChange={handleInputChange}
             />
           </div>
+          {errMsg.city  &&  <p className="editForm__errorMsg">This field is required</p>}
           <div className="editForm__control">
             <label htmlFor="country" className="editForm__label">
               Country
@@ -146,6 +161,12 @@ const EditWarehousePage = () => {
               value={formData.country}
               onChange={handleInputChange}
             />
+            {errMsg.country  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
         </div>
         {/* Right Column */}
@@ -164,6 +185,12 @@ const EditWarehousePage = () => {
               value={formData.contact_name}
               onChange={handleInputChange}
             />
+            {errMsg.contact_name  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
           <div className="editForm__control">
             <label htmlFor="position" className="editForm__label">
@@ -177,6 +204,12 @@ const EditWarehousePage = () => {
               value={formData.contact_position}
               onChange={handleInputChange}
             />
+            {errMsg.contact_position  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
           <div className="editForm__control">
             <label htmlFor="phone" className="editForm__label">
@@ -190,6 +223,12 @@ const EditWarehousePage = () => {
               value={formData.contact_phone}
               onChange={handleInputChange}
             />
+            {errMsg.contact_phone  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
           <div className="editForm__control">
             <label htmlFor="email" className="editForm__label">
@@ -203,6 +242,12 @@ const EditWarehousePage = () => {
               value={formData.contact_email}
               onChange={handleInputChange}
             />
+            {errMsg.contact_email  &&  (
+              <div className="editForm__error">
+                <img className="editForm__errorbtn" src={ErrorIcon} alt="Error Icon" />
+                <p className="editForm__errorMsg">This field is required</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
