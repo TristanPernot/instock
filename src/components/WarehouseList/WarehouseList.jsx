@@ -72,7 +72,7 @@ function WarehouseList() {
         onCancel={onDeleteModalCancel}
         onConfirm={onDeleteModalConfirm}
       />
-      <h1>Warehouse</h1>
+      <h1>Warehouses</h1>
       <form className="container__form">
         <input
           id="search"
@@ -117,7 +117,7 @@ function WarehouseList() {
           return (
             <li key={warehouse.id} className="container__li hoverdiv">
               <div className="container__li--format">
-                <h4 className="container__li--mobile">Warehouse</h4>
+                <h4 className="container__li--mobile">WAREHOUSE</h4>
 
                 <span className="container__li--item">
                   <Link to={`/warehouse/${warehouse.id}`}>
@@ -125,11 +125,15 @@ function WarehouseList() {
                       <p className="container__li--special">
                         {warehouse.warehouse_name}
                       </p>
-                      <img src={`${arrowright}`} alt="arrow" />
+                      <img
+                        className="container__arrow"
+                        src={`${arrowright}`}
+                        alt="arrow"
+                      />
                     </div>
                   </Link>
                 </span>
-                <h4 className="container__li--mobile">Address</h4>
+                <h4 className="container__li--mobile address">ADDRESS</h4>
                 <div className="container__li--item container__li--format">
                   {warehouse.address}
                   <br />
@@ -137,10 +141,10 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="container__li--format">
-                <h4 className="container__li--mobile">Contact Name</h4>
+                <h4 className="container__li--mobile">CONTACT NAME</h4>
                 <p className="container__li--item">{warehouse.contact_name}</p>
                 <h4 className="container__li--mobile contact-information">
-                  Contact information
+                  CONTACT INFORMATION
                 </h4>
                 <div className="container__li--item container__li--item-large container__li--format">
                   {warehouse.contact_phone}
@@ -148,14 +152,19 @@ function WarehouseList() {
                   {warehouse.contact_email}
                 </div>
               </div>
-              <span className="container__li--img">
+              <span className="container__li--img delete">
                 <img
+                  className="container__icon"
                   src={`${deleteimg}`}
                   alt="delete"
                   onClick={() => deleteButtonClick(warehouse)}
                 />
                 <Link to={`/editWarehouse/${warehouse.id}`}>
-                  <img src={`${editing}`} alt="edit" />
+                  <img
+                    className="container__icon"
+                    src={`${editing}`}
+                    alt="edit"
+                  />
                 </Link>
               </span>
             </li>
