@@ -246,7 +246,7 @@ function EditInventory() {
 						navigate(-1);
 					}}
 				>
-					<img src={ArrowBack} alt="ArrowBackButton" />
+					<img className="back__btn" src={ArrowBack} alt="ArrowBackButton" />
 				</Link>
 				<h1 className="heading__title">Edit Inventory Item</h1>
 			</div>

@@ -4,12 +4,11 @@
 
 .editForm {
     box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
-    margin: 1rem;
+    margin: -5rem 1rem 0 1rem;
+    background-color: white;
+
     @include tablet {
-        margin: 2rem;
-    }
-    @include desktop {
-        margin: 2rem 8.125rem;
+        margin: -6rem 2rem 0 2rem;
     }
     &__header {
         display: flex;

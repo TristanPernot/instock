@@ -4,7 +4,7 @@ import axios from "axios";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
 import "../Inventory/Inventory.scss";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg"
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import goToIcon from "../../assets/Icons/chevron_right-24px.svg";
@@ -96,30 +96,15 @@ function Inventory() {
     setDeleteModalInfo({});
   }
 
-  // add header to tablet/desktop view - might delete later.
-  const headers = [
-    "INVENTORY ITEM",
-    "CATEGORY",
-    "STATUS",
-    "QTY",
-    "WAREHOUSE",
-    "ACTIONS",
-  ];
-
-  const headerElements = headers.map((header) => (
-    <ul key={header} className="inventory__tabletFirstHeader">
-      {header}
-      <img src={sortIcon} alt="sort" className="inventory__sort" />
-    </ul>
-  ));
-
   return (
     <div className="inventory">
+      {/* delete cancel/confirm functionality */}
       <DeleteModal
         deleteModalInfo={deleteModalInfo}
         onCancel={onDeleteModalCancel}
         onConfirm={onDeleteModalConfirm}
       />
+      {/* search and new item button */}
       <div className="inventory__container">
         <div className="inventory__searchContainer">
           <h1 className="inventory__header">Inventory</h1>
@@ -135,14 +120,64 @@ function Inventory() {
           </div>
         </div>
       </div>
-      <div className="inventory__tabletContainer1">{headerElements}</div>
+      {/* header for tablet and desktop view */}
+      <div className="inventory__tabletHeader">
+        <div
+          className="inventory__mobileContainer1 tabletHeader"
+          id="testHeader"
+        >
+          <div className="inventory__test" id="testHeader">
+            <div className="inventory__mobileContainer2">
+              <div className="inventory__table">
+                <ul className="inventory__Header" id="firstItemHeader">
+                  INVENTORY ITEM
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table">
+                <ul className="inventory__Header">
+                  CATEGORY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+            </div>
+            <div className="inventory__mobileContainer3">
+              <div className="inventory__table" id="status">
+                <ul className="inventory__Header">
+                  STATUS
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table" id="qty">
+                <ul className="inventory__Header">
+                  QTY
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+              <div className="inventory__table" id="warehouse">
+                <ul className="inventory__Header">
+                  WAREHOUSE
+                  <img src={sortIcon} alt="sort" className="inventory__sort" />
+                </ul>
+              </div>
+            </div>
+
+            <div className="inventory__mobileContainer4">
+              <div className="inventory__table" id="lastItemHeader">
+                <ul classNam="inventory__Header">ACTIONS</ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* inventory data */}
       {inventoryData?.map((inventory) => (
         <div className="inventory__listContainer">
           <div className="inventory__mobileContainer1">
             <div className="inventory__test">
               <div className="inventory__mobileContainer2">
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column1">
                     INVENTORY ITEM
                     <img
                       src={sortIcon}
@@ -165,7 +200,7 @@ function Inventory() {
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column2">
                     CATEGORY
                     <img
                       src={sortIcon}
@@ -180,7 +215,7 @@ function Inventory() {
               </div>
               <div className="inventory__mobileContainer3">
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column3">
                     STATUS
                     <img
                       src={sortIcon}
@@ -199,7 +234,7 @@ function Inventory() {
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column4">
                     QTY
                     <img
                       src={sortIcon}
@@ -212,7 +247,7 @@ function Inventory() {
                   </li>
                 </div>
                 <div className="inventory__table">
-                  <ul className="inventory__tableHeader">
+                  <ul className="inventory__tableHeader" id="column5">
                     WAREHOUSE
                     <img
                       src={sortIcon}

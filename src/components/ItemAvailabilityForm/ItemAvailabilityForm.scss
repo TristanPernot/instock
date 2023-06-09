@@ -23,9 +23,11 @@
     &__label {
         display: block;
         padding-bottom: 0.25rem;
+        @include body-medium-mobile;
         font-weight: 600;
 
         @include tablet {
+            @include body-medium-tablet;
         }
     }
 
