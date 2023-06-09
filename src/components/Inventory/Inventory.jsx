@@ -31,7 +31,6 @@ function Inventory() {
       .get(`http://localhost:8080/inventory/:id`)
       .then((response) => {
         setInventoryData(response.data);
-        console.log(inventoryData);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -50,7 +49,6 @@ function Inventory() {
           .catch((error) => console.log(error));
       });
     }
-    console.log(inventoryData);
   }, [inventoryData]);
 
   // ~~delete inventory ~~//
@@ -70,7 +68,6 @@ function Inventory() {
       .delete(`http://localhost:8080/inventory/${id}`)
       .then((response) => {
         getInventoryList(id);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -128,13 +125,13 @@ function Inventory() {
         >
           <div className="inventory__test" id="TabletHeader">
             <div className="inventory__mobileContainer2">
-              <div className="inventory__table">
+              <div className="inventory__table" id="inventoryItem">
                 <ul className="inventory__Header" id="firstItemHeader">
                   INVENTORY ITEM
                   <img src={sortIcon} alt="sort" className="inventory__sort" />
                 </ul>
               </div>
-              <div className="inventory__table">
+              <div className="inventory__table" id="category">
                 <ul className="inventory__Header">
                   CATEGORY
                   <img src={sortIcon} alt="sort" className="inventory__sort" />

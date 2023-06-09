@@ -32,22 +32,16 @@
       max-width: 100%;
       display: flex;
       flex-direction: column;
-      // margin-left: 2rem;
-      // margin-right: 2rem;
     }
   }
 
   &__searchContainer {
     display: flex;
     flex-direction: column;
-    // margin-left: 1.5rem;
-    // margin-right: 1.5rem;
 
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      // margin: 2rem;
-      // margin-top: 1rem;
     }
   }
 
@@ -97,6 +91,7 @@
   &__test {
     display: flex;
     padding-left: 2rem;
+    justify-content: space-around;
     @include tablet {
       flex: 2;
       padding-left: 0;
@@ -198,6 +193,7 @@
 
     @include tablet {
       padding-left: 2rem;
+      flex: 1;
     }
   }
 
@@ -214,12 +210,6 @@
   }
   #firstItemHeader {
     padding-left: 2rem;
-  }
-
-  #lastItemHeader {
-    padding-top: 0.2rem;
-    padding-right: 2.7rem;
-    padding-left: 0;
   }
 
   #status {
@@ -240,6 +230,11 @@
     }
   }
 
+  #lastItemHeader {
+    padding-top: 0.2rem;
+    padding-right: 2.7rem;
+    padding-left: 0;
+  }
   &__listContainer {
     border-top: 2px solid $secondary-cloud;
 
