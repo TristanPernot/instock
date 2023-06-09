@@ -36,10 +36,9 @@
   border: 1px solid $secondary-cloud;
 
   width: 90%;
-  height: 2.5rem;
+  height: 2.3rem;
   padding: 0.5rem 1rem;
   @include tablet {
-    height: 3.5;
     width: 27%;
   }
   @include desktop {
@@ -53,7 +52,8 @@
   background-color: $primary-indigo;
   color: $primary-white;
   border: none;
-  height: 2.5rem;
+  height: 2.3rem;
+  font-weight: 600;
 
   &:hover {
     background-color: $background-graphite;
@@ -62,11 +62,13 @@
 
 //tags
 @mixin stock {
-  border-radius: 20px;
-  padding-right: 8px;
-  padding-left: 8px;
-  height: 1.6rem;
+  list-style: none;
   width: fit-content;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 // Body Font Sizes for mobile (just for p tags) //
