@@ -1,422 +1,75 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
 
 .header {
+  height: 14.5rem;
+  background-color: $background-graphite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    height: 12rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: green;
-    height: 12.5rem;
-    background-color: $background-graphite;
-    margin: 0 -1rem;
-    padding: 1rem 1rem;
-
-
+    flex-direction: row;
+    justify-content: center;
+    // gap: 22rem;
+    gap: 45vw;
+    align-items: start;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    gap: 40rem;
+  }
+  &__logo {
+    background-image: url(../../assets/Logo/InStock-Logo.svg);
+    width: 12rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9rem;
     @include tablet {
-        flex-direction: row;
-        align-items: flex-start;
-        height: 11.625rem;
-        justify-content: space-between;
-        margin: 0 -2rem;
-        padding: 0 4rem;
+      background-size: 8rem;
     }
-
-    @include desktop {
-        margin: 0 -8.125rem;
-        padding: 0 16.25rem;
-    }
-
-    &__img {
-        width: 8rem;
-            padding: 1.5rem 0 1rem;
-
-            @include tablet {
-                margin: 2rem 0;
-                padding: 0;
-                width: 8.125rem;
-            }
-
-            @include desktop {
-                margin: 2rem 0;
-            }
-    }
-
-    &__buttons {
-        display: flex;
-        justify-content: space-evenly;
-        // gap: .5rem;
-        width: 100%;
-
-        @include tablet {
-            padding: 1.75rem 0;
-            width: fit-content;
-            gap: .5rem;
-        }
-
-        @include desktop {
-            padding: 1.75rem 0;
-        }
-    }
-
-    &__warehouse-button {
-        height: 2.25rem;
-        padding: 0 2.75rem;
-        background-color: $background-graphite;
-        color: $secondary-cloud;
-        border: none;
-        border-radius: 1.125rem;
-        font-size: .625rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-            color: $primary-white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        @include tablet {
-            height: 2.375rem;
-            width: 6.75rem;
-            padding: 0;
-            border-radius: 1.125rem;
-        }
-    }
-
-        &__warehouse-button--active {
-        height: 2.25rem;
-        padding: 0 2.75rem;
-        background-color: $background-graphite;
-        color: $secondary-cloud;
-        border: none;
-        border-radius: 1.125rem;
-        font-size: .625rem;
-        background-color: $primary-black;
-        color: $primary-white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-            color: $primary-white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        @include tablet {
-            height: 2.375rem;
-            width: 6.75rem;
-            padding: 0;
-            border-radius: 1.125rem;
-        }
-    }
-
-    &__inventory-button {
-        height: 2.25rem;
-        padding: 0 3.3rem;
-        background-color: $background-graphite;
-        color: $secondary-cloud;
-        border: none;
-        border-radius: 1.125rem;
-        font-size: .625rem;
-        flex-basis: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-            color: $primary-white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        @include tablet {
-            height: 2.375rem;
-            width: 5.625rem;
-            padding: 0;
-        }
-    }
-
-        &__inventory-button--active {
-        height: 2.25rem;
-        padding: 0 3.3rem;
-        background-color: $background-graphite;
-        color: $secondary-cloud;
-        border: none;
-        border-radius: 1.125rem;
-        font-size: .625rem;
-        flex-basis: 50%;
-        background-color: $primary-black;
-        color: $primary-white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-            color: $primary-white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        @include tablet {
-            height: 2.375rem;
-            width: 5.625rem;
-            padding: 0;
-        }
-    }
-}
-
-.active {
-    background-color: $primary-black;
+  }
+  &__nav {
+    display: flex;
+    gap: 1rem;
     color: $primary-white;
+    @include tablet {
+      gap: 0rem;
+    }
+    &--item {
+      border-radius: 20px;
+      //   width: 11.5rem;
+      width: 44vw;
+      height: 2.5rem;
+      text-align: center;
+      padding-top: 0.5rem;
+      text-decoration: none;
+      color: $primary-white;
+      @include tablet {
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        width: 6.7rem;
+        height: 2.3rem;
+        padding-top: 0.45rem;
+      }
+    }
+    &--item:hover {
+      background-color: $primary-black;
+    }
+  }
 }
-
-
-//new css
-
-
-// // @use "../../styles/partials/font" as *;
-// // @use "../../styles/partials/mixins" as *;
-// // @use "../../styles/partials/variables" as *;
-
-// // * {
-// //   box-sizing: border-box;
-// // }
-
-// // body {
-// //   margin: 0;
-// //   font-family: "Titillium Web", sans-serif;
-// // }
-
-// // .header {
-// //   height: 14.5rem;
-// //   background-color: $background-graphite;
-// //   display: flex;
-// //   flex-direction: column;
-// //   align-items: center;
-// //   @include tablet {
-// //     height: 12rem;
-// //     display: flex;
-// //     flex-direction: row;
-// //     // gap: 22rem;
-// //     gap: 45vw;
-// //     align-items: start;
-// //   }
-// //   @include desktop {
-// //     display: flex;
-// //     justify-content: center;
-// //     gap: 40rem;
-// //   }
-// //   &__logo {
-// //     background-image: url(../../assets/Logo/InStock-Logo.svg);
-// //     width: 12rem;
-// //     height: 3rem;
-// //     margin: 1rem 0;
-// //     background-position: center;
-// //     background-repeat: no-repeat;
-// //     background-size: 9rem;
-// //     @include tablet {
-// //       background-size: 8rem;
-// //     }
-// //   }
-// //   &__nav {
-// //     display: flex;
-// //     gap: 1rem;
-// //     color: $primary-white;
-// //     @include tablet {
-// //       gap: 0rem;
-// //     }
-// //     &--item {
-// //       border-radius: 20px;
-// //       width: 11.5rem;
-// //       height: 2.5rem;
-// //       text-align: center;
-// //       padding-top: 0.5rem;
-// //       @include tablet {
-// //         font-size: 0.9rem;
-// //         margin: 1rem 0;
-// //         width: 6.7rem;
-// //         height: 2.3rem;
-// //         padding-top: 0.45rem;
-// //       }
-// //     }
-// //     &--item:hover {
-// //       background-color: $primary-black;
-// //     }
-// //   }
-// // }
-
-
-// @use '../../styles/partials/mixins' as *;
-// @use '../../styles/partials/variables' as *;
-
-// .header {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     background-color: green;
-//     height: 12.5rem;
-//     background-color: $background-graphite;
-//     margin: 0 -1rem;
-//     padding: 0 1rem;
-
-//     @include tablet {
-//         flex-direction: row;
-//         align-items: flex-start;
-//         height: 11.625rem;
-//         justify-content: space-between;
-//         margin: 0 -2rem;
-//         padding: 0 2rem;
-//     }
-
-//     @include desktop {
-//         margin: 0 -8.125rem;
-//         padding: 0 8.125rem;
-//     }
-
-//     &__img {
-//         width: 8rem;
-//             padding: 1.5rem 0 1rem;
-
-//             @include tablet {
-//                 margin: 2rem 0;
-//                 padding: 0;
-//                 width: 8.125rem;
-//             }
-
-//             @include desktop {
-//                 margin: 2rem 0;
-//             }
-//     }
-
-//     &__buttons {
-//         display: flex;
-//         justify-content: space-evenly;
-//         // gap: .5rem;
-//         width: 100%;
-
-//         @include tablet {
-//             padding: 1.75rem 0;
-//             width: fit-content;
-//             gap: .5rem;
-//         }
-
-//         @include desktop {
-//             padding: 1.75rem 0;
-//         }
-//     }
-
-//     &__warehouse-button {
-//         height: 2.25rem;
-//         padding: 0 2.75rem;
-//         background-color: $background-graphite;
-//         color: $secondary-cloud;
-//         border: none;
-//         border-radius: 1.125rem;
-//         font-size: .625rem;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         &:hover {
-//             color: $primary-white;
-//             text-decoration: underline;
-//             cursor: pointer;
-//         }
-
-//         @include tablet {
-//             height: 2.375rem;
-//             width: 6.75rem;
-//             padding: 0;
-//             border-radius: 1.125rem;
-//         }
-//     }
-
-//         &__warehouse-button--active {
-//         height: 2.25rem;
-//         padding: 0 2.75rem;
-//         background-color: $background-graphite;
-//         color: $secondary-cloud;
-//         border: none;
-//         border-radius: 1.125rem;
-//         font-size: .625rem;
-//         background-color: $primary-black;
-//         color: $primary-white;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         &:hover {
-//             color: $primary-white;
-//             text-decoration: underline;
-//             cursor: pointer;
-//         }
-
-//         @include tablet {
-//             height: 2.375rem;
-//             width: 6.75rem;
-//             padding: 0;
-//             border-radius: 1.125rem;
-//         }
-//     }
-
-//     &__inventory-button {
-//         height: 2.25rem;
-//         padding: 0 3.3rem;
-//         background-color: $background-graphite;
-//         color: $secondary-cloud;
-//         border: none;
-//         border-radius: 1.125rem;
-//         font-size: .625rem;
-//         flex-basis: 50%;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         &:hover {
-//             color: $primary-white;
-//             text-decoration: underline;
-//             cursor: pointer;
-//         }
-
-//         @include tablet {
-//             height: 2.375rem;
-//             width: 5.625rem;
-//             padding: 0;
-//         }
-//     }
-
-//         &__inventory-button--active {
-//         height: 2.25rem;
-//         padding: 0 3.3rem;
-//         background-color: $background-graphite;
-//         color: $secondary-cloud;
-//         border: none;
-//         border-radius: 1.125rem;
-//         font-size: .625rem;
-//         flex-basis: 50%;
-//         background-color: $primary-black;
-//         color: $primary-white;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         &:hover {
-//             color: $primary-white;
-//             text-decoration: underline;
-//             cursor: pointer;
-//         }
-
-//         @include tablet {
-//             height: 2.375rem;
-//             width: 5.625rem;
-//             padding: 0;
-//         }
-//     }
-// }
-
-// .active {
-//     background-color: $primary-black;
-//     color: $primary-white;
-// }
