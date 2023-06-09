@@ -15,9 +15,8 @@
     }
     @include desktop {
         padding: 2rem 4rem;
-        top:220px;
-        left:265;
-        right: 265px;
+        width: 60%;
+        margin: 0 auto;
     }
     &__overlay {
         position: fixed;
