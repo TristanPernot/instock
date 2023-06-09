@@ -14,7 +14,7 @@
 
   @include tablet {
     max-width: 90%;
-    margin-top: -4rem;
+    margin-top: -5rem;
     overflow: hidden;
   }
 
@@ -22,7 +22,7 @@
     font-size: 2rem;
     padding-bottom: 1rem;
     @include tablet {
-      flex: 3;
+      flex: 2;
     }
   }
   &__container {
@@ -32,21 +32,16 @@
       max-width: 100%;
       display: flex;
       flex-direction: column;
-      margin-left: 2rem;
-      margin-right: 2rem;
     }
   }
 
   &__searchContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
 
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      margin: 2rem;
     }
   }
 
@@ -65,7 +60,7 @@
     @include tablet {
       display: inline;
       margin-right: 1rem;
-      max-width: 11rem;
+      // max-width: 11rem;
       flex: 2;
     }
   }
@@ -80,7 +75,6 @@
       margin: 0;
       padding-left: 1rem;
       padding-right: 1rem;
-      flex: 1;
     }
   }
 
@@ -97,6 +91,7 @@
   &__test {
     display: flex;
     padding-left: 2rem;
+    justify-content: space-around;
     @include tablet {
       flex: 2;
       padding-left: 0;
@@ -144,6 +139,8 @@
       display: inline;
       background-color: $background-light-grey;
       font-size: 0.7rem;
+      font-weight: 600;
+      color: $secondary-slate;
       padding-top: 0.68rem;
       padding-bottom: 0.68rem;
       flex: 1;
@@ -163,30 +160,16 @@
     }
   }
   &__stock {
-    list-style: none;
-    width: fit-content;
-
+    @include stock;
     background-color: rgba(21, 132, 99, 0.07);
     color: $supporting-green;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
   }
   &__stock--red {
-    list-style: none;
-    width: fit-content;
+    @include stock;
     background-color: rgba(201, 69, 21, 0.07);
     color: $supporting-red;
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
   }
-  &__itemDetails {
-    font-size: 1.2rem;
-    @include tablet {
-      margin-bottom: 1rem;
-    }
-  }
+
   &__table {
     padding-top: 1rem;
     @include tablet {
@@ -202,17 +185,6 @@
       height: 3rem;
       margin-top: 1rem;
     }
-
-    &.out-of-stock {
-      color: $out-of-stock;
-      background-color: rgba(201, 69, 21, 0.07);
-    }
-
-    &.in-stock {
-      color: $in-stock;
-      background-color: rgba(21, 132, 99, 0.07);
-      @include stock;
-    }
   }
 
   #itemName {
@@ -221,6 +193,7 @@
 
     @include tablet {
       padding-left: 2rem;
+      flex: 1;
     }
   }
 
@@ -228,26 +201,20 @@
     display: none;
   }
 
-  #testHeader {
+  #TabletHeader {
     @include tablet {
       background-color: $background-light-grey;
-
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
     }
   }
   #firstItemHeader {
     padding-left: 2rem;
   }
 
-  #lastItemHeader {
-    padding-top: 0.3rem;
-    padding-right: 2.3rem;
-  }
-
   #status {
     @include tablet {
-      flex: 0.8;
+      flex: 0.7;
     }
   }
 
@@ -263,22 +230,11 @@
     }
   }
 
-  #column1 {
-    height: 18px;
+  #lastItemHeader {
+    padding-top: 0.2rem;
+    padding-right: 2.7rem;
+    padding-left: 0;
   }
-
-  #column2 {
-    width: 56px;
-    height: 18px;
-    left: 214px;
-    top: 197px;
-  }
-
-  #column3 {
-    width: 49px;
-    height: 18px;
-  }
-
   &__listContainer {
     border-top: 2px solid $secondary-cloud;
 
@@ -300,6 +256,7 @@
     display: none;
     @include tablet {
       display: inline;
+      height: 1rem;
     }
   }
 }
