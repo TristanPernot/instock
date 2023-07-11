@@ -1,5 +1,5 @@
 <h1 align="center">InStock</h1>
-<p align="center">InStock is a versatile inventory management system that simplifies warehouse and inventory management tasks. It offers essential features to add, edit, delete, and view warehouses and inventories, providing users with convenient control over their stock management processes.
+<p>InStock is a versatile inventory management system that simplifies warehouse and inventory management tasks. It offers essential features to add, edit, delete, and view warehouses and inventories, providing users with convenient control over their stock management processes.
 </p>
 
 ![Screen Capture 045 - InStock - localhost](https://github.com/TristanPernot/instock/assets/95105372/fd38226f-d5f3-468c-9bf6-e4fa2688605b)
